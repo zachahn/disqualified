@@ -1,0 +1,8 @@
+Description:
+    Installs Disqualified
+
+Example:
+    bin/rails generate disqualified:install
+
+    This will create:
+        db/migrate/20220703062536_create_disqualified_jobs.rb
