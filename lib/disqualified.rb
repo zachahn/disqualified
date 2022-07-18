@@ -1,3 +1,6 @@
+module Disqualified
+end
+
 require "optparse"
 
 require "concurrent"
@@ -11,7 +14,3 @@ require_relative "disqualified/main"
 require_relative "disqualified/pool"
 require_relative "disqualified/server_configuration"
 require_relative "disqualified/version"
-
-module Disqualified
-  # Your code goes here...
-end
