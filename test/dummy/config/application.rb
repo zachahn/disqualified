@@ -18,6 +18,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 require "disqualified"
+require "disqualified/active_job"
 
 module Dummy
   class Application < Rails::Application

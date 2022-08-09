@@ -6,7 +6,7 @@ Since SQLite doesn't have any features like Postgres' `LISTEN`/`NOTIFY`,
 Disqualified resorts to polling the database. This might _disqualify_ it as an
 option for you, but it works well enough for my workload.
 
-Disqualified only works with Rails. It does not work with ActiveJob.
+Disqualified only works with Rails. You can use it with ActiveJob or by itself.
 
 
 ## Usage
