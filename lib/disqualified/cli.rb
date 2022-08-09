@@ -29,7 +29,7 @@ class Disqualified::CLI
     logger.info { ' / /_/ / (__  ) /_/ / /_/ / /_/ / / / __/ /  __/ /_/ /' }
     logger.info { '/_____/_/____/\__, /\__,_/\__,_/_/_/_/ /_/\___/\__,_/' }
     logger.info { '                /_/' + "v#{Disqualified::VERSION}".rjust(32, " ") }
-    logger.info { "#{Disqualified.server_options.to_s}" }
+    logger.info { Disqualified.server_options.to_s }
 
     pool = Disqualified::Pool.new(delay_range:, pool_size:, logger:) do |args|
       args => { promise_index:, running: }

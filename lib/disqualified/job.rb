@@ -6,7 +6,7 @@ module Disqualified::Job
   module ClassMethods
     def perform_at(the_time, *args)
       Disqualified::Record.create(
-        handler: self.name,
+        handler: name,
         arguments: JSON.dump(args),
         queue: "default",
         run_at: the_time
