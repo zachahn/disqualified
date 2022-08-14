@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     disqualified (0.1.1)
+      concurrent-ruby
       rails (>= 7.0.0)
 
 GEM

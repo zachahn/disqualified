@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Support for ActiveJob
 
+### Fixed
+
+* Note that the gem `concurrent-ruby` is a requirement
+
 ## v0.1.1 - 2022-07-17
 
 ### Fixed
