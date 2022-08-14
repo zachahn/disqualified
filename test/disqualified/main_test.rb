@@ -46,8 +46,12 @@ class Disqualified::MainTest < ActiveSupport::TestCase
   end
 
   test "it provides a way to handle errors" do
-    the_error = nil
-    handler = lambda { |error| the_error = error }
+    accepted_args = nil
+    accepted_kwargs = nil
+    handler = lambda do |*args, **kwargs|
+      accepted_args = args
+      accepted_kwargs = kwargs
+    end
     job, mock = queue_job_now(NoArgJob)
     Mocktail.stubs { mock.perform }.with { raise "Always Fail" }
     assert_job_ran(job, success: false, error_hooks: [handler]) do
@@ -55,12 +59,16 @@ class Disqualified::MainTest < ActiveSupport::TestCase
     end
     assert_nil(job.finished_at)
     assert_equal(1, job.attempts)
-    assert_equal("Always Fail", the_error.message)
+    assert_equal(2, accepted_args.size)
+    assert_kind_of(RuntimeError, accepted_args[0])
+    assert_equal("Always Fail", accepted_args[0].message)
+    assert_equal([:record], accepted_args[1].keys.sort)
+    assert_equal({}, accepted_kwargs)
   end
 
   test "it doesn't mess up when the error handling breaks" do
     called = false
-    handler = lambda do |_|
+    handler = lambda do |*|
       called = true
       raise "Handler broke"
     end

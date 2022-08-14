@@ -31,7 +31,7 @@ class Disqualified::CLI
     logger.info { '                /_/' + "v#{Disqualified::VERSION}".rjust(32, " ") }
     logger.info { Disqualified.server_options.to_s }
 
-    pool = Disqualified::Pool.new(delay_range:, pool_size:, logger:) do |args|
+    pool = Disqualified::Pool.new(delay_range:, pool_size:, error_hooks:, logger:) do |args|
       args => { promise_index:, running: }
       logger.debug { format_log("[Disqualified::CLI#run <block>] ##{promise_index}") }
       Disqualified::Main.new(error_hooks:, logger:).call

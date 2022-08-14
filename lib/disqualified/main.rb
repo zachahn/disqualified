@@ -52,11 +52,7 @@ class Disqualified::Main
           nil
         end
       rescue => e
-        @error_hooks.each do |hook|
-          hook.call(e)
-        rescue
-          nil
-        end
+        handle_error(@error_hooks, e, {record: job.attributes})
         @logger.error { format_log("[Disqualified::Main#run] [Runner #{run_id}] Rescued Record ##{job&.id}") }
         requeue(job)
       end

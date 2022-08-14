@@ -1,10 +1,11 @@
 class Disqualified::Pool
   include Disqualified::Logging
 
-  def initialize(delay_range:, logger:, pool_size:, &task)
+  def initialize(delay_range:, logger:, pool_size:, error_hooks:, &task)
     @delay_range = delay_range
     @logger = logger
     @pool_size = pool_size
+    @error_hooks = error_hooks
     @task = task
     @running = Concurrent::AtomicBoolean.new(true)
   end
@@ -12,7 +13,7 @@ class Disqualified::Pool
   def run!
     Concurrent::Promises
       .zip(*pool)
-      .rescue { |error| handle_error(error) }
+      .rescue { |error| handle_fatal_error(error) }
       .run
       .value!
   end
@@ -25,7 +26,7 @@ class Disqualified::Pool
           .schedule(initial_delay) do
             repeat(promise_index:, schedule: false, previous_delay: initial_delay)
           end
-          .rescue { |error| handle_error(error) }
+          .rescue { |error| handle_fatal_error(error) }
           .run
       end
   end
@@ -52,7 +53,7 @@ class Disqualified::Pool
     Concurrent::Promises
       .schedule(interval, args, &@task)
       .then { repeat(promise_index:, schedule: true, previous_delay: interval) }
-      .rescue { |error| handle_error(error) }
+      .rescue { |error| handle_fatal_error(error) }
   end
 
   private
@@ -61,9 +62,8 @@ class Disqualified::Pool
     rand(@delay_range)
   end
 
-  def handle_error(error)
-    pp error
-    puts "Gracefully quitting..."
+  def handle_fatal_error(error)
+    handle_error(@error_hooks, error, {})
     @running.make_false
   end
 end
