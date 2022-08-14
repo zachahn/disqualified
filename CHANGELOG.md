@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 * Note that the gem `concurrent-ruby` is a requirement
+* Use `Rails.application.reloader` instead of the executor
 
 ## v0.1.1 - 2022-07-17
 

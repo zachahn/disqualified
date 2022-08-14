@@ -9,7 +9,7 @@ class Disqualified::Main
   def call
     run_id = SecureRandom.uuid
 
-    Rails.application.executor.wrap do
+    Rails.application.reloader.wrap do
       # Claim a job
       claimed_count =
         Disqualified::Record
