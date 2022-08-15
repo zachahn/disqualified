@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+* Lots of extra speed and efficiency
+
 ### Changed
 
 * Yield additional context as the second argument `on_error`

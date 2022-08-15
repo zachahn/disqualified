@@ -37,6 +37,10 @@ class Disqualified::CLI
       Disqualified::Main.new(error_hooks:, logger:).call
     end
     pool.run!
+  rescue Interrupt
+    pool.shutdown
+    puts
+    puts "Gracefully quitting..."
   end
 
   private
