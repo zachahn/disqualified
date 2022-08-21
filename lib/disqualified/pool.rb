@@ -34,10 +34,10 @@ class Disqualified::Pool
 
   def clock
     @clock ||= Concurrent::TimerTask.new(run_now: true) do |clock_task|
-      @logger.debug { format_log("[Disqualified::Pool#clock] starting") }
+      @logger.debug { format_log("Disqualified::Pool#clock", "Starting") }
       clock_task.execution_interval = random_interval
       @command_queue.push(Disqualified::Pool::CHECK)
-      @logger.debug { format_log("[Disqualified::Pool#clock] next run in #{clock_task.execution_interval}") }
+      @logger.debug { format_log("Disqualified::Pool#clock", "Next run in #{clock_task.execution_interval}") }
     rescue => e
       handle_error(@error_hooks, e, {})
     end
@@ -56,7 +56,7 @@ class Disqualified::Pool
       return
     end
 
-    @logger.debug { format_log("[Disqualified::Pool#repeat(#{promise_index})]") }
+    @logger.debug { format_log("Disqualified::Pool#repeat(#{promise_index})", "Started") }
 
     args = {
       promise_index:,
@@ -65,9 +65,9 @@ class Disqualified::Pool
 
     Concurrent::Promises
       .future(args) do |args|
-        @logger.debug { format_log("[Disqualified::Pool#repeat(#{promise_index}) <pre-exec>] waiting for command") }
+        @logger.debug { format_log("Disqualified::Pool#repeat(#{promise_index}) <pre-exec>", "Waiting for command") }
         command = @command_queue.pop
-        @logger.debug { format_log("[Disqualified::Pool#repeat(#{promise_index}) <pre-exec>] command: #{command}") }
+        @logger.debug { format_log("Disqualified::Pool#repeat(#{promise_index}) <pre-exec>", "Command: #{command}") }
 
         case command
         when Disqualified::Pool::QUIT

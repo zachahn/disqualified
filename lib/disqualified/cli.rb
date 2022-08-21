@@ -33,7 +33,7 @@ class Disqualified::CLI
 
     pool = Disqualified::Pool.new(delay_range:, pool_size:, error_hooks:, logger:) do |args|
       args => { promise_index:, running: }
-      logger.debug { format_log("[Disqualified::CLI#run <block>] ##{promise_index}") }
+      logger.debug { format_log("Disqualified::CLI#run <block>", "##{promise_index}") }
       Disqualified::Main.new(error_hooks:, logger:).call
     end
     pool.run!
