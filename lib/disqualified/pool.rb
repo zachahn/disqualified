@@ -58,10 +58,7 @@ class Disqualified::Pool
 
     @logger.debug { format_log("Disqualified::Pool#repeat(#{promise_index})", "Started") }
 
-    args = {
-      promise_index:,
-      running: @running
-    }
+    args = {promise_index:}
 
     Concurrent::Promises
       .future(args) do |args|
