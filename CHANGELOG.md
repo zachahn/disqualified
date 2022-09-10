@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 * Yield additional context as the second argument `on_error`
+* Change the existing migration to be of `ActiveRecord::Migration[7.0]`
 
 ## v0.2.0 - 2022-08-17
 

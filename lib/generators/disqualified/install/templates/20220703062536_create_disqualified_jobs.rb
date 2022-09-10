@@ -1,4 +1,4 @@
-class CreateDisqualifiedJobs < ActiveRecord::Migration[5.0]
+class CreateDisqualifiedJobs < ActiveRecord::Migration[7.0]
   def change
     create_table :disqualified_jobs do |t|
       t.string :handler, null: false
