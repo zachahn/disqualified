@@ -19,6 +19,7 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
     - run: bundle exec standardrb --format=simple
+    - run: bundle exec spoom tc
 
   tests:
     runs-on: ubuntu-latest
@@ -35,4 +36,7 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
+    - run: bundle exec rails db:setup
     - run: bundle exec rails test
+    - run: bundle exec tapioca gem --verify
+    - run: bundle exec tapioca dsl --verify
