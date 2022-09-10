@@ -1,3 +1,5 @@
+# typed: strict
+
 module Disqualified
 end
 
@@ -5,6 +7,7 @@ require "optparse"
 
 require "concurrent"
 require "rails"
+require "sorbet-runtime"
 
 require_relative "disqualified/logging"
 

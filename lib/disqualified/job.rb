@@ -1,10 +1,14 @@
+# typed: strict
+
 module Disqualified::Job
-  def self.included(base)
-    base.extend ClassMethods
-  end
+  extend T::Helpers
 
   module ClassMethods
+    extend T::Sig
+
+    sig { params(the_time: T.any(Time, Date, ActiveSupport::TimeWithZone), args: T.untyped).void }
     def perform_at(the_time, *args)
+      T.bind(self, Class)
       Disqualified::Record.create(
         handler: name,
         arguments: JSON.dump(args),
@@ -13,12 +17,16 @@ module Disqualified::Job
       )
     end
 
+    sig { params(args: T.untyped).void }
     def perform_async(*args)
-      perform_at(Time.now, *args)
+      T.unsafe(self).perform_at(Time.now, *args)
     end
 
+    sig { params(delay: T.any(Numeric, ActiveSupport::Duration), args: T.untyped).void }
     def perform_in(delay, *args)
-      perform_at(Time.now + delay, *args)
+      T.unsafe(self).perform_at(T.unsafe(Time.now) + delay, *args)
     end
   end
+
+  mixes_in_class_methods(ClassMethods)
 end

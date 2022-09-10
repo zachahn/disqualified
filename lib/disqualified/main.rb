@@ -1,11 +1,16 @@
+# typed: strict
+
 class Disqualified::Main
+  extend T::Sig
   include Disqualified::Logging
 
+  sig { params(error_hooks: T::Array[Disqualified::Logging::ERROR_HOOK_TYPE], logger: T.untyped).void }
   def initialize(error_hooks:, logger:)
     @error_hooks = error_hooks
     @logger = logger
   end
 
+  sig { void }
   def call
     run_id = SecureRandom.uuid
 
@@ -45,7 +50,7 @@ class Disqualified::Main
         end
       rescue => e
         handle_error(@error_hooks, e, {record: job.attributes})
-        @logger.error { format_log("Disqualified::Main#run", "Runner #{run_id}", "Rescued Record ##{job&.id}") }
+        @logger.error { format_log("Disqualified::Main#run", "Runner #{run_id}", "Rescued Record ##{job.id}") }
         requeue(job)
       end
     end
@@ -53,10 +58,12 @@ class Disqualified::Main
 
   private
 
+  sig { params(job: Disqualified::Record).void }
   def finish(job)
     job.update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
   end
 
+  sig { params(job: Disqualified::Record).void }
   def requeue(job)
     # Formula from the Sidekiq wiki
     retry_count = job.attempts - 1
