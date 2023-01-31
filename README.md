@@ -6,13 +6,26 @@ Since SQLite doesn't have any features like Postgres' `LISTEN`/`NOTIFY`,
 Disqualified resorts to polling the database. This might _disqualify_ it as an
 option for you, but it works well enough for my workload.
 
-Disqualified only works with Rails. You can use it with ActiveJob or by itself.
+Note that:
+
+* Disqualified only works with Rails.
+* Disqualified does not support multiple queues.
+* Each Disqualified process assumes it's the only process running. Running
+  multiple instances of Disqualified should not hurt, but it is not supported.
 
 
 ## Usage
 
 Run `bundle exec disqualified --help` for more information on how to run the
-Disqualified server.
+Disqualified server. This is what I use in production:
+
+```
+env RAILS_ENV=production bundle exec disqualified
+```
+
+You can use Disqualified with ActiveJob, or you can use it by itself.
+The examples below detail how to use it by by itself. See Installation
+instructions for information on how to set up integration with ActiveJob.
 
 
 ### Defining a job
