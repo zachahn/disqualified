@@ -29,6 +29,7 @@ class Disqualified::ServerConfiguration
     @pool_size = T.let(5, Integer)
     @pwd = T.let(Dir.pwd, String)
     @error_hooks = T.let([], T::Array[Disqualified::Logging::ERROR_HOOK_TYPE])
+    @queues = T.let([], T::Array[Symbol])
   end
 
   sig { returns(Numeric) }
@@ -43,8 +44,11 @@ class Disqualified::ServerConfiguration
   attr_accessor :pool_size
   sig { returns(String) }
   attr_accessor :pwd
+  sig { returns(T::Array[Symbol]) }
+  attr_accessor :queues
 
   private :error_hooks=
+  private :queues=
 
   sig { returns(T::Range[Float]) }
   def delay_range
@@ -56,8 +60,22 @@ class Disqualified::ServerConfiguration
     error_hooks.push(block)
   end
 
+  sig { params(queue: T.any(String, Symbol)).void }
+  def specify_queue(queue)
+    queues.push(queue.to_sym)
+  end
+
+  sig { returns(String) }
+  def queues_to_s
+    if queues.empty?
+      "ALL_QUEUES"
+    else
+      "[#{queues.join(", ")}]"
+    end
+  end
+
   sig { returns(String) }
   def to_s
-    "{ delay: #{delay_range}, pool_size: #{pool_size}, error_hooks_size: #{error_hooks.size} }"
+    "{ delay: #{delay_range}, pool_size: #{pool_size}, error_hooks_size: #{error_hooks.size}, queues: #{queues_to_s} }"
   end
 end
