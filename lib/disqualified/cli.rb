@@ -78,6 +78,10 @@ class Disqualified::CLI
         server_options.pool_size = value
       end
 
+      opts.on("--queue QUEUE", String, "Default: All queues. Repeat for multiple queues and priority") do |value|
+        server_options.specify_queue(value)
+      end
+
       opts.on("-h", "--help", "Prints this help") do
         puts opts
         exit
