@@ -10,6 +10,8 @@ Note that:
 
 * Disqualified only works with Rails.
 * Disqualified does not support multiple queues.
+* Disqualified supports Postgres and MySQL, but it isn't particularly optimized
+  for them.
 * Each Disqualified process assumes it's the only process running. Running
   multiple instances of Disqualified should not hurt, but it is not supported.
 
