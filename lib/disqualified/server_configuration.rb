@@ -56,19 +56,6 @@ class Disqualified::ServerConfiguration
     error_hooks.push(block)
   end
 
-  sig { returns(T::Hash[Symbol, T.untyped]) }
-  def to_h
-    {
-      delay_high:,
-      delay_low:,
-      delay_range:,
-      error_hooks:,
-      logger:,
-      pool_size:,
-      pwd:
-    }
-  end
-
   sig { returns(String) }
   def to_s
     "{ delay: #{delay_range}, pool_size: #{pool_size}, error_hooks_size: #{error_hooks.size} }"

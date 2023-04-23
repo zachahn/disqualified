@@ -27,7 +27,11 @@ class Disqualified::CLI
 
     option_parser.parse(@original_argv)
 
-    Disqualified.server_options.to_h => {delay_range:, error_hooks:, logger:, pool_size:}
+    server_options = T.must(Disqualified.server_options)
+    delay_range = server_options.delay_range
+    error_hooks = server_options.error_hooks
+    logger = server_options.logger
+    pool_size = server_options.pool_size
 
     logger.info { '    ____  _                        ___ _____          __' }
     logger.info { '   / __ \(_)________ ___  ______ _/ (_) __(_)__  ____/ /' }
