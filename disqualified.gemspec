@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "https://github.com/zachahn/disqualified/blob/main/CHANGELOG.md"
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    Dir["{app,config,exe,lib}/**/*", "LICENSE", "README.md"]
+    Dir["{app,exe,lib}/**/*", "LICENSE", "README.md"]
   end
 
   spec.bindir = "exe"
