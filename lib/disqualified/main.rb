@@ -12,63 +12,29 @@ class Disqualified::Main
 
   sig { void }
   def call
-    run_id = SecureRandom.uuid
-
     Rails.application.reloader.wrap do
-      # Claim a job
-      claimed_count =
-        Disqualified::Record
-          .where(finished_at: nil, run_at: (..Time.now), locked_by: nil)
-          .order(run_at: :asc)
-          .limit(1)
-          .update_all(locked_by: run_id, locked_at: Time.now, updated_at: Time.now, attempts: Arel.sql("attempts + 1"))
-
-      @logger.debug { format_log("Disqualified::Main#call", "Runner #{run_id}", "Claimed #{claimed_count}") }
-
-      next if claimed_count == 0
-
-      # Find the job that we claimed; quit early if none was claimed
-      job = Disqualified::Record.find_by!(locked_by: run_id)
+      begin
+        record = Disqualified::Record.claim_one!
+        run_id = record.locked_by
+      rescue ActiveRecord::RecordNotFound
+        @logger.warn do
+          format_log("Disqualified::Main#call", "Job not found")
+        end
+        next
+      end
 
       begin
-        # Deserialize job
-        handler_class = job.handler.constantize
-        arguments = JSON.parse(job.arguments)
-
-        @logger.info do
-          format_log("Disqualified::Main#call", "Runner #{run_id}" "Running `#{job.handler}'")
-        end
-
-        # Run the job
-        handler = handler_class.new
-        handler.perform(*arguments)
-
-        finish(job)
+        record.run_claimed
+        record.finish
 
         @logger.info do
           format_log("Disqualified::Main#call", "Runner #{run_id}", "Done")
         end
       rescue => e
-        handle_error(@error_hooks, e, {record: job.attributes})
-        @logger.error { format_log("Disqualified::Main#run", "Runner #{run_id}", "Rescued Record ##{job.id}") }
-        requeue(job)
+        handle_error(@error_hooks, e, {record: record.attributes})
+        @logger.error { format_log("Disqualified::Main#run", "Runner #{run_id}", "Rescued Record ##{record.id}") }
+        record.requeue
       end
     end
-  end
-
-  private
-
-  sig { params(job: Disqualified::Record).void }
-  def finish(job)
-    job.update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
-  end
-
-  sig { params(job: Disqualified::Record).void }
-  def requeue(job)
-    # Formula from the Sidekiq wiki
-    retry_count = job.attempts - 1
-    sleep = (retry_count**4) + 15 + (rand(10) * (retry_count + 1))
-    @logger.debug { format_log("Disqualified::Main#requeue", "Sleeping job for #{sleep} seconds") }
-    job.update!(locked_by: nil, locked_at: nil, run_at: Time.now + sleep)
   end
 end
