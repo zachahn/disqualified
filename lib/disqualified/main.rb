@@ -24,7 +24,7 @@ class Disqualified::Main
       end
 
       begin
-        record.run_claimed
+        record.send(:instantiate_handler_and_perform_with_args)
         record.finish
 
         @logger.info do

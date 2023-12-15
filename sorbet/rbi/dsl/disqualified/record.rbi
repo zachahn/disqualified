@@ -419,6 +419,9 @@ class Disqualified::Record
     def rewhere(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def runnable(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def select(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
@@ -1192,6 +1195,9 @@ class Disqualified::Record
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def rewhere(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def runnable(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def select(*args, &blk); end

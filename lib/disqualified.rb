@@ -9,6 +9,7 @@ require "concurrent"
 require "rails"
 require "sorbet-runtime"
 
+require_relative "disqualified/error"
 require_relative "disqualified/logging"
 
 require_relative "disqualified/engine"
