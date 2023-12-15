@@ -36,4 +36,32 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     claimed_record.unqueue
     Disqualified::Record.claim_one!
   end
+
+  test "#run doesn't run ran jobs" do
+    NoArgJob.perform_async
+    record = Disqualified::Record.runnable.first
+    record.update!(finished_at: Time.now)
+    assert_raises(ActiveRecord::RecordNotFound) do
+      record.run!
+    end
+  end
+
+  test "#run runs jobs" do
+    NoArgJob.perform_async
+    record = Disqualified::Record.runnable.first
+    record.run!
+  end
+
+  test "#instantiate_handler_and_perform_with_args" do
+    NoArgJob.perform_async
+    record = Disqualified::Record.runnable.first
+    record.update!(finished_at: Time.now, locked_by: SecureRandom.uuid)
+    assert_raises(Disqualified::Error::JobAlreadyFinished) do
+      record.send(:instantiate_handler_and_perform_with_args)
+    end
+    record.update!(finished_at: nil, locked_by: nil)
+    assert_raises(Disqualified::Error::JobNotClaimed) do
+      record.send(:instantiate_handler_and_perform_with_args)
+    end
+  end
 end

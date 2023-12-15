@@ -5,28 +5,69 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   self.table_name = "disqualified_jobs"
 
-  sig { returns(Disqualified::Record) }
-  def self.claim_one!
-    run_id = SecureRandom.uuid
+  scope :runnable, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
 
-    claimed_count =
+  sig do
+    params(
+      block: T.nilable(T.proc.params(arg0: ActiveRecord::Relation).returns(ActiveRecord::Relation))
+    ).returns(Disqualified::Record)
+  end
+  def self.claim_one!(&block)
+    run_id = SecureRandom.uuid
+    base_association =
       Disqualified::Record
-        .where(finished_at: nil, run_at: (..Time.now), locked_by: nil)
+        .runnable
         .order(run_at: :asc)
         .limit(1)
-        .update_all(locked_by: run_id, locked_at: Time.now, updated_at: Time.now, attempts: Arel.sql("attempts + 1"))
+
+    association =
+      if block
+        yield base_association
+      else
+        base_association
+      end
+
+    claimed_count = association.update_all(
+      locked_by: run_id,
+      locked_at: Time.now,
+      updated_at: Time.now,
+      attempts: Arel.sql("attempts + 1")
+    )
 
     raise ActiveRecord::RecordNotFound if claimed_count == 0
 
     Disqualified::Record.find_by!(locked_by: run_id)
   end
 
-  sig { void }
-  def run_claimed
-    job_class = handler.constantize
-    parsed_arguments = JSON.parse(arguments)
-    job = job_class.new
-    job.perform(*parsed_arguments)
+  sig do
+    params(
+      identifier: T.any(Integer, String, Disqualified::Record)
+    ).returns(Disqualified::Record)
+  end
+  def self.claim!(identifier)
+    id =
+      case identifier
+      when Integer
+        identifier
+      when String
+        Integer(identifier)
+      when Disqualified::Record
+        identifier.id
+      else
+        T.absurd(identifier)
+      end
+
+    claim_one! do |association|
+      association.where(id:)
+    end
+  end
+
+  sig { returns(Disqualified::Record) }
+  def run!
+    record = self.class.claim!(self)
+    record.send(:instantiate_handler_and_perform_with_args)
+    record.finish
+    record
   end
 
   sig { void }
@@ -45,5 +86,16 @@ class Disqualified::Record < Disqualified::BaseRecord
   def unqueue(run_at: nil)
     run_at ||= Time.now
     update!(locked_by: nil, locked_at: nil, run_at:)
+  end
+
+  sig { void }
+  private def instantiate_handler_and_perform_with_args
+    raise Disqualified::Error::JobAlreadyFinished if !finished_at.nil?
+    raise Disqualified::Error::JobNotClaimed if locked_by.nil?
+
+    job_class = handler.constantize
+    parsed_arguments = JSON.parse(arguments)
+    job = job_class.new
+    job.perform(*parsed_arguments)
   end
 end
