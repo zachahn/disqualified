@@ -5,7 +5,7 @@ class Disqualified::Main
   include Disqualified::Logging
 
   sig { params(error_hooks: T::Array[Disqualified::Logging::ERROR_HOOK_TYPE], logger: T.untyped).void }
-  def initialize(error_hooks:, logger:)
+  def initialize(error_hooks:, logger:, queues:)
     @error_hooks = error_hooks
     @logger = logger
   end

@@ -26,6 +26,16 @@ module Disqualified::Job
     def perform_in(delay, *args)
       T.unsafe(self).perform_at(T.unsafe(Time.now) + delay, *args)
     end
+
+    sig { params(q: T.any(String, Symbol)).void }
+    def disqualified_queue=(q)
+      @queue = T.let(q.to_s, T.nilable(String))
+    end
+
+    sig { returns(String) }
+    def disqualified_queue
+      @queue || "default"
+    end
   end
 
   mixes_in_class_methods(ClassMethods)
