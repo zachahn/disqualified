@@ -29,6 +29,7 @@ class Disqualified::ServerConfiguration
     @pool_size = T.let(5, Integer)
     @pwd = T.let(Dir.pwd, String)
     @error_hooks = T.let([], T::Array[Disqualified::Logging::ERROR_HOOK_TYPE])
+    @cron = T.let(Disqualified::Cron.new, Disqualified::Cron)
   end
 
   sig { returns(Numeric) }
@@ -43,6 +44,8 @@ class Disqualified::ServerConfiguration
   attr_accessor :pool_size
   sig { returns(String) }
   attr_accessor :pwd
+  sig { returns(Disqualified::Cron) }
+  attr_accessor :cron
 
   private :error_hooks=
 
