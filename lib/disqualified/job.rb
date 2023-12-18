@@ -8,9 +8,8 @@ module Disqualified::Job
 
     sig { params(the_time: T.any(Time, Date, ActiveSupport::TimeWithZone), args: T.untyped).void }
     def perform_at(the_time, *args)
-      T.bind(self, Class)
       Disqualified::Record.create!(
-        handler: name,
+        handler: T.unsafe(self).name,
         arguments: JSON.dump(args),
         queue: "default",
         run_at: the_time
