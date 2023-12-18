@@ -10,5 +10,8 @@ module Disqualified
 
     class JobNotClaimed < DisqualifiedError
     end
+
+    class InvalidCronSchedule < DisqualifiedError
+    end
   end
 end
