@@ -6,11 +6,11 @@ class Disqualified::JobTest < ActiveSupport::TestCase
   class OneArgJob
     include Disqualified::Job
 
-    def perform
+    def perform(args)
     end
   end
 
-  test "#perform_async" do
+  test ".perform_async" do
     freeze_time do
       assert_difference("Disqualified::Record.count", 1) do
         OneArgJob.perform_async("hello there")
@@ -24,7 +24,7 @@ class Disqualified::JobTest < ActiveSupport::TestCase
     end
   end
 
-  test "#perform_in" do
+  test ".perform_in" do
     freeze_time do
       assert_difference("Disqualified::Record.count", 1) do
         OneArgJob.perform_in(5.minutes, "hello there")
@@ -38,7 +38,7 @@ class Disqualified::JobTest < ActiveSupport::TestCase
     end
   end
 
-  test "#perform_at" do
+  test ".perform_at" do
     assert_difference("Disqualified::Record.count", 1) do
       OneArgJob.perform_at(Time.utc(1970, 1, 1), "hello there")
     end
