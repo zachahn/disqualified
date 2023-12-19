@@ -6,6 +6,11 @@ module Disqualified::Job
   module ClassMethods
     extend T::Sig
 
+    sig { returns(Disqualified::Options) }
+    private def job_options
+      @job_options ||= T.let(Disqualified::Options.new, T.nilable(Disqualified::Options))
+    end
+
     sig { params(till: Symbol, including: Symbol).void }
     private def unique(till = :until_executed, including: :arguments)
       T.bind(self, Kernel)
