@@ -10,6 +10,24 @@ class Disqualified::JobTest < ActiveSupport::TestCase
     end
   end
 
+  test ".job_options" do
+    klass = Class.new do
+      include Disqualified::Job
+      job_options["klass"] = "klass"
+    end
+    llass = Class.new do
+      include Disqualified::Job
+      job_options["llass"] = "llass"
+    end
+    mlass = Class.new(llass) do
+      job_options["mlass"] = "mlass"
+    end
+
+    assert_equal({"klass" => "klass"}, klass.send(:job_options).send(:to_h))
+    assert_equal({"llass" => "llass"}, llass.send(:job_options).send(:to_h))
+    assert_equal({"mlass" => "mlass"}, mlass.send(:job_options).send(:to_h))
+  end
+
   test ".perform_async" do
     freeze_time do
       assert_difference("Disqualified::Record.count", 1) do
