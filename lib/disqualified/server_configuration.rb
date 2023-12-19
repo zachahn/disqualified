@@ -29,6 +29,7 @@ class Disqualified::ServerConfiguration
     @pool_size = T.let(5, Integer)
     @pwd = T.let(Dir.pwd, String)
     @error_hooks = T.let([], T::Array[Disqualified::Logging::ERROR_HOOK_TYPE])
+    @plugins = T.let(Disqualified::PluginRegistry.new, Disqualified::PluginRegistry)
   end
 
   sig { returns(Numeric) }
@@ -43,8 +44,11 @@ class Disqualified::ServerConfiguration
   attr_accessor :pool_size
   sig { returns(String) }
   attr_accessor :pwd
+  sig { returns(Disqualified::PluginRegistry) }
+  attr_accessor :plugins
 
   private :error_hooks=
+  private :plugins=
 
   sig { returns(T::Range[Float]) }
   def delay_range
