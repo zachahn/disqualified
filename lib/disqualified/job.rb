@@ -13,40 +13,30 @@ module Disqualified::Job
 
     sig { params(till: Symbol, including: Symbol).void }
     private def unique(till = :until_executed, including: :arguments)
-      T.bind(self, Kernel)
-
-      if @__disqualified_unique_config
-        raise Disqualified::Error::DuplicateSetting, "`unique` called more than once"
+      if job_options.key?("unique")
+        Kernel.raise Disqualified::Error::DuplicateSetting, "`unique` called more than once"
       end
 
-      @__disqualified_unique_config = T.let(
-        Disqualified::Unique.new(
-          till:,
-          including:,
-          handler: T.unsafe(self).name
-        ),
-        T.nilable(Disqualified::Unique)
-      )
+      job_options["unique"] = {
+        "till" => till,
+        "including" => including,
+        "handler" => T.unsafe(self).name
+      }
     end
 
     sig { params(the_time: T.any(Time, Date, ActiveSupport::TimeWithZone), args: T.untyped).void }
     def perform_at(the_time, *args)
       metadata = {}
+      before_queue_completed = T.let(false, T::Boolean)
 
-      if @__disqualified_unique_config
-        unique_key = @__disqualified_unique_config.unique_key(arguments: args)
-        random = SecureRandom.hex
-
-        unique_record = Disqualified::Internal.create_or_find_by(unique_key:) do |record|
-          record.key = @__disqualified_unique_config.key
-          record.value = random
+      Kernel.catch(:abort) do
+        Disqualified.server_options&.plugins&.sorted_plugins&.each do |plugin|
+          plugin.before_queue(metadata:, job_options:, arguments: args)
         end
-
-        metadata[Disqualified::Unique::RECORD_METADATA_KEY] = unique_key
-        metadata[Disqualified::Unique::RECORD_METADATA_VALUE] = random
-
-        return if unique_record.value != random
+        before_queue_completed = true
       end
+
+      return unless before_queue_completed
 
       Disqualified::Record.create!(
         handler: T.unsafe(self).name,

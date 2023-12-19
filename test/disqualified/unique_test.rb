@@ -25,6 +25,15 @@ class Disqualified::UniqueTest < ActiveSupport::TestCase
     def perform(arg) = nil
   end
 
+  setup do
+    @original_config = Disqualified.server_options
+    Disqualified.server_options = Disqualified::ServerConfiguration.new
+  end
+
+  teardown do
+    Disqualified.server_options = @original_config
+  end
+
   test "only one when scheduling" do
     now = Time.now.round
 
