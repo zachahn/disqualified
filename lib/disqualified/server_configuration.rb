@@ -30,6 +30,8 @@ class Disqualified::ServerConfiguration
     @pwd = T.let(Dir.pwd, String)
     @error_hooks = T.let([], T::Array[Disqualified::Logging::ERROR_HOOK_TYPE])
     @plugins = T.let(Disqualified::PluginRegistry.new, Disqualified::PluginRegistry)
+
+    plugins.register(Disqualified::Unique::Plugin.new)
   end
 
   sig { returns(Numeric) }

@@ -74,10 +74,10 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   sig { void }
   def finish
-    if metadata&.key?(Disqualified::Unique::RECORD_METADATA_KEY)
-      unique_key = metadata.fetch(Disqualified::Unique::RECORD_METADATA_KEY)
-      value = metadata.fetch(Disqualified::Unique::RECORD_METADATA_VALUE)
-      Disqualified::Internal.where(unique_key:, value:).delete_all
+    Kernel.catch(:abort) do
+      Disqualified.server_options&.plugins&.sorted_plugins&.each do |plugin|
+        plugin.before_finish(record: self)
+      end
     end
 
     update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
