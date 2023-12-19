@@ -5,6 +5,8 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   self.table_name = "disqualified_jobs"
 
+  serialize :metadata, JSON
+
   scope :runnable, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
 
   sig do
@@ -72,6 +74,12 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   sig { void }
   def finish
+    if metadata&.key?(Disqualified::Unique::RECORD_METADATA_KEY)
+      unique_key = metadata.fetch(Disqualified::Unique::RECORD_METADATA_KEY)
+      value = metadata.fetch(Disqualified::Unique::RECORD_METADATA_VALUE)
+      Disqualified::Internal.where(unique_key:, value:).delete_all
+    end
+
     update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
   end
 

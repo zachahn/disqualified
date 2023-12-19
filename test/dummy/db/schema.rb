@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_03_062536) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_18_232905) do
+  create_table "disqualified_internals", force: :cascade do |t|
+    t.text "key", null: false
+    t.text "unique_key"
+    t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_disqualified_internals_on_key"
+    t.index ["unique_key"], name: "index_disqualified_internals_on_unique_key", unique: true
+  end
+
   create_table "disqualified_jobs", force: :cascade do |t|
     t.string "handler", null: false
     t.text "arguments", null: false
@@ -22,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_03_062536) do
     t.datetime "finished_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "metadata"
   end
 
 end
