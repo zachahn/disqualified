@@ -29,7 +29,7 @@ class Disqualified::CLI
 
     config = Disqualified.config
     delay_range = config.delay_range
-    error_hooks = config.error_hooks
+    error_hooks = config.execution_error_hooks
     logger = config.logger
     pool_size = config.pool_size
 
@@ -66,12 +66,12 @@ class Disqualified::CLI
 
       config = Disqualified.config
 
-      opts.on("--delay-low SECONDS", Numeric, "Default: #{config.delay_low}") do |value|
-        config.delay_low = value
+      opts.on("--poll-low SECONDS", Numeric, "Default: #{config.poll_low}") do |value|
+        config.poll_low = value
       end
 
-      opts.on("--delay-high SECONDS", Numeric, "Default: #{config.delay_high}") do |value|
-        config.delay_high = value
+      opts.on("--poll-high SECONDS", Numeric, "Default: #{config.poll_high}") do |value|
+        config.poll_high = value
       end
 
       opts.on("--pool COUNT", Integer, "Default: #{config.pool_size}") do |value|
