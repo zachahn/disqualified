@@ -75,7 +75,7 @@ class Disqualified::Record < Disqualified::BaseRecord
   sig { void }
   def finish
     Kernel.catch(:abort) do
-      Disqualified.server_options&.plugins&.sorted_plugins&.each do |plugin|
+      Disqualified.config.plugins.sorted_plugins.each do |plugin|
         plugin.before_finish(record: self)
       end
     end
