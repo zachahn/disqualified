@@ -6,19 +6,22 @@ module Disqualified
   class << self
     extend T::Sig
 
-    sig { returns(T.nilable(Disqualified::ServerConfiguration)) }
-    attr_accessor :server_options
+    sig { params(config: Disqualified::Configuration).returns(Disqualified::Configuration) }
+    attr_writer :config
 
-    sig { params(block: T.proc.params(arg0: Disqualified::ServerConfiguration).void).void }
-    def configure_server(&block)
-      if server_options
-        block.call(T.must(server_options))
-      end
+    sig { returns(Disqualified::Configuration) }
+    def config
+      @config ||= T.let(Disqualified::Configuration.new, T.nilable(Disqualified::Configuration))
+    end
+
+    sig { params(block: T.proc.params(arg0: Disqualified::Configuration).void).void }
+    def configure(&block)
+      block.call(config)
     end
   end
 end
 
-class Disqualified::ServerConfiguration
+class Disqualified::Configuration
   extend T::Sig
 
   sig { void }

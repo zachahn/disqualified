@@ -30,7 +30,7 @@ module Disqualified::Job
       before_queue_completed = T.let(false, T::Boolean)
 
       Kernel.catch(:abort) do
-        Disqualified.server_options&.plugins&.sorted_plugins&.each do |plugin|
+        Disqualified.config.plugins.sorted_plugins.each do |plugin|
           plugin.before_queue(metadata:, job_options:, arguments: args)
         end
         before_queue_completed = true

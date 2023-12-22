@@ -26,12 +26,12 @@ class Disqualified::UniqueTest < ActiveSupport::TestCase
   end
 
   setup do
-    @original_config = Disqualified.server_options
-    Disqualified.server_options = Disqualified::ServerConfiguration.new
+    @original_config = Disqualified.config
+    Disqualified.config = Disqualified::Configuration.new
   end
 
   teardown do
-    Disqualified.server_options = @original_config
+    Disqualified.config = @original_config
   end
 
   test "only one when scheduling" do

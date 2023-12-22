@@ -1,4 +1,4 @@
-Disqualified.configure_server do |config|
+Disqualified.configure do |config|
   config.logger = Rails.logger
   ActiveRecord::Base.logger = Rails.logger
 
