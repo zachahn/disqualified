@@ -197,10 +197,10 @@ class SQLite3::CorruptException < ::SQLite3::Exception; end
 class SQLite3::Database
   include ::SQLite3::Pragmas
 
-  # source://sqlite3//lib/sqlite3/database.rb#65
+  # source://sqlite3//lib/sqlite3/database.rb#91
   def initialize(file, options = T.unsafe(nil), zvfs = T.unsafe(nil)); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#142
+  # source://sqlite3//lib/sqlite3/database.rb#167
   def authorizer(&block); end
 
   def authorizer=(_arg0); end
@@ -215,21 +215,21 @@ class SQLite3::Database
   # source://sqlite3//lib/sqlite3/database.rb#36
   def collations; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#654
+  # source://sqlite3//lib/sqlite3/database.rb#674
   def commit; end
 
   def complete?(_arg0); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#445
+  # source://sqlite3//lib/sqlite3/database.rb#462
   def create_aggregate(name, arity, step = T.unsafe(nil), finalize = T.unsafe(nil), text_rep = T.unsafe(nil), &block); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#543
+  # source://sqlite3//lib/sqlite3/database.rb#560
   def create_aggregate_handler(handler); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#400
+  # source://sqlite3//lib/sqlite3/database.rb#417
   def create_function(name, arity, text_rep = T.unsafe(nil), &block); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#580
+  # source://sqlite3//lib/sqlite3/database.rb#597
   def define_aggregator(name, aggregator); end
 
   def define_function(_arg0); end
@@ -239,69 +239,69 @@ class SQLite3::Database
   def errcode; end
   def errmsg; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#183
+  # source://sqlite3//lib/sqlite3/database.rb#208
   def execute(sql, bind_vars = T.unsafe(nil), *args, &block); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#222
+  # source://sqlite3//lib/sqlite3/database.rb#245
   def execute2(sql, *bind_vars); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#246
+  # source://sqlite3//lib/sqlite3/database.rb#269
   def execute_batch(sql, bind_vars = T.unsafe(nil), *args); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#303
+  # source://sqlite3//lib/sqlite3/database.rb#322
   def execute_batch2(sql, &block); end
 
   def extended_result_codes=(_arg0); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#165
+  # source://sqlite3//lib/sqlite3/database.rb#190
   def filename(db_name = T.unsafe(nil)); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#357
+  # source://sqlite3//lib/sqlite3/database.rb#374
   def get_first_row(sql, *bind_vars); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#366
+  # source://sqlite3//lib/sqlite3/database.rb#383
   def get_first_value(sql, *bind_vars); end
 
   def interrupt; end
   def last_insert_row_id; end
   def load_extension(_arg0); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#151
+  # source://sqlite3//lib/sqlite3/database.rb#176
   def prepare(sql); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#325
+  # source://sqlite3//lib/sqlite3/database.rb#344
   def query(sql, bind_vars = T.unsafe(nil), *args); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#670
+  # source://sqlite3//lib/sqlite3/database.rb#690
   def readonly?; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#55
+  # source://sqlite3//lib/sqlite3/database.rb#70
   def results_as_hash; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#55
+  # source://sqlite3//lib/sqlite3/database.rb#70
   def results_as_hash=(_arg0); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#663
+  # source://sqlite3//lib/sqlite3/database.rb#683
   def rollback; end
 
   def total_changes; end
   def trace(*_arg0); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#632
+  # source://sqlite3//lib/sqlite3/database.rb#651
   def transaction(mode = T.unsafe(nil)); end
 
   def transaction_active?; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#721
+  # source://sqlite3//lib/sqlite3/database.rb#741
   def translate_from_db(types, row); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#134
+  # source://sqlite3//lib/sqlite3/database.rb#159
   def translator; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#126
+  # source://sqlite3//lib/sqlite3/database.rb#151
   def type_translation; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#117
+  # source://sqlite3//lib/sqlite3/database.rb#144
   def type_translation=(value); end
 
   private
@@ -311,45 +311,46 @@ class SQLite3::Database
   def disable_quirk_mode; end
   def exec_batch(_arg0, _arg1); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#729
+  # source://sqlite3//lib/sqlite3/database.rb#749
   def make_type_translator(should_translate); end
 
   def open16(_arg0); end
   def open_v2(_arg0, _arg1, _arg2); end
 
   class << self
-    def open(*_arg0); end
+    # source://sqlite3//lib/sqlite3/database.rb#45
+    def open(*args); end
 
-    # source://sqlite3//lib/sqlite3/database.rb#47
+    # source://sqlite3//lib/sqlite3/database.rb#62
     def quote(string); end
   end
 end
 
-# source://sqlite3//lib/sqlite3/database.rb#682
+# source://sqlite3//lib/sqlite3/database.rb#702
 class SQLite3::Database::FunctionProxy
-  # source://sqlite3//lib/sqlite3/database.rb#689
+  # source://sqlite3//lib/sqlite3/database.rb#709
   def initialize; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#709
+  # source://sqlite3//lib/sqlite3/database.rb#729
   def [](key); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#715
+  # source://sqlite3//lib/sqlite3/database.rb#735
   def []=(key, value); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#703
+  # source://sqlite3//lib/sqlite3/database.rb#723
   def count; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#683
+  # source://sqlite3//lib/sqlite3/database.rb#703
   def result; end
 
-  # source://sqlite3//lib/sqlite3/database.rb#683
+  # source://sqlite3//lib/sqlite3/database.rb#703
   def result=(_arg0); end
 
-  # source://sqlite3//lib/sqlite3/database.rb#696
+  # source://sqlite3//lib/sqlite3/database.rb#716
   def set_error(error); end
 end
 
-# source://sqlite3//lib/sqlite3/database.rb#727
+# source://sqlite3//lib/sqlite3/database.rb#747
 SQLite3::Database::NULL_TRANSLATOR = T.let(T.unsafe(nil), Proc)
 
 # source://sqlite3//lib/sqlite3/errors.rb#24
@@ -781,37 +782,37 @@ class SQLite3::ReadOnlyException < ::SQLite3::Exception; end
 class SQLite3::ResultSet
   include ::Enumerable
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#72
+  # source://sqlite3//lib/sqlite3/resultset.rb#64
   def initialize(db, stmt); end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#149
+  # source://sqlite3//lib/sqlite3/resultset.rb#141
   def close; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#154
+  # source://sqlite3//lib/sqlite3/resultset.rb#146
   def closed?; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#164
+  # source://sqlite3//lib/sqlite3/resultset.rb#156
   def columns; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#132
+  # source://sqlite3//lib/sqlite3/resultset.rb#124
   def each; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#140
+  # source://sqlite3//lib/sqlite3/resultset.rb#132
   def each_hash; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#86
+  # source://sqlite3//lib/sqlite3/resultset.rb#78
   def eof?; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#103
+  # source://sqlite3//lib/sqlite3/resultset.rb#95
   def next; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#169
+  # source://sqlite3//lib/sqlite3/resultset.rb#161
   def next_hash; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#79
+  # source://sqlite3//lib/sqlite3/resultset.rb#71
   def reset(*bind_params); end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#159
+  # source://sqlite3//lib/sqlite3/resultset.rb#151
   def types; end
 end
 
@@ -826,7 +827,7 @@ end
 
 # source://sqlite3//lib/sqlite3/resultset.rb#17
 class SQLite3::ResultSet::ArrayWithTypesAndFields < ::Array
-  # source://sqlite3//lib/sqlite3/resultset.rb#30
+  # source://sqlite3//lib/sqlite3/resultset.rb#28
   def fields; end
 
   # source://sqlite3//lib/sqlite3/resultset.rb#19
@@ -839,21 +840,21 @@ class SQLite3::ResultSet::ArrayWithTypesAndFields < ::Array
   def types=(_arg0); end
 end
 
-# source://sqlite3//lib/sqlite3/resultset.rb#42
+# source://sqlite3//lib/sqlite3/resultset.rb#38
 class SQLite3::ResultSet::HashWithTypesAndFields < ::Hash
-  # source://sqlite3//lib/sqlite3/resultset.rb#64
+  # source://sqlite3//lib/sqlite3/resultset.rb#56
   def [](key); end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#55
+  # source://sqlite3//lib/sqlite3/resultset.rb#49
   def fields; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#44
+  # source://sqlite3//lib/sqlite3/resultset.rb#40
   def fields=(_arg0); end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#46
+  # source://sqlite3//lib/sqlite3/resultset.rb#42
   def types; end
 
-  # source://sqlite3//lib/sqlite3/resultset.rb#43
+  # source://sqlite3//lib/sqlite3/resultset.rb#39
   def types=(_arg0); end
 end
 
@@ -932,15 +933,15 @@ class SQLite3::Translator
   # source://sqlite3//lib/sqlite3/translator.rb#37
   def add_translator(type, &block); end
 
-  # source://sqlite3//lib/sqlite3/translator.rb#49
+  # source://sqlite3//lib/sqlite3/translator.rb#48
   def translate(type, value); end
 
   private
 
-  # source://sqlite3//lib/sqlite3/translator.rb#73
+  # source://sqlite3//lib/sqlite3/translator.rb#72
   def register_default_translators; end
 
-  # source://sqlite3//lib/sqlite3/translator.rb#62
+  # source://sqlite3//lib/sqlite3/translator.rb#61
   def type_name(type); end
 end
 

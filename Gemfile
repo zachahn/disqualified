@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Specify your gem's dependencies in disqualified.gemspec.
 gemspec
 
-gem "sqlite3"
+gem "sqlite3", "~> 1.6"
 
 gem "sprockets-rails"
 
