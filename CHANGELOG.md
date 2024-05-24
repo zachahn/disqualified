@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 * Raise ActiveRecord error if Job failed to be queued
+* Renamed `Disqualified.server_options` to `Disqualified.config`
+* Renamed `Disqualified.configure_server` to `Disqualified.configure`
+* Renamed configuration options
 
 ## v0.3.0 - 2023-04-16
 

@@ -5,6 +5,8 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   self.table_name = "disqualified_jobs"
 
+  serialize :metadata, JSON
+
   scope :runnable, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
 
   sig do
@@ -72,6 +74,12 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   sig { void }
   def finish
+    Kernel.catch(:abort) do
+      Disqualified.config.plugins.sorted_plugins.each do |plugin|
+        plugin.before_finish(record: self)
+      end
+    end
+
     update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
   end
 

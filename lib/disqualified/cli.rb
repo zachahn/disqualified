@@ -12,7 +12,7 @@ class Disqualified::CLI
 
   class ServerEngine < Rails::Engine
     config.before_initialize do
-      Disqualified.server_options = Disqualified::ServerConfiguration.new
+      Disqualified.config = Disqualified::Configuration.new
     end
   end
 
@@ -27,11 +27,11 @@ class Disqualified::CLI
 
     option_parser.parse(@original_argv)
 
-    server_options = T.must(Disqualified.server_options)
-    delay_range = server_options.delay_range
-    error_hooks = server_options.error_hooks
-    logger = server_options.logger
-    pool_size = server_options.pool_size
+    config = Disqualified.config
+    delay_range = config.delay_range
+    error_hooks = config.execution_error_hooks
+    logger = config.logger
+    pool_size = config.pool_size
 
     # standard:disable Style/StringLiterals
     logger.info { '    ____  _                        ___ _____          __' }
@@ -41,7 +41,7 @@ class Disqualified::CLI
     logger.info { '/_____/_/____/\__, /\__,_/\__,_/_/_/_/ /_/\___/\__,_/' }
     logger.info { '                /_/' + "v#{Disqualified::VERSION}".rjust(32, " ") }
     # standard:enable Style/StringLiterals
-    logger.info { Disqualified.server_options.to_s }
+    logger.info { Disqualified.config.to_s }
 
     pool = Disqualified::Pool.new(delay_range:, pool_size:, error_hooks:, logger:) do |args|
       args => {promise_index:}
@@ -64,18 +64,18 @@ class Disqualified::CLI
     option_parser = OptionParser.new do |opts|
       opts.banner = "Usage: #{File.basename($0)} [OPTIONS]"
 
-      server_options = T.must(Disqualified.server_options)
+      config = Disqualified.config
 
-      opts.on("--delay-low SECONDS", Numeric, "Default: #{server_options.delay_low}") do |value|
-        server_options.delay_low = value
+      opts.on("--poll-low SECONDS", Numeric, "Default: #{config.poll_low}") do |value|
+        config.poll_low = value
       end
 
-      opts.on("--delay-high SECONDS", Numeric, "Default: #{server_options.delay_high}") do |value|
-        server_options.delay_high = value
+      opts.on("--poll-high SECONDS", Numeric, "Default: #{config.poll_high}") do |value|
+        config.poll_high = value
       end
 
-      opts.on("--pool COUNT", Integer, "Default: #{server_options.pool_size}") do |value|
-        server_options.pool_size = value
+      opts.on("--pool COUNT", Integer, "Default: #{config.pool_size}") do |value|
+        config.pool_size = value
       end
 
       opts.on("-h", "--help", "Prints this help") do
