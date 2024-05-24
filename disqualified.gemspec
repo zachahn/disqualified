@@ -25,6 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", ">= 7.0.0"
   spec.add_dependency "concurrent-ruby"
 
-  spec.add_development_dependency "mocktail"
+  spec.add_development_dependency "mocha"
   spec.add_development_dependency "standard"
 end

@@ -97,7 +97,8 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
-    mocktail (1.2.2)
+    mocha (2.3.0)
+      ruby2_keywords (>= 0.0.5)
     net-imap (0.3.4)
       date
       net-protocol
@@ -174,6 +175,7 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
     sorbet (0.5.11156)
       sorbet-static (= 0.5.11156)
     sorbet-runtime (0.5.11156)
@@ -234,7 +236,7 @@ PLATFORMS
 
 DEPENDENCIES
   disqualified!
-  mocktail
+  mocha
   sorbet
   sorbet-runtime
   spoom
