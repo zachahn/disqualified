@@ -33,12 +33,14 @@ class Disqualified::CLI
     logger = server_options.logger
     pool_size = server_options.pool_size
 
+    # standard:disable Style/StringLiterals
     logger.info { '    ____  _                        ___ _____          __' }
     logger.info { '   / __ \(_)________ ___  ______ _/ (_) __(_)__  ____/ /' }
     logger.info { '  / / / / / ___/ __ `/ / / / __ `/ / / /_/ / _ \/ __  /' }
     logger.info { ' / /_/ / (__  ) /_/ / /_/ / /_/ / / / __/ /  __/ /_/ /' }
     logger.info { '/_____/_/____/\__, /\__,_/\__,_/_/_/_/ /_/\___/\__,_/' }
     logger.info { '                /_/' + "v#{Disqualified::VERSION}".rjust(32, " ") }
+    # standard:enable Style/StringLiterals
     logger.info { Disqualified.server_options.to_s }
 
     pool = Disqualified::Pool.new(delay_range:, pool_size:, error_hooks:, logger:) do |args|
