@@ -32,9 +32,15 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
 
   test ".claim_one! claims requeued jobs" do
     NoArgJob.perform_async
-    claimed_record = Disqualified::Record.claim_one!
-    claimed_record.unqueue
-    Disqualified::Record.claim_one!
+    assert_difference("Disqualified::Record.first.attempts", 2) do
+      assert_difference("Disqualified::Record.first.attempts", 1) do
+        claimed_record = Disqualified::Record.claim_one!
+        claimed_record.unqueue
+      end
+      assert_difference("Disqualified::Record.first.attempts", 1) do
+        Disqualified::Record.claim_one!
+      end
+    end
   end
 
   test "#run doesn't run ran jobs" do
@@ -49,7 +55,11 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
   test "#run runs jobs" do
     NoArgJob.perform_async
     record = Disqualified::Record.runnable.first
-    record.run!
+    assert_difference("record.reload.attempts", 1) do
+      assert_changes("record.reload.finished_at") do
+        record.run!
+      end
+    end
   end
 
   test "#instantiate_handler_and_perform_with_args" do
