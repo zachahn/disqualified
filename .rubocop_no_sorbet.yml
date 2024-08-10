@@ -1,0 +1,17 @@
+---
+require:
+  - rubocop-no_sorbet
+
+AllCops:
+  DisabledByDefault: true
+  Exclude:
+    - bin/**/*
+    - test/**/*
+  Include:
+    - app/**/*.rb
+    - exe/**/*
+    - lib/**/*.rb
+    - '*.gemspec'
+
+NoSorbet:
+  Enabled: Yes

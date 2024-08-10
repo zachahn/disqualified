@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/zachahn/rubocop-no_sorbet.git
+  revision: 6baabac52abb42fd85fcdf84cd702ae038a4d063
+  specs:
+    rubocop-no_sorbet (0.0.0)
+      rubocop
+
 PATH
   remote: .
   specs:
@@ -277,6 +284,8 @@ PLATFORMS
 DEPENDENCIES
   disqualified!
   mocha (~> 2.0)
+  rubocop
+  rubocop-no_sorbet!
   sorbet
   sorbet-runtime
   spoom
