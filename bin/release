@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby --disable=gems
+
+puts "==> Bump lib/disqualified/version.rb"
+puts "--- Press enter when you're done. No need to commit."
+gets
+
+puts "==> Loading VERSION..."
+require_relative "../lib/disqualified/version"
+
+puts "==> Updating CHANGELOG..."
+require "date"
+changelog_path = "CHANGELOG.md"
+changelog = File.read(changelog_path)
+changelog = changelog.sub("## Unreleased", "## v#{Disqualified::VERSION} - #{Date.today.iso8601}")
+File.write(
+  changelog_path,
+  changelog
+)
+
+puts "==> Running `bundle`..."
+`bundle install`
+
+puts "==> Committing changes"
+`git add CHANGELOG.md`
+`git add Gemfile.lock`
+`git add lib/disqualified/version.rb`
+`git commit --message "Release v#{Disqualified::VERSION}"`
+
+puts "==> Creating branch"
+`git checkout -b v#{Disqualified::VERSION.gsub(".", "-")}-release`
+
+puts "==> Removing Sorbet"
+`bundle exec rubocop --config .rubocop_no_sorbet.yml --autocorrect`
+`bundle exec standardrb --fix`
+
+puts "==> Committing changes"
+`git commit --all --message "Removed Sorbet for release"`
+
+puts "==> Running tests"
+`rails test`
+
+puts "==> Release phases complete!"
+puts "--- Run when ready: rake release"
