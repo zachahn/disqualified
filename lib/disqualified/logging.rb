@@ -17,10 +17,10 @@ module Disqualified::Logging
   def format_log(*parts)
     *extras, message = parts
 
-    if T.must(extras).empty?
+    if extras.empty?
       message
     else
-      "#{T.must(extras).map { |x| "[#{x}]" }.join(" ")} #{message}"
+      "#{extras.map { |x| "[#{x}]" }.join(" ")} #{message}"
     end
   end
 
