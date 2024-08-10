@@ -8,24 +8,19 @@ class Disqualified::Record < Disqualified::BaseRecord
   scope :runnable, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
 
   sig do
-    params(
-      block: T.nilable(T.proc.params(arg0: ActiveRecord::Relation).returns(ActiveRecord::Relation))
-    ).returns(Disqualified::Record)
+    params(id: T.nilable(T.any(Integer, String))).returns(Disqualified::Record)
   end
-  def self.claim_one!(&block)
+  def self.claim_one!(id: nil)
     run_id = SecureRandom.uuid
-    base_association =
+    association =
       Disqualified::Record
         .runnable
         .order(run_at: :asc)
         .limit(1)
 
-    association =
-      if block
-        yield base_association
-      else
-        base_association
-      end
+    if id
+      association = association.where(id:)
+    end
 
     claimed_count = association.update_all(
       locked_by: run_id,
@@ -39,32 +34,9 @@ class Disqualified::Record < Disqualified::BaseRecord
     Disqualified::Record.find_by!(locked_by: run_id)
   end
 
-  sig do
-    params(
-      identifier: T.any(Integer, String, Disqualified::Record)
-    ).returns(Disqualified::Record)
-  end
-  def self.claim!(identifier)
-    id =
-      case identifier
-      when Integer
-        identifier
-      when String
-        Integer(identifier)
-      when Disqualified::Record
-        identifier.id
-      else
-        T.absurd(identifier)
-      end
-
-    claim_one! do |association|
-      association.where(id:)
-    end
-  end
-
   sig { returns(Disqualified::Record) }
   def run!
-    record = self.class.claim!(self)
+    record = self.class.claim_one!(id:)
     record.send(:instantiate_handler_and_perform_with_args)
     record.finish
     record
