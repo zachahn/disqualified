@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 * A potential public API
+* `Disqualified.configure_client`, specifically to handle Rails 7.2's new config
+  option `enqueue_after_transaction_commit`. This is set to `false` by default,
+  similar to other SQL-based background job processors including GoodJob.
 
 ### Changed
 

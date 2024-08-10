@@ -18,6 +18,11 @@ module ActiveJob
     class DisqualifiedAdapter
       extend T::Sig
 
+      sig { returns(T::Boolean) }
+      def enqueue_after_transaction_commit?
+        Disqualified.client_options.enqueue_after_transaction_commit
+      end
+
       sig { params(job_data: ActiveJob::Base).void }
       def enqueue(job_data)
         Disqualified::ActiveJobAdapter.perform_async(job_data.serialize)

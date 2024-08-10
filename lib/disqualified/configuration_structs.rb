@@ -1,5 +1,17 @@
 # typed: strict
 
+class Disqualified::ClientConfiguration
+  extend T::Sig
+
+  sig { void }
+  def initialize
+    @enqueue_after_transaction_commit = T.let(false, T::Boolean)
+  end
+
+  sig { returns(T::Boolean) }
+  attr_accessor :enqueue_after_transaction_commit
+end
+
 class Disqualified::ServerConfiguration
   extend T::Sig
 
