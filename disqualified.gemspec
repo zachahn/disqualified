@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.1.0"
 
   spec.add_dependency "rails", ">= 7.0.0"
-  spec.add_dependency "concurrent-ruby"
+  spec.add_dependency "concurrent-ruby", "~> 1.0"
 
-  spec.add_development_dependency "mocha"
-  spec.add_development_dependency "standard"
+  spec.add_development_dependency "mocha", "~> 2.0"
+  spec.add_development_dependency "standard", "~> 1.0"
 end

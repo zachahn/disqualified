@@ -28,6 +28,17 @@ class Disqualified::Record
 
     sig do
       params(
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(::Disqualified::Record)
+    end
+    sig do
+      params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
+    sig do
+      params(
         attributes: T.untyped,
         block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
       ).returns(::Disqualified::Record)
@@ -43,12 +54,34 @@ class Disqualified::Record
 
     sig do
       params(
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(::Disqualified::Record)
+    end
+    sig do
+      params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
+    sig do
+      params(
         attributes: T.untyped,
         block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
       ).returns(::Disqualified::Record)
     end
     def create(attributes = nil, &block); end
 
+    sig do
+      params(
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(::Disqualified::Record)
+    end
+    sig do
+      params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
     sig do
       params(
         attributes: T.untyped,
@@ -59,12 +92,24 @@ class Disqualified::Record
 
     sig do
       params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
+    sig do
+      params(
         attributes: T.untyped,
         block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
       ).returns(::Disqualified::Record)
     end
     def create_or_find_by(attributes, &block); end
 
+    sig do
+      params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
     sig do
       params(
         attributes: T.untyped,
@@ -153,6 +198,12 @@ class Disqualified::Record
 
     sig do
       params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
+    sig do
+      params(
         attributes: T.untyped,
         block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
       ).returns(::Disqualified::Record)
@@ -161,12 +212,24 @@ class Disqualified::Record
 
     sig do
       params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
+    sig do
+      params(
         attributes: T.untyped,
         block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
       ).returns(::Disqualified::Record)
     end
     def find_or_create_by!(attributes, &block); end
 
+    sig do
+      params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
     sig do
       params(
         attributes: T.untyped,
@@ -184,7 +247,7 @@ class Disqualified::Record
     sig { params(arg: T.untyped, args: T.untyped).returns(::Disqualified::Record) }
     def find_sole_by(arg, *args); end
 
-    sig { params(limit: NilClass).returns(T.nilable(::Disqualified::Record)) }
+    sig { returns(T.nilable(::Disqualified::Record)) }
     sig { params(limit: Integer).returns(T::Array[::Disqualified::Record]) }
     def first(limit = nil); end
 
@@ -234,7 +297,7 @@ class Disqualified::Record
     sig { params(record: T.untyped).returns(T::Boolean) }
     def include?(record); end
 
-    sig { params(limit: NilClass).returns(T.nilable(::Disqualified::Record)) }
+    sig { returns(T.nilable(::Disqualified::Record)) }
     sig { params(limit: Integer).returns(T::Array[::Disqualified::Record]) }
     def last(limit = nil); end
 
@@ -257,6 +320,17 @@ class Disqualified::Record
     sig { params(column_name: T.any(String, Symbol)).returns(T.untyped) }
     def minimum(column_name); end
 
+    sig do
+      params(
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(::Disqualified::Record)
+    end
+    sig do
+      params(
+        attributes: T::Array[T.untyped],
+        block: T.nilable(T.proc.params(object: ::Disqualified::Record).void)
+      ).returns(T::Array[::Disqualified::Record])
+    end
     sig do
       params(
         attributes: T.untyped,
@@ -310,7 +384,7 @@ class Disqualified::Record
     end
     def sum(initial_value_or_column = nil, &block); end
 
-    sig { params(limit: NilClass).returns(T.nilable(::Disqualified::Record)) }
+    sig { returns(T.nilable(::Disqualified::Record)) }
     sig { params(limit: Integer).returns(T::Array[::Disqualified::Record]) }
     def take(limit = nil); end
 
@@ -375,40 +449,6 @@ class Disqualified::Record
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def includes(*args, &blk); end
-
-    sig do
-      params(
-        attributes: Hash,
-        returning: T.nilable(T.any(T::Array[Symbol], FalseClass)),
-        unique_by: T.nilable(T.any(T::Array[Symbol], Symbol))
-      ).returns(ActiveRecord::Result)
-    end
-    def insert(attributes, returning: nil, unique_by: nil); end
-
-    sig do
-      params(
-        attributes: Hash,
-        returning: T.nilable(T.any(T::Array[Symbol], FalseClass))
-      ).returns(ActiveRecord::Result)
-    end
-    def insert!(attributes, returning: nil); end
-
-    sig do
-      params(
-        attributes: T::Array[Hash],
-        returning: T.nilable(T.any(T::Array[Symbol], FalseClass)),
-        unique_by: T.nilable(T.any(T::Array[Symbol], Symbol))
-      ).returns(ActiveRecord::Result)
-    end
-    def insert_all(attributes, returning: nil, unique_by: nil); end
-
-    sig do
-      params(
-        attributes: T::Array[Hash],
-        returning: T.nilable(T.any(T::Array[Symbol], FalseClass))
-      ).returns(ActiveRecord::Result)
-    end
-    def insert_all!(attributes, returning: nil); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def invert_where(*args, &blk); end
@@ -494,29 +534,14 @@ class Disqualified::Record
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def unscope(*args, &blk); end
 
-    sig do
-      params(
-        attributes: Hash,
-        returning: T.nilable(T.any(T::Array[Symbol], FalseClass)),
-        unique_by: T.nilable(T.any(T::Array[Symbol], Symbol))
-      ).returns(ActiveRecord::Result)
-    end
-    def upsert(attributes, returning: nil, unique_by: nil); end
-
-    sig do
-      params(
-        attributes: T::Array[Hash],
-        returning: T.nilable(T.any(T::Array[Symbol], FalseClass)),
-        unique_by: T.nilable(T.any(T::Array[Symbol], Symbol))
-      ).returns(ActiveRecord::Result)
-    end
-    def upsert_all(attributes, returning: nil, unique_by: nil); end
-
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelationWhereChain) }
     def where(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def with(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def with_recursive(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def without(*args, &blk); end
@@ -613,7 +638,7 @@ class Disqualified::Record
     sig { void }
     def attempts_will_change!; end
 
-    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    sig { returns(::ActiveSupport::TimeWithZone) }
     def created_at; end
 
     sig { params(value: ::ActiveSupport::TimeWithZone).returns(::ActiveSupport::TimeWithZone) }
@@ -631,10 +656,10 @@ class Disqualified::Record
     sig { returns(T::Boolean) }
     def created_at_came_from_user?; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def created_at_change; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def created_at_change_to_be_saved; end
 
     sig { params(from: ::ActiveSupport::TimeWithZone, to: ::ActiveSupport::TimeWithZone).returns(T::Boolean) }
@@ -643,7 +668,7 @@ class Disqualified::Record
     sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
     def created_at_in_database; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def created_at_previous_change; end
 
     sig { params(from: ::ActiveSupport::TimeWithZone, to: ::ActiveSupport::TimeWithZone).returns(T::Boolean) }
@@ -758,7 +783,7 @@ class Disqualified::Record
     sig { void }
     def handler_will_change!; end
 
-    sig { returns(T.nilable(::Integer)) }
+    sig { returns(::Integer) }
     def id; end
 
     sig { params(value: ::Integer).returns(::Integer) }
@@ -776,10 +801,10 @@ class Disqualified::Record
     sig { returns(T::Boolean) }
     def id_came_from_user?; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def id_change; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def id_change_to_be_saved; end
 
     sig { params(from: ::Integer, to: ::Integer).returns(T::Boolean) }
@@ -788,7 +813,7 @@ class Disqualified::Record
     sig { returns(T.nilable(::Integer)) }
     def id_in_database; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def id_previous_change; end
 
     sig { params(from: ::Integer, to: ::Integer).returns(T::Boolean) }
@@ -797,7 +822,7 @@ class Disqualified::Record
     sig { returns(T.nilable(::Integer)) }
     def id_previously_was; end
 
-    sig { returns(T.nilable(::Integer)) }
+    sig { returns(::Integer) }
     def id_value; end
 
     sig { params(value: ::Integer).returns(::Integer) }
@@ -815,10 +840,10 @@ class Disqualified::Record
     sig { returns(T::Boolean) }
     def id_value_came_from_user?; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def id_value_change; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def id_value_change_to_be_saved; end
 
     sig { params(from: ::Integer, to: ::Integer).returns(T::Boolean) }
@@ -827,7 +852,7 @@ class Disqualified::Record
     sig { returns(T.nilable(::Integer)) }
     def id_value_in_database; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def id_value_previous_change; end
 
     sig { params(from: ::Integer, to: ::Integer).returns(T::Boolean) }
@@ -1086,7 +1111,7 @@ class Disqualified::Record
     sig { returns(T::Boolean) }
     def saved_change_to_attempts?; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def saved_change_to_created_at; end
 
     sig { returns(T::Boolean) }
@@ -1104,13 +1129,13 @@ class Disqualified::Record
     sig { returns(T::Boolean) }
     def saved_change_to_handler?; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def saved_change_to_id; end
 
     sig { returns(T::Boolean) }
     def saved_change_to_id?; end
 
-    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    sig { returns(T.nilable([::Integer, ::Integer])) }
     def saved_change_to_id_value; end
 
     sig { returns(T::Boolean) }
@@ -1140,13 +1165,13 @@ class Disqualified::Record
     sig { returns(T::Boolean) }
     def saved_change_to_run_at?; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def saved_change_to_updated_at; end
 
     sig { returns(T::Boolean) }
     def saved_change_to_updated_at?; end
 
-    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    sig { returns(::ActiveSupport::TimeWithZone) }
     def updated_at; end
 
     sig { params(value: ::ActiveSupport::TimeWithZone).returns(::ActiveSupport::TimeWithZone) }
@@ -1164,10 +1189,10 @@ class Disqualified::Record
     sig { returns(T::Boolean) }
     def updated_at_came_from_user?; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def updated_at_change; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def updated_at_change_to_be_saved; end
 
     sig { params(from: ::ActiveSupport::TimeWithZone, to: ::ActiveSupport::TimeWithZone).returns(T::Boolean) }
@@ -1176,7 +1201,7 @@ class Disqualified::Record
     sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
     def updated_at_in_database; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def updated_at_previous_change; end
 
     sig { params(from: ::ActiveSupport::TimeWithZone, to: ::ActiveSupport::TimeWithZone).returns(T::Boolean) }
@@ -1365,6 +1390,9 @@ class Disqualified::Record
     def with(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def with_recursive(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def without(*args, &blk); end
   end
 
@@ -1458,20 +1486,6 @@ class Disqualified::Record
       ).returns(PrivateCollectionProxy)
     end
     def concat(*records); end
-
-    sig do
-      params(
-        records: T.any(::Disqualified::Record, Integer, String, T::Enumerable[T.any(::Disqualified::Record, Integer, String, T::Enumerable[::Disqualified::Record])])
-      ).returns(T::Array[::Disqualified::Record])
-    end
-    def delete(*records); end
-
-    sig do
-      params(
-        records: T.any(::Disqualified::Record, Integer, String, T::Enumerable[T.any(::Disqualified::Record, Integer, String, T::Enumerable[::Disqualified::Record])])
-      ).returns(T::Array[::Disqualified::Record])
-    end
-    def destroy(*records); end
 
     sig { returns(T::Array[::Disqualified::Record]) }
     def load_target; end
