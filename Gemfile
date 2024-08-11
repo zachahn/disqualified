@@ -8,11 +8,14 @@ gem "sqlite3"
 
 gem "sprockets-rails"
 
+gem "mocha", "~> 2.0"
+
 gem "sorbet", group: :development
 gem "sorbet-runtime"
 gem "tapioca", require: false, group: :development
 gem "spoom", require: false, group: :development
 
+gem "standard", "~> 1.0", require: false
 gem "rubocop", require: false
 gem "rubocop-no_sorbet", require: false, github: "zachahn/rubocop-no_sorbet"
 
