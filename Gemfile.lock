@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    disqualified (0.3.0)
+    disqualified (0.4.0)
       concurrent-ruby (~> 1.0)
       rails (>= 7.0.0)
 
