@@ -1,16 +1,11 @@
-# typed: strict
-
 class Disqualified::Main
-  extend T::Sig
   include Disqualified::Logging
 
-  sig { params(error_hooks: T::Array[Disqualified::Logging::ERROR_HOOK_TYPE], logger: T.untyped).void }
   def initialize(error_hooks:, logger:)
     @error_hooks = error_hooks
     @logger = logger
   end
 
-  sig { void }
   def call
     Rails.application.reloader.wrap do
       begin

@@ -1,5 +1,3 @@
-# typed: strict
-
 module Disqualified
   module Error
     class DisqualifiedError < StandardError
