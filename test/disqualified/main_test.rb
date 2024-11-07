@@ -63,7 +63,7 @@ class Disqualified::MainTest < ActiveSupport::TestCase
 
   test "it doesn't mess up when the error handling breaks" do
     handler_called = false
-    handler = lambda do |*|
+    handler = lambda do |*_|
       handler_called = true
       raise "Handler broke"
     end
