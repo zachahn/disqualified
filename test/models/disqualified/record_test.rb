@@ -43,7 +43,7 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     end
   end
 
-  test "#run doesn't run ran jobs" do
+  test "#run! doesn't run ran jobs" do
     NoArgJob.perform_async
     record = Disqualified::Record.runnable.first
     record.update!(finished_at: Time.now)
@@ -52,7 +52,7 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     end
   end
 
-  test "#run runs jobs" do
+  test "#run! runs jobs" do
     NoArgJob.perform_async
     record = Disqualified::Record.runnable.first
     assert_difference("record.reload.attempts", 1) do
