@@ -8,11 +8,19 @@ module Disqualified::Job
 
     sig { params(the_time: T.any(Time, Date, ActiveSupport::TimeWithZone), args: T.untyped).void }
     def perform_at(the_time, *args)
+      if Thread.current[Disqualified::Sequence::UUID]
+        Thread.current[Disqualified::Sequence::COUNT] += 1
+        sequence_uuid = Thread.current[Disqualified::Sequence::UUID]
+        sequence_step = Thread.current[Disqualified::Sequence::COUNT]
+      end
+
       Disqualified::Record.create!(
         handler: T.unsafe(self).name,
         arguments: JSON.dump(args),
         queue: "default",
-        run_at: the_time
+        run_at: the_time,
+        sequence_uuid:,
+        sequence_step:
       )
     end
 

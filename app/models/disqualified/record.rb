@@ -5,7 +5,18 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   self.table_name = "disqualified_jobs"
 
-  scope :runnable, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
+  belongs_to :disqualified_sequence,
+    class_name: "Disqualified::SequenceRecord",
+    foreign_key: "sequence_uuid",
+    primary_key: "uuid",
+    optional: true
+
+  scope :with_sequence, -> {
+    joins("LEFT OUTER JOIN disqualified_sequences ds ON ds.uuid = sequence_uuid AND ds.current_step = sequence_step")
+      .where("ds.uuid = sequence_uuid OR (ds.uuid IS NULL AND sequence_uuid IS NULL)")
+  }
+  scope :pending, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
+  scope :runnable, -> { with_sequence.pending }
 
   sig do
     params(id: T.nilable(T.any(Integer, String))).returns(Disqualified::Record)
@@ -50,7 +61,17 @@ class Disqualified::Record < Disqualified::BaseRecord
 
   sig { void }
   def finish
-    update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
+    transaction do
+      update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
+      if sequence_uuid && sequence_step
+        Disqualified::SequenceRecord
+          .where(uuid: sequence_uuid, current_step: sequence_step)
+          .update_all(
+            current_step: T.must(sequence_step) + 1,
+            updated_at: Time.now
+          )
+      end
+    end
   end
 
   sig { void }

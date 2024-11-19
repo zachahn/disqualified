@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_03_062536) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_19_023328) do
   create_table "disqualified_jobs", force: :cascade do |t|
     t.string "handler", null: false
     t.text "arguments", null: false
@@ -22,6 +22,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_03_062536) do
     t.datetime "finished_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "sequence_uuid"
+    t.integer "sequence_step"
   end
 
+  create_table "disqualified_sequences", force: :cascade do |t|
+    t.text "uuid", null: false
+    t.integer "current_step", null: false
+    t.integer "final_step", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uuid"], name: "index_disqualified_sequences_on_uuid", unique: true
+  end
 end
