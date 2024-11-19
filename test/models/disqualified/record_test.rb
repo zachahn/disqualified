@@ -8,6 +8,17 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     end
   end
 
+  class AlwaysFailJob
+    include Disqualified::Job
+
+    class Oops < StandardError
+    end
+
+    def perform
+      raise Oops
+    end
+  end
+
   test ".claim_one! raises if no jobs are due" do
     NoArgJob.perform_in(1.minute)
     assert_raises(ActiveRecord::RecordNotFound) do
@@ -35,7 +46,7 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     assert_difference("Disqualified::Record.first.attempts", 2) do
       assert_difference("Disqualified::Record.first.attempts", 1) do
         claimed_record = Disqualified::Record.claim_one!
-        claimed_record.unqueue
+        claimed_record.unclaim
       end
       assert_difference("Disqualified::Record.first.attempts", 1) do
         Disqualified::Record.claim_one!
@@ -57,6 +68,21 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     record = Disqualified::Record.runnable.first
     assert_difference("record.reload.attempts", 1) do
       assert_changes("record.reload.finished_at") do
+        record.run!
+      end
+    end
+  end
+
+  test "#run! attempts a rerun on fail" do
+    AlwaysFailJob.perform_async
+    record = Disqualified::Record.runnable.first
+    assert_difference("record.reload.attempts", 1) do
+      assert_raises(AlwaysFailJob::Oops) do
+        record.run!
+      end
+    end
+    assert_difference("record.reload.attempts", 1) do
+      assert_raises(AlwaysFailJob::Oops) do
         record.run!
       end
     end

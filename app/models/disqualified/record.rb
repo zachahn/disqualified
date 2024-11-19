@@ -37,8 +37,14 @@ class Disqualified::Record < Disqualified::BaseRecord
   sig { returns(Disqualified::Record) }
   def run!
     record = self.class.claim_one!(id:)
-    record.send(:instantiate_handler_and_perform_with_args)
-    record.finish
+    begin
+      record.send(:instantiate_handler_and_perform_with_args)
+    rescue => e
+      record.unclaim
+      raise e
+    else
+      record.finish
+    end
     record
   end
 
@@ -51,13 +57,16 @@ class Disqualified::Record < Disqualified::BaseRecord
   def requeue
     retry_count = attempts - 1
     sleep = (retry_count**4) + 15 + (rand(10) * (retry_count + 1))
-    unqueue(run_at: Time.now + sleep)
+    unclaim(next_run_at: Time.now + sleep)
   end
 
-  sig { params(run_at: T.nilable(Time)).void }
-  def unqueue(run_at: nil)
-    run_at ||= Time.now
-    update!(locked_by: nil, locked_at: nil, run_at:)
+  sig { params(next_run_at: T.nilable(Time)).void }
+  def unclaim(next_run_at: nil)
+    if next_run_at
+      update!(locked_by: nil, locked_at: nil, run_at: next_run_at)
+    else
+      update!(locked_by: nil, locked_at: nil)
+    end
   end
 
   sig { void }
