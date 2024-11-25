@@ -40,9 +40,11 @@ class Disqualified::Record < Disqualified::BaseRecord
       attempts: Arel.sql("attempts + 1")
     )
 
-    raise ActiveRecord::RecordNotFound if claimed_count == 0
+    raise Disqualified::Error::NoClaimableJob if claimed_count == 0
 
     Disqualified::Record.find_by!(locked_by: run_id)
+  rescue ActiveRecord::RecordNotFound
+    raise Disqualified::Error::NoClaimableJob
   end
 
   sig { returns(Disqualified::Record) }
