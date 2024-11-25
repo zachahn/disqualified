@@ -563,6 +563,186 @@ class Disqualified::SequenceRecord
   end
 
   module GeneratedAttributeMethods
+    sig { returns(T.nilable(::String)) }
+    def context0; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def context0=(value); end
+
+    sig { returns(T::Boolean) }
+    def context0?; end
+
+    sig { returns(T.nilable(::String)) }
+    def context0_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def context0_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def context0_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context0_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context0_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context0_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context0_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context0_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context0_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context0_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def context0_was; end
+
+    sig { void }
+    def context0_will_change!; end
+
+    sig { returns(T.nilable(::String)) }
+    def context1; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def context1=(value); end
+
+    sig { returns(T::Boolean) }
+    def context1?; end
+
+    sig { returns(T.nilable(::String)) }
+    def context1_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def context1_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def context1_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context1_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context1_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context1_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context1_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context1_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context1_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context1_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def context1_was; end
+
+    sig { void }
+    def context1_will_change!; end
+
+    sig { returns(T.nilable(::String)) }
+    def context2; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def context2=(value); end
+
+    sig { returns(T::Boolean) }
+    def context2?; end
+
+    sig { returns(T.nilable(::String)) }
+    def context2_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def context2_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def context2_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context2_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context2_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context2_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context2_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context2_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context2_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context2_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def context2_was; end
+
+    sig { void }
+    def context2_will_change!; end
+
+    sig { returns(T.nilable(::String)) }
+    def context3; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def context3=(value); end
+
+    sig { returns(T::Boolean) }
+    def context3?; end
+
+    sig { returns(T.nilable(::String)) }
+    def context3_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def context3_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def context3_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context3_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context3_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context3_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context3_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def context3_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def context3_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def context3_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def context3_was; end
+
+    sig { void }
+    def context3_will_change!; end
+
     sig { returns(::ActiveSupport::TimeWithZone) }
     def created_at; end
 
@@ -834,6 +1014,18 @@ class Disqualified::SequenceRecord
     def id_will_change!; end
 
     sig { void }
+    def restore_context0!; end
+
+    sig { void }
+    def restore_context1!; end
+
+    sig { void }
+    def restore_context2!; end
+
+    sig { void }
+    def restore_context3!; end
+
+    sig { void }
     def restore_created_at!; end
 
     sig { void }
@@ -856,6 +1048,30 @@ class Disqualified::SequenceRecord
 
     sig { void }
     def restore_uuid!; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_context0; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_context0?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_context1; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_context1?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_context2; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_context2?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_context3; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_context3?; end
 
     sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def saved_change_to_created_at; end
@@ -994,6 +1210,18 @@ class Disqualified::SequenceRecord
 
     sig { void }
     def uuid_will_change!; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_context0?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_context1?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_context2?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_context3?; end
 
     sig { returns(T::Boolean) }
     def will_save_change_to_created_at?; end
