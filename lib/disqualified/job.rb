@@ -4,8 +4,28 @@ module Disqualified::Job
   extend T::Helpers
   extend T::Sig
 
+  requires_ancestor { Kernel }
+
   sig { returns(T.nilable(Disqualified::Record)) }
   attr_accessor :current_job
+
+  sig { returns(T.nilable(Disqualified::SequenceRecord)) }
+  def current_sequence
+    if instance_variable_defined?(:@current_sequence)
+      return @current_sequence
+    end
+
+    cj = current_job
+    current_sequence =
+      if cj&.sequence_uuid
+        Disqualified::SequenceRecord.find_by(
+          uuid: cj.sequence_uuid,
+          current_step: cj.sequence_step
+        )
+      end
+
+    @current_sequence = T.let(current_sequence, T.nilable(Disqualified::SequenceRecord))
+  end
 
   module ClassMethods
     extend T::Sig
