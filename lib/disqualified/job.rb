@@ -2,6 +2,10 @@
 
 module Disqualified::Job
   extend T::Helpers
+  extend T::Sig
+
+  sig { returns(T.nilable(Disqualified::Record)) }
+  attr_accessor :current_job
 
   module ClassMethods
     extend T::Sig

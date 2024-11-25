@@ -2,22 +2,22 @@ require "test_helper"
 
 class Disqualified::MainTest < ActiveSupport::TestCase
   class NoArgJob
-    def perform
-    end
+    include Disqualified::Job
+    def perform = nil
   end
 
   class OneArgJob
-    def perform(arg)
-    end
+    include Disqualified::Job
+    def perform(arg) = nil
   end
 
   class FailingJob
+    include Disqualified::Job
+
     class Error < StandardError
     end
 
-    def perform
-      raise Error, "I always fail"
-    end
+    def perform = raise Error, "I always fail"
   end
 
   test "it runs the job with no arguments" do
