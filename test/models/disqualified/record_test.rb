@@ -21,7 +21,7 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
 
   test ".claim_one! raises if no jobs are due" do
     NoArgJob.perform_in(1.minute)
-    assert_raises(ActiveRecord::RecordNotFound) do
+    assert_raises(Disqualified::Error::NoClaimableJob) do
       Disqualified::Record.claim_one!
     end
   end
@@ -36,7 +36,7 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     NoArgJob.perform_async
     claimed_record = Disqualified::Record.claim_one!
     assert_kind_of(Disqualified::Record, claimed_record)
-    assert_raises(ActiveRecord::RecordNotFound) do
+    assert_raises(Disqualified::Error::NoClaimableJob) do
       Disqualified::Record.claim_one!
     end
   end
@@ -58,7 +58,7 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     NoArgJob.perform_async
     record = Disqualified::Record.runnable.first
     record.update!(finished_at: Time.now)
-    assert_raises(ActiveRecord::RecordNotFound) do
+    assert_raises(Disqualified::Error::NoClaimableJob) do
       record.run!
     end
   end
