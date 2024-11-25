@@ -1,3 +1,4 @@
 --dir
 .
+--ignore=lib/generators/disqualified/
 --ignore=vendor/
