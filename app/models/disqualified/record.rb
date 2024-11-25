@@ -100,6 +100,7 @@ class Disqualified::Record < Disqualified::BaseRecord
     job_class = handler.constantize
     parsed_arguments = JSON.parse(arguments)
     job = job_class.new
+    job.current_job = self
     job.perform(*parsed_arguments)
   end
 end

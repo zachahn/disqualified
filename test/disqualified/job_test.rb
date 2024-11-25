@@ -10,6 +10,26 @@ class Disqualified::JobTest < ActiveSupport::TestCase
     end
   end
 
+  class AccessCurrentJobJob
+    include Disqualified::Job
+
+    def perform
+      if current_job.nil?
+        raise "current job was nil"
+      end
+
+      if current_job.class != Disqualified::Record
+        raise "current job was not a disqualified record"
+      end
+
+      if current_job.id != Disqualified::Record.first.id
+        raise "current job id is not the current job?"
+      end
+
+      raise "the job successfully failed!"
+    end
+  end
+
   test ".perform_async" do
     freeze_time do
       assert_difference("Disqualified::Record.count", 1) do
@@ -48,5 +68,13 @@ class Disqualified::JobTest < ActiveSupport::TestCase
       queue: "default",
       run_at: Time.at(0)
     )
+  end
+
+  test "#current_job is probably the current job" do
+    assert_equal(0, Disqualified::Record.count)
+    assert_raise("the job successfully failed!") do
+      AccessCurrentJobJob.perform_async
+      Disqualified::Record.first.run!
+    end
   end
 end
