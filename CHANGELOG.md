@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Added `Disqualified::Sequence`
 * Added `Disqualified::Job#current_job`, which returns the ActiveRecord object
   representing the current job being executed
+* Added `Disqualified::Job#current_sequence`, which returns the ActiveRecord
+  object representing the current sequence
 
 ### Changed
 
