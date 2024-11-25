@@ -3,6 +3,8 @@ Description:
 
 Example:
     bin/rails generate disqualified:install
+    bin/rails generate disqualified:install --database primary
+    bin/rails g disqualified:install --db=animals
 
     This will create:
         db/migrate/20220703062536_create_disqualified_jobs.rb

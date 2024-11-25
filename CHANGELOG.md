@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   representing the current job being executed
 * Added `Disqualified::Job#current_sequence`, which returns the ActiveRecord
   object representing the current sequence
+* Handle ActiveRecord's multi-database feature in the installation generator
 
 ### Changed
 
