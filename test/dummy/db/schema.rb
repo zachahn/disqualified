@@ -31,6 +31,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_19_023328) do
     t.integer "current_step", null: false
     t.integer "final_step", null: false
     t.text "description"
+    t.text "metadata0"
+    t.text "metadata1"
+    t.text "metadata2"
+    t.text "metadata3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uuid"], name: "index_disqualified_sequences_on_uuid", unique: true

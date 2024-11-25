@@ -833,6 +833,186 @@ class Disqualified::SequenceRecord
     sig { void }
     def id_will_change!; end
 
+    sig { returns(T.nilable(::String)) }
+    def metadata0; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def metadata0=(value); end
+
+    sig { returns(T::Boolean) }
+    def metadata0?; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata0_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def metadata0_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def metadata0_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata0_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata0_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata0_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata0_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata0_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata0_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata0_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata0_was; end
+
+    sig { void }
+    def metadata0_will_change!; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata1; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def metadata1=(value); end
+
+    sig { returns(T::Boolean) }
+    def metadata1?; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata1_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def metadata1_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def metadata1_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata1_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata1_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata1_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata1_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata1_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata1_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata1_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata1_was; end
+
+    sig { void }
+    def metadata1_will_change!; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata2; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def metadata2=(value); end
+
+    sig { returns(T::Boolean) }
+    def metadata2?; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata2_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def metadata2_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def metadata2_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata2_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata2_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata2_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata2_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata2_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata2_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata2_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata2_was; end
+
+    sig { void }
+    def metadata2_will_change!; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata3; end
+
+    sig { params(value: T.nilable(::String)).returns(T.nilable(::String)) }
+    def metadata3=(value); end
+
+    sig { returns(T::Boolean) }
+    def metadata3?; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata3_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def metadata3_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def metadata3_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata3_change; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata3_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata3_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata3_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def metadata3_previous_change; end
+
+    sig { params(from: T.nilable(::String), to: T.nilable(::String)).returns(T::Boolean) }
+    def metadata3_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata3_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def metadata3_was; end
+
+    sig { void }
+    def metadata3_will_change!; end
+
     sig { void }
     def restore_created_at!; end
 
@@ -850,6 +1030,18 @@ class Disqualified::SequenceRecord
 
     sig { void }
     def restore_id_value!; end
+
+    sig { void }
+    def restore_metadata0!; end
+
+    sig { void }
+    def restore_metadata1!; end
+
+    sig { void }
+    def restore_metadata2!; end
+
+    sig { void }
+    def restore_metadata3!; end
 
     sig { void }
     def restore_updated_at!; end
@@ -892,6 +1084,30 @@ class Disqualified::SequenceRecord
 
     sig { returns(T::Boolean) }
     def saved_change_to_id_value?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_metadata0; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_metadata0?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_metadata1; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_metadata1?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_metadata2; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_metadata2?; end
+
+    sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
+    def saved_change_to_metadata3; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_metadata3?; end
 
     sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def saved_change_to_updated_at; end
@@ -1012,6 +1228,18 @@ class Disqualified::SequenceRecord
 
     sig { returns(T::Boolean) }
     def will_save_change_to_id_value?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_metadata0?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_metadata1?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_metadata2?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_metadata3?; end
 
     sig { returns(T::Boolean) }
     def will_save_change_to_updated_at?; end

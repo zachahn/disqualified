@@ -5,6 +5,10 @@ class CreateDisqualifiedSequences < ActiveRecord::Migration[7.2]
       t.integer :current_step, null: false
       t.integer :final_step, null: false
       t.text :description
+      t.text :metadata0
+      t.text :metadata1
+      t.text :metadata2
+      t.text :metadata3
       t.timestamps
     end
 
