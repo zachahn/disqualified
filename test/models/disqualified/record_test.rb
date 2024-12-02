@@ -54,6 +54,15 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
     end
   end
 
+  test ".runnable returns non-finished jobs with expired claim" do
+    travel_to(2.days.ago) do
+      NoArgJob.perform_async
+      Disqualified::Record.claim_one!
+      assert_equal(0, Disqualified::Record.runnable.size)
+    end
+    assert_equal(1, Disqualified::Record.runnable.size)
+  end
+
   test "#run! doesn't run ran jobs" do
     NoArgJob.perform_async
     record = Disqualified::Record.runnable.first
@@ -85,6 +94,26 @@ class Disqualified::RecordTest < ActiveSupport::TestCase
       assert_raises(AlwaysFailJob::Oops) do
         record.run!
       end
+    end
+  end
+
+  test "#run! runs jobs with expired claims" do
+    claimed_id = nil
+    travel_to(2.days.ago) do
+      NoArgJob.perform_async
+      record = Disqualified::Record.claim_one!
+      claimed_id = record.id
+    end
+    expired = Disqualified::Record.first
+    expired.run!
+    assert_equal(claimed_id, expired.id)
+  end
+
+  test "#run! doesn't run currently claimed jobs" do
+    NoArgJob.perform_async
+    record = Disqualified::Record.claim_one!
+    assert_raise(Disqualified::Error::NoClaimableJob) do
+      Disqualified::Record.find(record.id).run!
     end
   end
 end
