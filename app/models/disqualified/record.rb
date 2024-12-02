@@ -15,8 +15,14 @@ class Disqualified::Record < Disqualified::BaseRecord
     joins("LEFT OUTER JOIN disqualified_sequences ds ON ds.uuid = sequence_uuid AND ds.current_step = sequence_step")
       .where("ds.uuid = sequence_uuid OR (ds.uuid IS NULL AND sequence_uuid IS NULL)")
   }
-  scope :pending, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
-  scope :runnable, -> { with_sequence.pending }
+  scope :runnable, -> do
+    claim_duration = Disqualified.server_options&.claim_duration || Disqualified::ServerConfiguration::DEFAULT_CLAIM_DURATION
+    claim_expired_at = claim_duration.ago
+    with_sequence
+      .where(finished_at: nil, run_at: ..Time.now)
+      .and(where(locked_by: nil).or(where(locked_at: ..claim_expired_at)))
+      .order(run_at: :asc)
+  end
 
   sig do
     params(id: T.nilable(T.any(Integer, String))).returns(Disqualified::Record)
@@ -26,7 +32,6 @@ class Disqualified::Record < Disqualified::BaseRecord
     association =
       Disqualified::Record
         .runnable
-        .order(run_at: :asc)
         .limit(1)
 
     if id

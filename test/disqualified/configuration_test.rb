@@ -17,6 +17,7 @@ class Disqualified::ConfigurationTest < ActiveSupport::TestCase
     assert_equal(default_server_options.logger, initializer_options.logger)
     assert_equal(default_server_options.pool_size, initializer_options.pool_size)
     assert_equal(default_server_options.pwd, initializer_options.pwd)
+    assert_equal(default_server_options.claim_duration, initializer_options.claim_duration)
     assert_equal(1, initializer_options.error_hooks.size)
     assert_output(/StandardError.*orange.*mocha/m) do
       T.must(initializer_options.error_hooks.first).call(StandardError.new, {orange: :mocha})

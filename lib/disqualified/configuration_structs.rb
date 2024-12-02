@@ -1,5 +1,7 @@
 # typed: strict
 
+require "active_support/core_ext/numeric/time"
+
 class Disqualified::ClientConfiguration
   extend T::Sig
 
@@ -15,6 +17,8 @@ end
 class Disqualified::ServerConfiguration
   extend T::Sig
 
+  DEFAULT_CLAIM_DURATION = T.let(10.minutes, ActiveSupport::Duration)
+
   sig { void }
   def initialize
     @delay_high = T.let(5.0, Numeric)
@@ -22,6 +26,7 @@ class Disqualified::ServerConfiguration
     @logger = T.let(Rails.logger, T.untyped)
     @pool_size = T.let(5, Integer)
     @pwd = T.let(Dir.pwd, String)
+    @claim_duration = T.let(DEFAULT_CLAIM_DURATION, ActiveSupport::Duration)
     @error_hooks = T.let([], T::Array[Disqualified::Logging::ERROR_HOOK_TYPE])
   end
 
@@ -37,6 +42,8 @@ class Disqualified::ServerConfiguration
   attr_accessor :pool_size
   sig { returns(String) }
   attr_accessor :pwd
+  sig { returns(ActiveSupport::Duration) }
+  attr_accessor :claim_duration
 
   private :error_hooks=
 
