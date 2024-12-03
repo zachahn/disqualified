@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_19_023328) do
     t.datetime "updated_at", null: false
     t.text "sequence_uuid"
     t.integer "sequence_step"
+    t.index ["sequence_uuid", "sequence_step"], name: "index_disqualified_jobs_on_sequence_uuid_and_sequence_step", unique: true
   end
 
   create_table "disqualified_sequences", force: :cascade do |t|

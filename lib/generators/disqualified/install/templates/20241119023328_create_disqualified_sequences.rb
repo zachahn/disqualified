@@ -6,11 +6,12 @@ class CreateDisqualifiedSequences < ActiveRecord::Migration[7.2]
       t.integer :final_step, null: false
       t.text :description
       t.timestamps
-    end
 
-    add_index :disqualified_sequences, :uuid, unique: true
+      t.index :uuid, unique: true
+    end
 
     add_column :disqualified_jobs, :sequence_uuid, :text
     add_column :disqualified_jobs, :sequence_step, :integer
+    add_index :disqualified_jobs, [:sequence_uuid, :sequence_step], unique: true
   end
 end
