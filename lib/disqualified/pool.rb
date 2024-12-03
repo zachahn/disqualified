@@ -48,28 +48,33 @@ class Disqualified::Pool
 
   sig { returns(Concurrent::TimerTask) }
   def clock
-    @clock ||= T.let(
-      Concurrent::TimerTask.new(run_now: true) do |clock_task|
-        @logger.debug { format_log("Disqualified::Pool#clock", "Starting") }
-        clock_task.execution_interval = random_interval
-        @command_queue.push(Disqualified::Pool::CHECK)
-        @logger.debug { format_log("Disqualified::Pool#clock", "Next run in #{clock_task.execution_interval}") }
-      rescue => e
-        handle_error(@error_hooks, e, {})
-      end,
-      T.nilable(Concurrent::TimerTask)
-    )
+    if instance_variable_defined?(:@clock)
+      return T.must(@clock)
+    end
+
+    clock = Concurrent::TimerTask.new(run_now: true) do |clock_task|
+      @logger.debug { format_log("Disqualified::Pool#clock", "Starting") }
+      clock_task.execution_interval = random_interval
+      @command_queue.push(Disqualified::Pool::CHECK)
+      @logger.debug { format_log("Disqualified::Pool#clock", "Next run in #{clock_task.execution_interval}") }
+    rescue => e
+      handle_error(@error_hooks, e, {})
+    end
+
+    @clock ||= T.let(clock, T.nilable(Concurrent::TimerTask))
   end
 
   sig { returns(T::Array[T.nilable(Concurrent::Promises::Future)]) }
   def pool
-    @pool ||= T.let(
-      @pool_size.times.map do |promise_index|
-        repeat(promise_index:)
-          &.run
-      end,
-      T.nilable(T::Array[T.nilable(Concurrent::Promises::Future)])
-    )
+    if instance_variable_defined?(:@pool)
+      return T.must(@pool)
+    end
+
+    pool = @pool_size.times.map do |promise_index|
+      repeat(promise_index:)&.run
+    end
+
+    @pool ||= T.let(pool, T.nilable(T::Array[T.nilable(Concurrent::Promises::Future)]))
   end
 
   sig { params(promise_index: Integer).returns(T.nilable(Concurrent::Promises::Future)) }
