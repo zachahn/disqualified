@@ -62,6 +62,10 @@ bundle exec rails generate disqualified:install
 bundle binstub disqualified
 ```
 
+Please remember to run `rails generate disqualified:install` when upgrading
+Disqualified! It is mostly an idempotent command and will prepare any necessary
+database migrations.
+
 
 ### ActiveJob
 
