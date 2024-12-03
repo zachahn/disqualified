@@ -1,12 +1,7 @@
-# typed: strict
-
 class Disqualified::Sequence
-  extend T::Sig
-
   UUID = :disqualified_sequence_uuid
   COUNT = :disqualified_sequence_count
 
-  sig { params(description: T.nilable(String), block: T.proc.void).void }
   def self.queue(description: nil, &block)
     Disqualified::SequenceRecord.transaction do
       Thread.current[UUID] = SecureRandom.uuid

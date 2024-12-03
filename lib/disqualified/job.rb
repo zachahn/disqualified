@@ -1,12 +1,5 @@
-# typed: strict
-
 module Disqualified::Job
-  extend T::Helpers
-
   module ClassMethods
-    extend T::Sig
-
-    sig { params(the_time: T.any(Time, Date, ActiveSupport::TimeWithZone), args: T.untyped).void }
     def perform_at(the_time, *args)
       if Thread.current[Disqualified::Sequence::UUID]
         Thread.current[Disqualified::Sequence::COUNT] += 1
@@ -15,7 +8,7 @@ module Disqualified::Job
       end
 
       Disqualified::Record.create!(
-        handler: T.unsafe(self).name,
+        handler: name,
         arguments: JSON.dump(args),
         queue: "default",
         run_at: the_time,
@@ -24,16 +17,16 @@ module Disqualified::Job
       )
     end
 
-    sig { params(args: T.untyped).void }
     def perform_async(*args)
-      T.unsafe(self).perform_at(Time.now, *args)
+      perform_at(Time.now, *args)
     end
 
-    sig { params(delay: T.any(Numeric, ActiveSupport::Duration), args: T.untyped).void }
     def perform_in(delay, *args)
-      T.unsafe(self).perform_at(T.unsafe(Time.now) + delay, *args)
+      perform_at(Time.now + delay, *args)
     end
   end
 
-  mixes_in_class_methods(ClassMethods)
+  def self.included(other)
+    other.extend(ClassMethods)
+  end
 end

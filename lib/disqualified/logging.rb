@@ -1,8 +1,4 @@
-# typed: strict
-
 module Disqualified::Logging
-  extend T::Sig
-
   ERROR_CONTEXT_TYPE = T.type_alias do
     T::Hash[T.untyped, T.untyped]
   end
@@ -13,7 +9,6 @@ module Disqualified::Logging
 
   module_function
 
-  sig { params(parts: T.untyped).void }
   def format_log(*parts)
     *extras, message = parts
 
@@ -24,7 +19,6 @@ module Disqualified::Logging
     end
   end
 
-  sig { params(error_hooks: T::Array[ERROR_HOOK_TYPE], error: Exception, context: ERROR_CONTEXT_TYPE).void }
   def handle_error(error_hooks, error, context)
     error_hooks.each do |hook|
       hook.call(error, context)

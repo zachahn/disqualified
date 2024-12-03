@@ -1,8 +1,4 @@
-# typed: strict
-
 class Disqualified::Record < Disqualified::BaseRecord
-  extend T::Sig
-
   self.table_name = "disqualified_jobs"
 
   belongs_to :disqualified_sequence,
@@ -18,9 +14,6 @@ class Disqualified::Record < Disqualified::BaseRecord
   scope :pending, -> { where(finished_at: nil, run_at: (..Time.now), locked_by: nil) }
   scope :runnable, -> { with_sequence.pending }
 
-  sig do
-    params(id: T.nilable(T.any(Integer, String))).returns(Disqualified::Record)
-  end
   def self.claim_one!(id: nil)
     run_id = SecureRandom.uuid
     association =
@@ -47,7 +40,6 @@ class Disqualified::Record < Disqualified::BaseRecord
     raise Disqualified::Error::NoClaimableJob
   end
 
-  sig { returns(Disqualified::Record) }
   def run!
     record = self.class.claim_one!(id:)
     begin
@@ -61,7 +53,6 @@ class Disqualified::Record < Disqualified::BaseRecord
     record
   end
 
-  sig { void }
   def finish
     transaction do
       update!(locked_by: nil, locked_at: nil, finished_at: Time.now)
@@ -69,21 +60,19 @@ class Disqualified::Record < Disqualified::BaseRecord
         Disqualified::SequenceRecord
           .where(uuid: sequence_uuid, current_step: sequence_step)
           .update_all(
-            current_step: T.must(sequence_step) + 1,
+            current_step: sequence_step + 1,
             updated_at: Time.now
           )
       end
     end
   end
 
-  sig { void }
   def requeue
     retry_count = attempts - 1
     sleep = (retry_count**4) + 15 + (rand(10) * (retry_count + 1))
     unclaim(next_run_at: Time.now + sleep)
   end
 
-  sig { params(next_run_at: T.nilable(Time)).void }
   def unclaim(next_run_at: nil)
     if next_run_at
       update!(locked_by: nil, locked_at: nil, run_at: next_run_at)
@@ -92,7 +81,6 @@ class Disqualified::Record < Disqualified::BaseRecord
     end
   end
 
-  sig { void }
   private def instantiate_handler_and_perform_with_args
     raise Disqualified::Error::JobAlreadyFinished if !finished_at.nil?
     raise Disqualified::Error::JobNotClaimed if locked_by.nil?
