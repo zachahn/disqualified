@@ -5,9 +5,9 @@
 # Please instead update this file by running `bin/tapioca gem json`.
 
 
-# source://json//lib/json/common.rb#867
+# source://json//lib/json/common.rb#868
 class Class < ::Module
-  # source://json//lib/json/common.rb#872
+  # source://json//lib/json/common.rb#873
   def json_creatable?; end
 end
 
@@ -15,160 +15,160 @@ end
 module JSON
   private
 
-  # source://json//lib/json/common.rb#771
+  # source://json//lib/json/common.rb#772
   def dump(obj, anIO = T.unsafe(nil), limit = T.unsafe(nil), kwargs = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#312
+  # source://json//lib/json/common.rb#313
   def fast_generate(obj, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#312
+  # source://json//lib/json/common.rb#313
   def fast_unparse(obj, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#284
+  # source://json//lib/json/common.rb#285
   def generate(obj, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#690
+  # source://json//lib/json/common.rb#691
   def load(source, proc = T.unsafe(nil), options = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#233
+  # source://json//lib/json/common.rb#234
   def load_file(filespec, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#244
+  # source://json//lib/json/common.rb#245
   def load_file!(filespec, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#815
+  # source://json//lib/json/common.rb#816
   def merge_dump_options(opts, strict: T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#203
+  # source://json//lib/json/common.rb#204
   def parse(source, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#218
+  # source://json//lib/json/common.rb#219
   def parse!(source, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#357
+  # source://json//lib/json/common.rb#358
   def pretty_generate(obj, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#357
+  # source://json//lib/json/common.rb#358
   def pretty_unparse(obj, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#716
+  # source://json//lib/json/common.rb#717
   def recurse_proc(result, &proc); end
 
-  # source://json//lib/json/common.rb#690
+  # source://json//lib/json/common.rb#691
   def restore(source, proc = T.unsafe(nil), options = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#284
+  # source://json//lib/json/common.rb#285
   def unparse(obj, opts = T.unsafe(nil)); end
 
-  # source://json//lib/json/common.rb#536
+  # source://json//lib/json/common.rb#537
   def unsafe_load(source, proc = T.unsafe(nil), options = T.unsafe(nil)); end
 
   class << self
-    # source://json//lib/json/common.rb#22
+    # source://json//lib/json/common.rb#23
     def [](object, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#79
+    # source://json//lib/json/common.rb#80
     def create_fast_state; end
 
-    # source://json//lib/json/common.rb#114
+    # source://json//lib/json/common.rb#115
     def create_id; end
 
-    # source://json//lib/json/common.rb#108
+    # source://json//lib/json/common.rb#109
     def create_id=(new_value); end
 
-    # source://json//lib/json/common.rb#89
+    # source://json//lib/json/common.rb#90
     def create_pretty_state; end
 
-    # source://json//lib/json/common.rb#49
+    # source://json//lib/json/common.rb#50
     def deep_const_get(path); end
 
-    # source://json//lib/json/common.rb#771
+    # source://json//lib/json/common.rb#772
     def dump(obj, anIO = T.unsafe(nil), limit = T.unsafe(nil), kwargs = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#737
+    # source://json//lib/json/common.rb#738
     def dump_default_options; end
 
-    # source://json//lib/json/common.rb#737
+    # source://json//lib/json/common.rb#738
     def dump_default_options=(_arg0); end
 
-    # source://json//lib/json/common.rb#312
+    # source://json//lib/json/common.rb#313
     def fast_generate(obj, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#312
+    # source://json//lib/json/common.rb#313
     def fast_unparse(obj, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#284
+    # source://json//lib/json/common.rb#285
     def generate(obj, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#99
+    # source://json//lib/json/common.rb#100
     def generator; end
 
-    # source://json//lib/json/common.rb#56
+    # source://json//lib/json/common.rb#57
     def generator=(generator); end
 
-    # source://json//lib/json/common.rb#811
+    # source://json//lib/json/common.rb#812
     def iconv(to, from, string); end
 
-    # source://json//lib/json/common.rb#690
+    # source://json//lib/json/common.rb#691
     def load(source, proc = T.unsafe(nil), options = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#401
+    # source://json//lib/json/common.rb#402
     def load_default_options; end
 
-    # source://json//lib/json/common.rb#401
+    # source://json//lib/json/common.rb#402
     def load_default_options=(_arg0); end
 
-    # source://json//lib/json/common.rb#233
+    # source://json//lib/json/common.rb#234
     def load_file(filespec, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#244
+    # source://json//lib/json/common.rb#245
     def load_file!(filespec, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#203
+    # source://json//lib/json/common.rb#204
     def parse(source, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#218
+    # source://json//lib/json/common.rb#219
     def parse!(source, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#36
+    # source://json//lib/json/common.rb#37
     def parser; end
 
-    # source://json//lib/json/common.rb#39
+    # source://json//lib/json/common.rb#40
     def parser=(parser); end
 
-    # source://json//lib/json/common.rb#357
+    # source://json//lib/json/common.rb#358
     def pretty_generate(obj, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#357
+    # source://json//lib/json/common.rb#358
     def pretty_unparse(obj, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#716
+    # source://json//lib/json/common.rb#717
     def recurse_proc(result, &proc); end
 
-    # source://json//lib/json/common.rb#690
+    # source://json//lib/json/common.rb#691
     def restore(source, proc = T.unsafe(nil), options = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#102
+    # source://json//lib/json/common.rb#103
     def state; end
 
-    # source://json//lib/json/common.rb#102
+    # source://json//lib/json/common.rb#103
     def state=(_arg0); end
 
-    # source://json//lib/json/common.rb#284
+    # source://json//lib/json/common.rb#285
     def unparse(obj, opts = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#536
+    # source://json//lib/json/common.rb#537
     def unsafe_load(source, proc = T.unsafe(nil), options = T.unsafe(nil)); end
 
-    # source://json//lib/json/common.rb#387
+    # source://json//lib/json/common.rb#388
     def unsafe_load_default_options; end
 
-    # source://json//lib/json/common.rb#387
+    # source://json//lib/json/common.rb#388
     def unsafe_load_default_options=(_arg0); end
 
     private
 
-    # source://json//lib/json/common.rb#815
+    # source://json//lib/json/common.rb#816
     def merge_dump_options(opts, strict: T.unsafe(nil)); end
   end
 end
@@ -232,36 +232,36 @@ class JSON::GenericObject < ::OpenStruct
   end
 end
 
-# source://json//lib/json/common.rb#125
+# source://json//lib/json/common.rb#126
 class JSON::JSONError < ::StandardError
   class << self
-    # source://json//lib/json/common.rb#126
+    # source://json//lib/json/common.rb#127
     def wrap(exception); end
   end
 end
 
-# source://json//lib/json/common.rb#7
+# source://json//lib/json/common.rb#8
 JSON::NOT_SET = T.let(T.unsafe(nil), Object)
 
-# source://json//lib/json/common.rb#42
+# source://json//lib/json/common.rb#43
 JSON::Parser = JSON::Ext::Parser
 
-# source://json//lib/json/common.rb#71
+# source://json//lib/json/common.rb#72
 JSON::State = JSON::Ext::Generator::State
 
-# source://json//lib/json/common.rb#147
+# source://json//lib/json/common.rb#148
 JSON::UnparserError = JSON::GeneratorError
 
-# source://json//lib/json/common.rb#825
+# source://json//lib/json/common.rb#826
 module Kernel
   private
 
-  # source://json//lib/json/common.rb#852
+  # source://json//lib/json/common.rb#853
   def JSON(object, *args); end
 
-  # source://json//lib/json/common.rb#830
+  # source://json//lib/json/common.rb#831
   def j(*objs); end
 
-  # source://json//lib/json/common.rb#839
+  # source://json//lib/json/common.rb#840
   def jj(*objs); end
 end

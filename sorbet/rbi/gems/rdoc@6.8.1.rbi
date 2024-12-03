@@ -26,343 +26,354 @@ module RDoc
   end
 end
 
-# source://rdoc//lib/rdoc/alias.rb#9
+# source://rdoc//lib/rdoc/code_object/alias.rb#9
 class RDoc::Alias < ::RDoc::CodeObject
-  # source://rdoc//lib/rdoc/alias.rb#37
+  # source://rdoc//lib/rdoc/code_object/alias.rb#37
   def initialize(text, old_name, new_name, comment, singleton = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/alias.rb#50
+  # source://rdoc//lib/rdoc/code_object/alias.rb#50
   def <=>(other); end
 
-  # source://rdoc//lib/rdoc/alias.rb#57
+  # source://rdoc//lib/rdoc/code_object/alias.rb#57
   def aref; end
 
-  # source://rdoc//lib/rdoc/alias.rb#65
+  # source://rdoc//lib/rdoc/code_object/alias.rb#65
   def full_old_name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#72
+  # source://rdoc//lib/rdoc/code_object/alias.rb#72
   def html_name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#76
+  # source://rdoc//lib/rdoc/code_object/alias.rb#76
   def inspect; end
 
-  # source://rdoc//lib/rdoc/alias.rb#14
+  # source://rdoc//lib/rdoc/code_object/alias.rb#14
   def name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#87
+  # source://rdoc//lib/rdoc/code_object/alias.rb#87
   def name_prefix; end
 
-  # source://rdoc//lib/rdoc/alias.rb#14
+  # source://rdoc//lib/rdoc/code_object/alias.rb#14
   def new_name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#21
+  # source://rdoc//lib/rdoc/code_object/alias.rb#21
   def old_name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#101
+  # source://rdoc//lib/rdoc/code_object/alias.rb#101
   def pretty_name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#101
+  # source://rdoc//lib/rdoc/code_object/alias.rb#101
   def pretty_new_name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#94
+  # source://rdoc//lib/rdoc/code_object/alias.rb#94
   def pretty_old_name; end
 
-  # source://rdoc//lib/rdoc/alias.rb#26
+  # source://rdoc//lib/rdoc/code_object/alias.rb#26
   def singleton; end
 
-  # source://rdoc//lib/rdoc/alias.rb#26
+  # source://rdoc//lib/rdoc/code_object/alias.rb#26
   def singleton=(_arg0); end
 
-  # source://rdoc//lib/rdoc/alias.rb#31
+  # source://rdoc//lib/rdoc/code_object/alias.rb#31
   def text; end
 
-  # source://rdoc//lib/rdoc/alias.rb#107
+  # source://rdoc//lib/rdoc/code_object/alias.rb#107
   def to_s; end
 end
 
-# source://rdoc//lib/rdoc/any_method.rb#5
+# source://rdoc//lib/rdoc/code_object/any_method.rb#5
 class RDoc::AnyMethod < ::RDoc::MethodAttr
   include ::RDoc::TokenStream
 
-  # source://rdoc//lib/rdoc/any_method.rb#46
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#46
   def initialize(text, name); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#59
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#59
   def add_alias(an_alias, context = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#76
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#76
   def aref_prefix; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#85
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#85
   def arglists; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#27
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#27
   def c_function; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#27
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#27
   def c_function=(_arg0); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#96
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#96
   def call_seq; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#112
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#112
   def call_seq=(call_seq); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#39
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#39
   def calls_super; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#39
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#39
   def calls_super=(_arg0); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#22
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#22
   def dont_rename_initialize; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#22
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#22
   def dont_rename_initialize=(_arg0); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#121
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#121
   def has_call_seq?; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#129
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#129
   def is_alias_for; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#147
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#147
   def marshal_dump; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#184
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#184
   def marshal_load(array); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#233
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#233
   def name; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#246
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#246
   def param_list; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#278
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#278
   def param_seq; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#34
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#34
   def params; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#34
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#34
   def params=(_arg0); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#30
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#30
   def section_title; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#30
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#30
   def section_title=(_arg0); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#310
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#310
   def skip_description?; end
 
-  # source://rdoc//lib/rdoc/any_method.rb#317
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#317
   def store=(store); end
 
-  # source://rdoc//lib/rdoc/any_method.rb#326
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#326
   def superclass_method; end
 
   protected
 
-  # source://rdoc//lib/rdoc/any_method.rb#345
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#345
   def _call_seq; end
 
   private
 
-  # source://rdoc//lib/rdoc/any_method.rb#355
+  # source://rdoc//lib/rdoc/code_object/any_method.rb#355
   def deduplicate_call_seq(call_seq); end
 end
 
-# source://rdoc//lib/rdoc/attr.rb#6
+# source://rdoc//lib/rdoc/code_object/attr.rb#6
 class RDoc::Attr < ::RDoc::MethodAttr
-  # source://rdoc//lib/rdoc/attr.rb#25
+  # source://rdoc//lib/rdoc/code_object/attr.rb#25
   def initialize(text, name, rw, comment, singleton = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/attr.rb#36
+  # source://rdoc//lib/rdoc/code_object/attr.rb#36
   def ==(other); end
 
-  # source://rdoc//lib/rdoc/attr.rb#46
+  # source://rdoc//lib/rdoc/code_object/attr.rb#46
   def add_alias(an_alias, context); end
 
-  # source://rdoc//lib/rdoc/attr.rb#61
+  # source://rdoc//lib/rdoc/code_object/attr.rb#61
   def aref_prefix; end
 
-  # source://rdoc//lib/rdoc/attr.rb#71
+  # source://rdoc//lib/rdoc/code_object/attr.rb#71
   def calls_super; end
 
-  # source://rdoc//lib/rdoc/attr.rb#78
+  # source://rdoc//lib/rdoc/code_object/attr.rb#78
   def definition; end
 
-  # source://rdoc//lib/rdoc/attr.rb#86
+  # source://rdoc//lib/rdoc/code_object/attr.rb#86
   def inspect; end
 
-  # source://rdoc//lib/rdoc/attr.rb#102
+  # source://rdoc//lib/rdoc/code_object/attr.rb#102
   def marshal_dump; end
 
-  # source://rdoc//lib/rdoc/attr.rb#124
+  # source://rdoc//lib/rdoc/code_object/attr.rb#124
   def marshal_load(array); end
 
-  # source://rdoc//lib/rdoc/attr.rb#151
+  # source://rdoc//lib/rdoc/code_object/attr.rb#151
   def pretty_print(q); end
 
-  # source://rdoc//lib/rdoc/attr.rb#19
+  # source://rdoc//lib/rdoc/code_object/attr.rb#19
   def rw; end
 
-  # source://rdoc//lib/rdoc/attr.rb#19
+  # source://rdoc//lib/rdoc/code_object/attr.rb#19
   def rw=(_arg0); end
 
-  # source://rdoc//lib/rdoc/attr.rb#162
+  # source://rdoc//lib/rdoc/code_object/attr.rb#162
   def to_s; end
 
-  # source://rdoc//lib/rdoc/attr.rb#172
+  # source://rdoc//lib/rdoc/code_object/attr.rb#172
   def token_stream; end
 end
 
-# source://rdoc//lib/rdoc/class_module.rb#6
+# source://rdoc//lib/rdoc/code_object/class_module.rb#6
 class RDoc::ClassModule < ::RDoc::Context
-  # source://rdoc//lib/rdoc/class_module.rb#111
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#111
   def initialize(name, superclass = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#127
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#127
   def add_comment(comment, location); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#148
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#148
   def add_things(my_things, other_things); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#171
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#171
   def ancestors; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#183
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#183
   def aref; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#175
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#175
   def aref_prefix; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#195
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#195
   def clear_comment; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#205
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#205
   def comment=(comment); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#35
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#35
   def comment_location; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#35
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#35
   def comment_location=(_arg0); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#223
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#223
   def complete(min_visibility); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#30
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#30
   def constant_aliases; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#30
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#30
   def constant_aliases=(_arg0); end
 
   # source://rdoc//lib/rdoc/generator/markup.rb#131
   def description; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#37
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#37
   def diagram; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#37
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#37
   def diagram=(_arg0); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#171
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#171
   def direct_ancestors; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#233
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#234
   def document_self_or_methods; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#241
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#242
   def documented?; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#251
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#252
   def each_ancestor; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#264
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#816
+  def embed_mixins; end
+
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#265
   def find_ancestor_local_symbol(symbol); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#276
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#277
   def find_class_named(name); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#289
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#290
   def full_name; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#42
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#42
   def is_alias_for; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#42
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#42
   def is_alias_for=(_arg0); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#300
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#301
   def marshal_dump; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#346
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#347
   def marshal_load(array); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#435
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#436
   def merge(class_module); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#519
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#520
   def merge_collections(mine, other, other_files, &block); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#531
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#532
   def merge_sections(cm); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#570
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#571
   def module?; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#579
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#580
   def name=(new_name); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#622
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#623
   def name_for_path; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#631
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#632
   def non_aliases; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#587
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#588
   def parse(comment_location); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#613
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#614
   def path; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#643
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#644
   def remove_nodoc_children; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#657
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#658
   def remove_things(my_things, other_files); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#672
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#673
   def search_record; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#687
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#688
   def store=(store); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#701
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#718
+  def super_classes; end
+
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#702
   def superclass; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#708
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#709
   def superclass=(superclass); end
 
-  # source://rdoc//lib/rdoc/class_module.rb#713
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#728
   def to_s; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#724
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#739
   def type; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#743
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#758
   def update_aliases; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#791
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#806
   def update_extends; end
 
-  # source://rdoc//lib/rdoc/class_module.rb#776
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#791
   def update_includes; end
 
+  private
+
+  # source://rdoc//lib/rdoc/code_object/class_module.rb#845
+  def prepare_to_embed(code_object, singleton = T.unsafe(nil)); end
+
   class << self
-    # source://rdoc//lib/rdoc/class_module.rb#50
+    # source://rdoc//lib/rdoc/code_object/class_module.rb#50
     def from_module(class_type, mod); end
   end
 end
@@ -372,64 +383,64 @@ class RDoc::CodeObject
   include ::RDoc::Text
   include ::RDoc::Generator::Markup
 
-  # source://rdoc//lib/rdoc/code_object.rb#102
+  # source://rdoc//lib/rdoc/code_object.rb#107
   def initialize; end
 
   # source://rdoc//lib/rdoc/code_object.rb#35
   def comment; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#135
+  # source://rdoc//lib/rdoc/code_object.rb#141
   def comment=(comment); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#163
+  # source://rdoc//lib/rdoc/code_object.rb#169
   def display?; end
 
   # source://rdoc//lib/rdoc/code_object.rb#40
   def document_children; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#172
+  # source://rdoc//lib/rdoc/code_object.rb#178
   def document_children=(document_children); end
 
   # source://rdoc//lib/rdoc/code_object.rb#45
   def document_self; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#183
+  # source://rdoc//lib/rdoc/code_object.rb#189
   def document_self=(document_self); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#194
+  # source://rdoc//lib/rdoc/code_object.rb#200
   def documented?; end
 
   # source://rdoc//lib/rdoc/code_object.rb#50
   def done_documenting; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#207
+  # source://rdoc//lib/rdoc/code_object.rb#213
   def done_documenting=(value); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#218
+  # source://rdoc//lib/rdoc/code_object.rb#224
   def each_parent; end
 
   # source://rdoc//lib/rdoc/code_object.rb#55
   def file; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#233
+  # source://rdoc//lib/rdoc/code_object.rb#239
   def file_name; end
 
   # source://rdoc//lib/rdoc/code_object.rb#60
   def force_documentation; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#245
+  # source://rdoc//lib/rdoc/code_object.rb#251
   def force_documentation=(value); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#254
+  # source://rdoc//lib/rdoc/code_object.rb#260
   def full_name=(full_name); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#274
+  # source://rdoc//lib/rdoc/code_object.rb#280
   def ignore; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#287
+  # source://rdoc//lib/rdoc/code_object.rb#293
   def ignored?; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#121
+  # source://rdoc//lib/rdoc/code_object.rb#127
   def initialize_visibility; end
 
   # source://rdoc//lib/rdoc/code_object.rb#65
@@ -441,49 +452,55 @@ class RDoc::CodeObject
   # source://rdoc//lib/rdoc/code_object.rb#70
   def metadata; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#297
+  # source://rdoc//lib/rdoc/code_object.rb#102
+  def mixin_from; end
+
+  # source://rdoc//lib/rdoc/code_object.rb#102
+  def mixin_from=(_arg0); end
+
+  # source://rdoc//lib/rdoc/code_object.rb#303
   def options; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#309
+  # source://rdoc//lib/rdoc/code_object.rb#315
   def parent; end
 
   # source://rdoc//lib/rdoc/code_object.rb#75
   def parent=(_arg0); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#331
+  # source://rdoc//lib/rdoc/code_object.rb#337
   def parent_file_name; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#338
+  # source://rdoc//lib/rdoc/code_object.rb#344
   def parent_name; end
 
   # source://rdoc//lib/rdoc/code_object.rb#80
   def received_nodoc; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#345
+  # source://rdoc//lib/rdoc/code_object.rb#351
   def record_location(top_level); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#355
+  # source://rdoc//lib/rdoc/code_object.rb#361
   def section; end
 
   # source://rdoc//lib/rdoc/code_object.rb#85
   def section=(_arg0); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#365
+  # source://rdoc//lib/rdoc/code_object.rb#371
   def start_doc; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#377
+  # source://rdoc//lib/rdoc/code_object.rb#383
   def stop_doc; end
 
   # source://rdoc//lib/rdoc/code_object.rb#90
   def store; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#387
+  # source://rdoc//lib/rdoc/code_object.rb#393
   def store=(store); end
 
-  # source://rdoc//lib/rdoc/code_object.rb#404
+  # source://rdoc//lib/rdoc/code_object.rb#410
   def suppress; end
 
-  # source://rdoc//lib/rdoc/code_object.rb#417
+  # source://rdoc//lib/rdoc/code_object.rb#423
   def suppressed?; end
 
   # source://rdoc//lib/rdoc/code_object.rb#97
@@ -569,437 +586,437 @@ class RDoc::Comment
   def initialize_copy(copy); end
 end
 
-# source://rdoc//lib/rdoc/constant.rb#5
+# source://rdoc//lib/rdoc/code_object/constant.rb#5
 class RDoc::Constant < ::RDoc::CodeObject
-  # source://rdoc//lib/rdoc/constant.rb#32
+  # source://rdoc//lib/rdoc/code_object/constant.rb#32
   def initialize(name, value, comment); end
 
-  # source://rdoc//lib/rdoc/constant.rb#47
+  # source://rdoc//lib/rdoc/code_object/constant.rb#47
   def <=>(other); end
 
-  # source://rdoc//lib/rdoc/constant.rb#56
+  # source://rdoc//lib/rdoc/code_object/constant.rb#56
   def ==(other); end
 
-  # source://rdoc//lib/rdoc/constant.rb#66
+  # source://rdoc//lib/rdoc/code_object/constant.rb#66
   def documented?; end
 
-  # source://rdoc//lib/rdoc/constant.rb#81
+  # source://rdoc//lib/rdoc/code_object/constant.rb#81
   def full_name; end
 
-  # source://rdoc//lib/rdoc/constant.rb#99
+  # source://rdoc//lib/rdoc/code_object/constant.rb#99
   def inspect; end
 
-  # source://rdoc//lib/rdoc/constant.rb#88
+  # source://rdoc//lib/rdoc/code_object/constant.rb#88
   def is_alias_for; end
 
-  # source://rdoc//lib/rdoc/constant.rb#12
+  # source://rdoc//lib/rdoc/code_object/constant.rb#12
   def is_alias_for=(_arg0); end
 
-  # source://rdoc//lib/rdoc/constant.rb#109
+  # source://rdoc//lib/rdoc/code_object/constant.rb#109
   def marshal_dump; end
 
-  # source://rdoc//lib/rdoc/constant.rb#135
+  # source://rdoc//lib/rdoc/code_object/constant.rb#135
   def marshal_load(array); end
 
-  # source://rdoc//lib/rdoc/constant.rb#17
+  # source://rdoc//lib/rdoc/code_object/constant.rb#17
   def name; end
 
-  # source://rdoc//lib/rdoc/constant.rb#17
+  # source://rdoc//lib/rdoc/code_object/constant.rb#17
   def name=(_arg0); end
 
-  # source://rdoc//lib/rdoc/constant.rb#153
+  # source://rdoc//lib/rdoc/code_object/constant.rb#153
   def path; end
 
-  # source://rdoc//lib/rdoc/constant.rb#157
+  # source://rdoc//lib/rdoc/code_object/constant.rb#157
   def pretty_print(q); end
 
-  # source://rdoc//lib/rdoc/constant.rb#171
+  # source://rdoc//lib/rdoc/code_object/constant.rb#171
   def store=(store); end
 
-  # source://rdoc//lib/rdoc/constant.rb#177
+  # source://rdoc//lib/rdoc/code_object/constant.rb#177
   def to_s; end
 
-  # source://rdoc//lib/rdoc/constant.rb#22
+  # source://rdoc//lib/rdoc/code_object/constant.rb#22
   def value; end
 
-  # source://rdoc//lib/rdoc/constant.rb#22
+  # source://rdoc//lib/rdoc/code_object/constant.rb#22
   def value=(_arg0); end
 
-  # source://rdoc//lib/rdoc/constant.rb#27
+  # source://rdoc//lib/rdoc/code_object/constant.rb#27
   def visibility; end
 
-  # source://rdoc//lib/rdoc/constant.rb#27
+  # source://rdoc//lib/rdoc/code_object/constant.rb#27
   def visibility=(_arg0); end
 end
 
-# source://rdoc//lib/rdoc/context.rb#7
+# source://rdoc//lib/rdoc/code_object/context.rb#7
 class RDoc::Context < ::RDoc::CodeObject
   include ::Comparable
 
-  # source://rdoc//lib/rdoc/context.rb#123
+  # source://rdoc//lib/rdoc/code_object/context.rb#123
   def initialize; end
 
-  # source://rdoc//lib/rdoc/context.rb#171
+  # source://rdoc//lib/rdoc/code_object/context.rb#171
   def <=>(other); end
 
-  # source://rdoc//lib/rdoc/context.rb#183
+  # source://rdoc//lib/rdoc/code_object/context.rb#183
   def add(klass, name, comment); end
 
-  # source://rdoc//lib/rdoc/context.rb#198
+  # source://rdoc//lib/rdoc/code_object/context.rb#198
   def add_alias(an_alias); end
 
-  # source://rdoc//lib/rdoc/context.rb#225
+  # source://rdoc//lib/rdoc/code_object/context.rb#225
   def add_attribute(attribute); end
 
-  # source://rdoc//lib/rdoc/context.rb#288
+  # source://rdoc//lib/rdoc/code_object/context.rb#288
   def add_class(class_type, given_name, superclass = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/context.rb#404
+  # source://rdoc//lib/rdoc/code_object/context.rb#404
   def add_class_or_module(mod, self_hash, all_hash); end
 
-  # source://rdoc//lib/rdoc/context.rb#429
+  # source://rdoc//lib/rdoc/code_object/context.rb#429
   def add_constant(constant); end
 
-  # source://rdoc//lib/rdoc/context.rb#463
+  # source://rdoc//lib/rdoc/code_object/context.rb#463
   def add_extend(ext); end
 
-  # source://rdoc//lib/rdoc/context.rb#454
+  # source://rdoc//lib/rdoc/code_object/context.rb#454
   def add_include(include); end
 
-  # source://rdoc//lib/rdoc/context.rb#473
+  # source://rdoc//lib/rdoc/code_object/context.rb#473
   def add_method(method); end
 
-  # source://rdoc//lib/rdoc/context.rb#506
+  # source://rdoc//lib/rdoc/code_object/context.rb#506
   def add_module(class_type, name); end
 
-  # source://rdoc//lib/rdoc/context.rb#527
+  # source://rdoc//lib/rdoc/code_object/context.rb#527
   def add_module_alias(from, from_name, to, file); end
 
-  # source://rdoc//lib/rdoc/context.rb#519
+  # source://rdoc//lib/rdoc/code_object/context.rb#519
   def add_module_by_normal_module(mod); end
 
-  # source://rdoc//lib/rdoc/context.rb#568
+  # source://rdoc//lib/rdoc/code_object/context.rb#568
   def add_require(require); end
 
-  # source://rdoc//lib/rdoc/context.rb#586
+  # source://rdoc//lib/rdoc/code_object/context.rb#586
   def add_section(title, comment = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/context.rb#600
+  # source://rdoc//lib/rdoc/code_object/context.rb#600
   def add_to(array, thing); end
 
-  # source://rdoc//lib/rdoc/context.rb#25
+  # source://rdoc//lib/rdoc/code_object/context.rb#25
   def aliases; end
 
-  # source://rdoc//lib/rdoc/context.rb#616
+  # source://rdoc//lib/rdoc/code_object/context.rb#616
   def any_content(includes = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/context.rb#30
+  # source://rdoc//lib/rdoc/code_object/context.rb#30
   def attributes; end
 
-  # source://rdoc//lib/rdoc/context.rb#35
+  # source://rdoc//lib/rdoc/code_object/context.rb#35
   def block_params; end
 
-  # source://rdoc//lib/rdoc/context.rb#35
+  # source://rdoc//lib/rdoc/code_object/context.rb#35
   def block_params=(_arg0); end
 
-  # source://rdoc//lib/rdoc/context.rb#632
+  # source://rdoc//lib/rdoc/code_object/context.rb#632
   def child_name(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#645
+  # source://rdoc//lib/rdoc/code_object/context.rb#645
   def class_attributes; end
 
-  # source://rdoc//lib/rdoc/context.rb#652
+  # source://rdoc//lib/rdoc/code_object/context.rb#652
   def class_method_list; end
 
-  # source://rdoc//lib/rdoc/context.rb#659
+  # source://rdoc//lib/rdoc/code_object/context.rb#659
   def classes; end
 
-  # source://rdoc//lib/rdoc/context.rb#666
+  # source://rdoc//lib/rdoc/code_object/context.rb#666
   def classes_and_modules; end
 
-  # source://rdoc//lib/rdoc/context.rb#673
+  # source://rdoc//lib/rdoc/code_object/context.rb#673
   def classes_hash; end
 
-  # source://rdoc//lib/rdoc/context.rb#40
+  # source://rdoc//lib/rdoc/code_object/context.rb#40
   def constants; end
 
-  # source://rdoc//lib/rdoc/context.rb#118
+  # source://rdoc//lib/rdoc/code_object/context.rb#118
   def constants_hash; end
 
-  # source://rdoc//lib/rdoc/context.rb#102
+  # source://rdoc//lib/rdoc/code_object/context.rb#102
   def current_line_visibility=(_arg0); end
 
-  # source://rdoc//lib/rdoc/context.rb#681
+  # source://rdoc//lib/rdoc/code_object/context.rb#681
   def current_section; end
 
-  # source://rdoc//lib/rdoc/context.rb#45
+  # source://rdoc//lib/rdoc/code_object/context.rb#45
   def current_section=(_arg0); end
 
-  # source://rdoc//lib/rdoc/context.rb#694
+  # source://rdoc//lib/rdoc/code_object/context.rb#694
   def defined_in?(file); end
 
-  # source://rdoc//lib/rdoc/context.rb#698
+  # source://rdoc//lib/rdoc/code_object/context.rb#698
   def display(method_attr); end
 
-  # source://rdoc//lib/rdoc/context.rb#713
+  # source://rdoc//lib/rdoc/code_object/context.rb#713
   def each_ancestor(&_); end
 
-  # source://rdoc//lib/rdoc/context.rb#719
+  # source://rdoc//lib/rdoc/code_object/context.rb#719
   def each_attribute; end
 
-  # source://rdoc//lib/rdoc/context.rb#726
+  # source://rdoc//lib/rdoc/code_object/context.rb#726
   def each_classmodule(&block); end
 
-  # source://rdoc//lib/rdoc/context.rb#733
+  # source://rdoc//lib/rdoc/code_object/context.rb#733
   def each_constant; end
 
-  # source://rdoc//lib/rdoc/context.rb#747
+  # source://rdoc//lib/rdoc/code_object/context.rb#747
   def each_extend; end
 
-  # source://rdoc//lib/rdoc/context.rb#740
+  # source://rdoc//lib/rdoc/code_object/context.rb#740
   def each_include; end
 
-  # source://rdoc//lib/rdoc/context.rb#754
+  # source://rdoc//lib/rdoc/code_object/context.rb#754
   def each_method; end
 
-  # source://rdoc//lib/rdoc/context.rb#770
+  # source://rdoc//lib/rdoc/code_object/context.rb#770
   def each_section; end
 
-  # source://rdoc//lib/rdoc/context.rb#60
+  # source://rdoc//lib/rdoc/code_object/context.rb#60
   def extends; end
 
-  # source://rdoc//lib/rdoc/context.rb#92
+  # source://rdoc//lib/rdoc/code_object/context.rb#92
   def external_aliases; end
 
-  # source://rdoc//lib/rdoc/context.rb#787
+  # source://rdoc//lib/rdoc/code_object/context.rb#787
   def find_attribute(name, singleton); end
 
-  # source://rdoc//lib/rdoc/context.rb#795
+  # source://rdoc//lib/rdoc/code_object/context.rb#795
   def find_attribute_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#809
+  # source://rdoc//lib/rdoc/code_object/context.rb#809
   def find_class_method_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#816
+  # source://rdoc//lib/rdoc/code_object/context.rb#816
   def find_constant_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#825
+  # source://rdoc//lib/rdoc/code_object/context.rb#825
   def find_enclosing_module_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#832
+  # source://rdoc//lib/rdoc/code_object/context.rb#832
   def find_external_alias(name, singleton); end
 
-  # source://rdoc//lib/rdoc/context.rb#839
+  # source://rdoc//lib/rdoc/code_object/context.rb#839
   def find_external_alias_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#853
+  # source://rdoc//lib/rdoc/code_object/context.rb#853
   def find_file_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#860
+  # source://rdoc//lib/rdoc/code_object/context.rb#860
   def find_instance_method_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#868
+  # source://rdoc//lib/rdoc/code_object/context.rb#868
   def find_local_symbol(symbol); end
 
-  # source://rdoc//lib/rdoc/context.rb#880
+  # source://rdoc//lib/rdoc/code_object/context.rb#880
   def find_method(name, singleton); end
 
-  # source://rdoc//lib/rdoc/context.rb#893
+  # source://rdoc//lib/rdoc/code_object/context.rb#893
   def find_method_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#907
+  # source://rdoc//lib/rdoc/code_object/context.rb#907
   def find_module_named(name); end
 
-  # source://rdoc//lib/rdoc/context.rb#917
+  # source://rdoc//lib/rdoc/code_object/context.rb#917
   def find_symbol(symbol); end
 
-  # source://rdoc//lib/rdoc/context.rb#924
+  # source://rdoc//lib/rdoc/code_object/context.rb#924
   def find_symbol_module(symbol); end
 
-  # source://rdoc//lib/rdoc/context.rb#957
+  # source://rdoc//lib/rdoc/code_object/context.rb#957
   def full_name; end
 
-  # source://rdoc//lib/rdoc/context.rb#966
+  # source://rdoc//lib/rdoc/code_object/context.rb#966
   def fully_documented?; end
 
-  # source://rdoc//lib/rdoc/context.rb#976
+  # source://rdoc//lib/rdoc/code_object/context.rb#976
   def http_url(prefix); end
 
-  # source://rdoc//lib/rdoc/context.rb#50
+  # source://rdoc//lib/rdoc/code_object/context.rb#50
   def in_files; end
 
-  # source://rdoc//lib/rdoc/context.rb#55
+  # source://rdoc//lib/rdoc/code_object/context.rb#55
   def includes; end
 
-  # source://rdoc//lib/rdoc/context.rb#145
+  # source://rdoc//lib/rdoc/code_object/context.rb#145
   def initialize_methods_etc; end
 
-  # source://rdoc//lib/rdoc/context.rb#987
+  # source://rdoc//lib/rdoc/code_object/context.rb#987
   def instance_attributes; end
 
-  # source://rdoc//lib/rdoc/context.rb#1003
+  # source://rdoc//lib/rdoc/code_object/context.rb#1003
   def instance_method_list; end
 
-  # source://rdoc//lib/rdoc/context.rb#994
+  # source://rdoc//lib/rdoc/code_object/context.rb#994
   def instance_methods; end
 
-  # source://rdoc//lib/rdoc/context.rb#65
+  # source://rdoc//lib/rdoc/code_object/context.rb#65
   def method_list; end
 
-  # source://rdoc//lib/rdoc/context.rb#1015
+  # source://rdoc//lib/rdoc/code_object/context.rb#1015
   def methods_by_type(section = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/context.rb#108
+  # source://rdoc//lib/rdoc/code_object/context.rb#108
   def methods_hash; end
 
-  # source://rdoc//lib/rdoc/context.rb#1038
+  # source://rdoc//lib/rdoc/code_object/context.rb#1038
   def methods_matching(methods, singleton = T.unsafe(nil), &block); end
 
-  # source://rdoc//lib/rdoc/context.rb#1051
+  # source://rdoc//lib/rdoc/code_object/context.rb#1051
   def modules; end
 
-  # source://rdoc//lib/rdoc/context.rb#1058
+  # source://rdoc//lib/rdoc/code_object/context.rb#1058
   def modules_hash; end
 
-  # source://rdoc//lib/rdoc/context.rb#70
+  # source://rdoc//lib/rdoc/code_object/context.rb#70
   def name; end
 
-  # source://rdoc//lib/rdoc/context.rb#1066
+  # source://rdoc//lib/rdoc/code_object/context.rb#1066
   def name_for_path; end
 
-  # source://rdoc//lib/rdoc/context.rb#1073
+  # source://rdoc//lib/rdoc/code_object/context.rb#1073
   def ongoing_visibility=(visibility); end
 
-  # source://rdoc//lib/rdoc/context.rb#113
+  # source://rdoc//lib/rdoc/code_object/context.rb#113
   def params; end
 
-  # source://rdoc//lib/rdoc/context.rb#113
+  # source://rdoc//lib/rdoc/code_object/context.rb#113
   def params=(_arg0); end
 
-  # source://rdoc//lib/rdoc/context.rb#1080
+  # source://rdoc//lib/rdoc/code_object/context.rb#1080
   def record_location(top_level); end
 
-  # source://rdoc//lib/rdoc/context.rb#1094
+  # source://rdoc//lib/rdoc/code_object/context.rb#1094
   def remove_from_documentation?; end
 
-  # source://rdoc//lib/rdoc/context.rb#1107
+  # source://rdoc//lib/rdoc/code_object/context.rb#1107
   def remove_invisible(min_visibility); end
 
-  # source://rdoc//lib/rdoc/context.rb#1117
+  # source://rdoc//lib/rdoc/code_object/context.rb#1117
   def remove_invisible_in(array, min_visibility); end
 
-  # source://rdoc//lib/rdoc/context.rb#75
+  # source://rdoc//lib/rdoc/code_object/context.rb#75
   def requires; end
 
-  # source://rdoc//lib/rdoc/context.rb#1133
+  # source://rdoc//lib/rdoc/code_object/context.rb#1133
   def resolve_aliases(added); end
 
-  # source://rdoc//lib/rdoc/context.rb#1149
+  # source://rdoc//lib/rdoc/code_object/context.rb#1149
   def section_contents; end
 
-  # source://rdoc//lib/rdoc/context.rb#1173
+  # source://rdoc//lib/rdoc/code_object/context.rb#1173
   def sections; end
 
-  # source://rdoc//lib/rdoc/context.rb#1177
+  # source://rdoc//lib/rdoc/code_object/context.rb#1177
   def sections_hash; end
 
-  # source://rdoc//lib/rdoc/context.rb#1202
+  # source://rdoc//lib/rdoc/code_object/context.rb#1202
   def set_constant_visibility_for(names, visibility); end
 
-  # source://rdoc//lib/rdoc/context.rb#1184
+  # source://rdoc//lib/rdoc/code_object/context.rb#1184
   def set_current_section(title, comment); end
 
-  # source://rdoc//lib/rdoc/context.rb#1192
+  # source://rdoc//lib/rdoc/code_object/context.rb#1192
   def set_visibility_for(methods, visibility, singleton = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/context.rb#1213
+  # source://rdoc//lib/rdoc/code_object/context.rb#1213
   def sort_sections; end
 
-  # source://rdoc//lib/rdoc/context.rb#80
+  # source://rdoc//lib/rdoc/code_object/context.rb#80
   def temporary_section; end
 
-  # source://rdoc//lib/rdoc/context.rb#80
+  # source://rdoc//lib/rdoc/code_object/context.rb#80
   def temporary_section=(_arg0); end
 
-  # source://rdoc//lib/rdoc/context.rb#1229
+  # source://rdoc//lib/rdoc/code_object/context.rb#1229
   def to_s; end
 
-  # source://rdoc//lib/rdoc/context.rb#1239
+  # source://rdoc//lib/rdoc/code_object/context.rb#1239
   def top_level; end
 
-  # source://rdoc//lib/rdoc/context.rb#87
+  # source://rdoc//lib/rdoc/code_object/context.rb#87
   def unmatched_alias_lists; end
 
-  # source://rdoc//lib/rdoc/context.rb#87
+  # source://rdoc//lib/rdoc/code_object/context.rb#87
   def unmatched_alias_lists=(_arg0); end
 
-  # source://rdoc//lib/rdoc/context.rb#1249
+  # source://rdoc//lib/rdoc/code_object/context.rb#1249
   def upgrade_to_class(mod, class_type, enclosing); end
 
-  # source://rdoc//lib/rdoc/context.rb#97
+  # source://rdoc//lib/rdoc/code_object/context.rb#97
   def visibility; end
 
-  # source://rdoc//lib/rdoc/context.rb#97
+  # source://rdoc//lib/rdoc/code_object/context.rb#97
   def visibility=(_arg0); end
 end
 
-# source://rdoc//lib/rdoc/context/section.rb#13
+# source://rdoc//lib/rdoc/code_object/context/section.rb#13
 class RDoc::Context::Section
   include ::RDoc::Text
   include ::RDoc::Generator::Markup
 
-  # source://rdoc//lib/rdoc/context/section.rb#42
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#42
   def initialize(parent, title, comment); end
 
-  # source://rdoc//lib/rdoc/context/section.rb#54
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#54
   def ==(other); end
 
-  # source://rdoc//lib/rdoc/context/section.rb#63
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#63
   def add_comment(comment); end
 
-  # source://rdoc//lib/rdoc/context/section.rb#83
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#83
   def aref; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#22
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#22
   def comment; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#27
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#27
   def comments; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#54
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#54
   def eql?(other); end
 
-  # source://rdoc//lib/rdoc/context/section.rb#98
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#98
   def extract_comment(comment); end
 
-  # source://rdoc//lib/rdoc/context/section.rb#130
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#130
   def hash; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#137
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#137
   def in_files; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#126
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#126
   def inspect; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#158
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#158
   def marshal_dump; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#169
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#169
   def marshal_load(array); end
 
-  # source://rdoc//lib/rdoc/context/section.rb#32
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#32
   def parent; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#180
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#180
   def parse; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#208
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#208
   def plain_html; end
 
-  # source://rdoc//lib/rdoc/context/section.rb#216
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#216
   def remove_comment(comment); end
 
-  # source://rdoc//lib/rdoc/context/section.rb#37
+  # source://rdoc//lib/rdoc/code_object/context/section.rb#37
   def title; end
 end
 
@@ -1102,6 +1119,9 @@ class RDoc::Generator::Darkfish
   # source://rdoc//lib/rdoc/generator/darkfish.rb#113
   def dry_run=(_arg0); end
 
+  # source://rdoc//lib/rdoc/generator/darkfish.rb#784
+  def excerpt(content); end
+
   # source://rdoc//lib/rdoc/generator/darkfish.rb#199
   def file_dir; end
 
@@ -1119,6 +1139,9 @@ class RDoc::Generator::Darkfish
 
   # source://rdoc//lib/rdoc/generator/darkfish.rb#241
   def generate; end
+
+  # source://rdoc//lib/rdoc/generator/darkfish.rb#811
+  def generate_ancestor_list(ancestors, klass); end
 
   # source://rdoc//lib/rdoc/generator/darkfish.rb#337
   def generate_class(klass, template_file = T.unsafe(nil)); end
@@ -1165,10 +1188,10 @@ class RDoc::Generator::Darkfish
   # source://rdoc//lib/rdoc/generator/darkfish.rb#154
   def outputdir; end
 
-  # source://rdoc//lib/rdoc/generator/darkfish.rb#699
+  # source://rdoc//lib/rdoc/generator/darkfish.rb#696
   def render(file_name); end
 
-  # source://rdoc//lib/rdoc/generator/darkfish.rb#717
+  # source://rdoc//lib/rdoc/generator/darkfish.rb#714
   def render_template(template_file, out_file = T.unsafe(nil)); end
 
   # source://rdoc//lib/rdoc/generator/darkfish.rb#604
@@ -1180,10 +1203,10 @@ class RDoc::Generator::Darkfish
   # source://rdoc//lib/rdoc/generator/darkfish.rb#149
   def template_dir; end
 
-  # source://rdoc//lib/rdoc/generator/darkfish.rb#764
+  # source://rdoc//lib/rdoc/generator/darkfish.rb#761
   def template_for(file, page = T.unsafe(nil), klass = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/generator/darkfish.rb#751
+  # source://rdoc//lib/rdoc/generator/darkfish.rb#748
   def template_result(template, context, template_file); end
 
   # source://rdoc//lib/rdoc/generator/darkfish.rb#621
@@ -1419,10 +1442,10 @@ class RDoc::Markdown
   # source://rdoc//lib/rdoc/markdown.rb#668
   def initialize(extensions = T.unsafe(nil), debug = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14705
+  # source://rdoc//lib/rdoc/markdown.rb#14715
   def _Alphanumeric; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14712
+  # source://rdoc//lib/rdoc/markdown.rb#14722
   def _AlphanumericAscii; end
 
   # source://rdoc//lib/rdoc/markdown.rb#1162
@@ -1434,535 +1457,535 @@ class RDoc::Markdown
   # source://rdoc//lib/rdoc/markdown.rb#1136
   def _AtxStart; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11574
+  # source://rdoc//lib/rdoc/markdown.rb#11584
   def _AutoLink; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11707
+  # source://rdoc//lib/rdoc/markdown.rb#11717
   def _AutoLinkEmail; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11592
+  # source://rdoc//lib/rdoc/markdown.rb#11602
   def _AutoLinkUrl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14719
+  # source://rdoc//lib/rdoc/markdown.rb#14729
   def _BOM; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14148
+  # source://rdoc//lib/rdoc/markdown.rb#14158
   def _BlankLine; end
 
   # source://rdoc//lib/rdoc/markdown.rb#939
   def _Block; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1566
+  # source://rdoc//lib/rdoc/markdown.rb#1576
   def _BlockQuote; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1589
+  # source://rdoc//lib/rdoc/markdown.rb#1599
   def _BlockQuoteRaw; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2154
+  # source://rdoc//lib/rdoc/markdown.rb#2164
   def _Bullet; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2198
+  # source://rdoc//lib/rdoc/markdown.rb#2208
   def _BulletList; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14812
+  # source://rdoc//lib/rdoc/markdown.rb#14822
   def _CharEntity; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12511
+  # source://rdoc//lib/rdoc/markdown.rb#12521
   def _Code; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15681
+  # source://rdoc//lib/rdoc/markdown.rb#15691
   def _CodeFence; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14776
+  # source://rdoc//lib/rdoc/markdown.rb#14786
   def _DecEntity; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16339
+  # source://rdoc//lib/rdoc/markdown.rb#16349
   def _DefinitionList; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16482
+  # source://rdoc//lib/rdoc/markdown.rb#16492
   def _DefinitionListDefinition; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16383
+  # source://rdoc//lib/rdoc/markdown.rb#16393
   def _DefinitionListItem; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16449
+  # source://rdoc//lib/rdoc/markdown.rb#16459
   def _DefinitionListLabel; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14691
+  # source://rdoc//lib/rdoc/markdown.rb#14701
   def _Digit; end
 
   # source://rdoc//lib/rdoc/markdown.rb#899
   def _Doc; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10283
+  # source://rdoc//lib/rdoc/markdown.rb#10293
   def _Emph; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10319
+  # source://rdoc//lib/rdoc/markdown.rb#10329
   def _EmphStar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10477
+  # source://rdoc//lib/rdoc/markdown.rb#10487
   def _EmphUl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12086
+  # source://rdoc//lib/rdoc/markdown.rb#12096
   def _EmptyTitle; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9917
+  # source://rdoc//lib/rdoc/markdown.rb#9927
   def _Endline; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9880
+  # source://rdoc//lib/rdoc/markdown.rb#9890
   def _Entity; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2687
+  # source://rdoc//lib/rdoc/markdown.rb#2697
   def _Enumerator; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14542
+  # source://rdoc//lib/rdoc/markdown.rb#14552
   def _Eof; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9841
+  # source://rdoc//lib/rdoc/markdown.rb#9851
   def _EscapedChar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11147
+  # source://rdoc//lib/rdoc/markdown.rb#11157
   def _ExplicitLink; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15184
+  # source://rdoc//lib/rdoc/markdown.rb#15194
   def _ExtendedSpecialChar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1548
+  # source://rdoc//lib/rdoc/markdown.rb#1558
   def _Heading; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14740
+  # source://rdoc//lib/rdoc/markdown.rb#14750
   def _HexEntity; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1932
+  # source://rdoc//lib/rdoc/markdown.rb#1942
   def _HorizontalRule; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2971
+  # source://rdoc//lib/rdoc/markdown.rb#2981
   def _HtmlAnchor; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14273
+  # source://rdoc//lib/rdoc/markdown.rb#14283
   def _HtmlAttribute; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8768
+  # source://rdoc//lib/rdoc/markdown.rb#8778
   def _HtmlBlock; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3137
+  # source://rdoc//lib/rdoc/markdown.rb#3147
   def _HtmlBlockAddress; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3303
+  # source://rdoc//lib/rdoc/markdown.rb#3313
   def _HtmlBlockBlockquote; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3469
+  # source://rdoc//lib/rdoc/markdown.rb#3479
   def _HtmlBlockCenter; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3085
+  # source://rdoc//lib/rdoc/markdown.rb#3095
   def _HtmlBlockCloseAddress; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3251
+  # source://rdoc//lib/rdoc/markdown.rb#3261
   def _HtmlBlockCloseBlockquote; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3417
+  # source://rdoc//lib/rdoc/markdown.rb#3427
   def _HtmlBlockCloseCenter; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6737
+  # source://rdoc//lib/rdoc/markdown.rb#6747
   def _HtmlBlockCloseDd; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3583
+  # source://rdoc//lib/rdoc/markdown.rb#3593
   def _HtmlBlockCloseDir; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3749
+  # source://rdoc//lib/rdoc/markdown.rb#3759
   def _HtmlBlockCloseDiv; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3915
+  # source://rdoc//lib/rdoc/markdown.rb#3925
   def _HtmlBlockCloseDl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6903
+  # source://rdoc//lib/rdoc/markdown.rb#6913
   def _HtmlBlockCloseDt; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4081
+  # source://rdoc//lib/rdoc/markdown.rb#4091
   def _HtmlBlockCloseFieldset; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4247
+  # source://rdoc//lib/rdoc/markdown.rb#4257
   def _HtmlBlockCloseForm; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7069
+  # source://rdoc//lib/rdoc/markdown.rb#7079
   def _HtmlBlockCloseFrameset; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4413
+  # source://rdoc//lib/rdoc/markdown.rb#4423
   def _HtmlBlockCloseH1; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4579
+  # source://rdoc//lib/rdoc/markdown.rb#4589
   def _HtmlBlockCloseH2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4745
+  # source://rdoc//lib/rdoc/markdown.rb#4755
   def _HtmlBlockCloseH3; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4911
+  # source://rdoc//lib/rdoc/markdown.rb#4921
   def _HtmlBlockCloseH4; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5077
+  # source://rdoc//lib/rdoc/markdown.rb#5087
   def _HtmlBlockCloseH5; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5243
+  # source://rdoc//lib/rdoc/markdown.rb#5253
   def _HtmlBlockCloseH6; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8552
+  # source://rdoc//lib/rdoc/markdown.rb#8562
   def _HtmlBlockCloseHead; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7235
+  # source://rdoc//lib/rdoc/markdown.rb#7245
   def _HtmlBlockCloseLi; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5409
+  # source://rdoc//lib/rdoc/markdown.rb#5419
   def _HtmlBlockCloseMenu; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5575
+  # source://rdoc//lib/rdoc/markdown.rb#5585
   def _HtmlBlockCloseNoframes; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5741
+  # source://rdoc//lib/rdoc/markdown.rb#5751
   def _HtmlBlockCloseNoscript; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5907
+  # source://rdoc//lib/rdoc/markdown.rb#5917
   def _HtmlBlockCloseOl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6073
+  # source://rdoc//lib/rdoc/markdown.rb#6083
   def _HtmlBlockCloseP; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6239
+  # source://rdoc//lib/rdoc/markdown.rb#6249
   def _HtmlBlockClosePre; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8397
+  # source://rdoc//lib/rdoc/markdown.rb#8407
   def _HtmlBlockCloseScript; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6405
+  # source://rdoc//lib/rdoc/markdown.rb#6415
   def _HtmlBlockCloseTable; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7401
+  # source://rdoc//lib/rdoc/markdown.rb#7411
   def _HtmlBlockCloseTbody; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7567
+  # source://rdoc//lib/rdoc/markdown.rb#7577
   def _HtmlBlockCloseTd; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7733
+  # source://rdoc//lib/rdoc/markdown.rb#7743
   def _HtmlBlockCloseTfoot; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7899
+  # source://rdoc//lib/rdoc/markdown.rb#7909
   def _HtmlBlockCloseTh; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8065
+  # source://rdoc//lib/rdoc/markdown.rb#8075
   def _HtmlBlockCloseThead; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8231
+  # source://rdoc//lib/rdoc/markdown.rb#8241
   def _HtmlBlockCloseTr; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6571
+  # source://rdoc//lib/rdoc/markdown.rb#6581
   def _HtmlBlockCloseUl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6789
+  # source://rdoc//lib/rdoc/markdown.rb#6799
   def _HtmlBlockDd; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3635
+  # source://rdoc//lib/rdoc/markdown.rb#3645
   def _HtmlBlockDir; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3801
+  # source://rdoc//lib/rdoc/markdown.rb#3811
   def _HtmlBlockDiv; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3967
+  # source://rdoc//lib/rdoc/markdown.rb#3977
   def _HtmlBlockDl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6955
+  # source://rdoc//lib/rdoc/markdown.rb#6965
   def _HtmlBlockDt; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4133
+  # source://rdoc//lib/rdoc/markdown.rb#4143
   def _HtmlBlockFieldset; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4299
+  # source://rdoc//lib/rdoc/markdown.rb#4309
   def _HtmlBlockForm; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7121
+  # source://rdoc//lib/rdoc/markdown.rb#7131
   def _HtmlBlockFrameset; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4465
+  # source://rdoc//lib/rdoc/markdown.rb#4475
   def _HtmlBlockH1; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4631
+  # source://rdoc//lib/rdoc/markdown.rb#4641
   def _HtmlBlockH2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4797
+  # source://rdoc//lib/rdoc/markdown.rb#4807
   def _HtmlBlockH3; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4963
+  # source://rdoc//lib/rdoc/markdown.rb#4973
   def _HtmlBlockH4; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5129
+  # source://rdoc//lib/rdoc/markdown.rb#5139
   def _HtmlBlockH5; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5295
+  # source://rdoc//lib/rdoc/markdown.rb#5305
   def _HtmlBlockH6; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8604
+  # source://rdoc//lib/rdoc/markdown.rb#8614
   def _HtmlBlockHead; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8651
+  # source://rdoc//lib/rdoc/markdown.rb#8661
   def _HtmlBlockInTags; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7287
+  # source://rdoc//lib/rdoc/markdown.rb#7297
   def _HtmlBlockLi; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5461
+  # source://rdoc//lib/rdoc/markdown.rb#5471
   def _HtmlBlockMenu; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5627
+  # source://rdoc//lib/rdoc/markdown.rb#5637
   def _HtmlBlockNoframes; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5793
+  # source://rdoc//lib/rdoc/markdown.rb#5803
   def _HtmlBlockNoscript; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5959
+  # source://rdoc//lib/rdoc/markdown.rb#5969
   def _HtmlBlockOl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3029
+  # source://rdoc//lib/rdoc/markdown.rb#3039
   def _HtmlBlockOpenAddress; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3195
+  # source://rdoc//lib/rdoc/markdown.rb#3205
   def _HtmlBlockOpenBlockquote; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3361
+  # source://rdoc//lib/rdoc/markdown.rb#3371
   def _HtmlBlockOpenCenter; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6681
+  # source://rdoc//lib/rdoc/markdown.rb#6691
   def _HtmlBlockOpenDd; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3527
+  # source://rdoc//lib/rdoc/markdown.rb#3537
   def _HtmlBlockOpenDir; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3693
+  # source://rdoc//lib/rdoc/markdown.rb#3703
   def _HtmlBlockOpenDiv; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#3859
+  # source://rdoc//lib/rdoc/markdown.rb#3869
   def _HtmlBlockOpenDl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6847
+  # source://rdoc//lib/rdoc/markdown.rb#6857
   def _HtmlBlockOpenDt; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4025
+  # source://rdoc//lib/rdoc/markdown.rb#4035
   def _HtmlBlockOpenFieldset; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4191
+  # source://rdoc//lib/rdoc/markdown.rb#4201
   def _HtmlBlockOpenForm; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7013
+  # source://rdoc//lib/rdoc/markdown.rb#7023
   def _HtmlBlockOpenFrameset; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4357
+  # source://rdoc//lib/rdoc/markdown.rb#4367
   def _HtmlBlockOpenH1; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4523
+  # source://rdoc//lib/rdoc/markdown.rb#4533
   def _HtmlBlockOpenH2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4689
+  # source://rdoc//lib/rdoc/markdown.rb#4699
   def _HtmlBlockOpenH3; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#4855
+  # source://rdoc//lib/rdoc/markdown.rb#4865
   def _HtmlBlockOpenH4; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5021
+  # source://rdoc//lib/rdoc/markdown.rb#5031
   def _HtmlBlockOpenH5; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5187
+  # source://rdoc//lib/rdoc/markdown.rb#5197
   def _HtmlBlockOpenH6; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8496
+  # source://rdoc//lib/rdoc/markdown.rb#8506
   def _HtmlBlockOpenHead; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7179
+  # source://rdoc//lib/rdoc/markdown.rb#7189
   def _HtmlBlockOpenLi; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5353
+  # source://rdoc//lib/rdoc/markdown.rb#5363
   def _HtmlBlockOpenMenu; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5519
+  # source://rdoc//lib/rdoc/markdown.rb#5529
   def _HtmlBlockOpenNoframes; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5685
+  # source://rdoc//lib/rdoc/markdown.rb#5695
   def _HtmlBlockOpenNoscript; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#5851
+  # source://rdoc//lib/rdoc/markdown.rb#5861
   def _HtmlBlockOpenOl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6017
+  # source://rdoc//lib/rdoc/markdown.rb#6027
   def _HtmlBlockOpenP; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6183
+  # source://rdoc//lib/rdoc/markdown.rb#6193
   def _HtmlBlockOpenPre; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8341
+  # source://rdoc//lib/rdoc/markdown.rb#8351
   def _HtmlBlockOpenScript; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6349
+  # source://rdoc//lib/rdoc/markdown.rb#6359
   def _HtmlBlockOpenTable; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7345
+  # source://rdoc//lib/rdoc/markdown.rb#7355
   def _HtmlBlockOpenTbody; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7511
+  # source://rdoc//lib/rdoc/markdown.rb#7521
   def _HtmlBlockOpenTd; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7677
+  # source://rdoc//lib/rdoc/markdown.rb#7687
   def _HtmlBlockOpenTfoot; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7843
+  # source://rdoc//lib/rdoc/markdown.rb#7853
   def _HtmlBlockOpenTh; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8009
+  # source://rdoc//lib/rdoc/markdown.rb#8019
   def _HtmlBlockOpenThead; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8175
+  # source://rdoc//lib/rdoc/markdown.rb#8185
   def _HtmlBlockOpenTr; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6515
+  # source://rdoc//lib/rdoc/markdown.rb#6525
   def _HtmlBlockOpenUl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6125
+  # source://rdoc//lib/rdoc/markdown.rb#6135
   def _HtmlBlockP; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6291
+  # source://rdoc//lib/rdoc/markdown.rb#6301
   def _HtmlBlockPre; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8449
+  # source://rdoc//lib/rdoc/markdown.rb#8459
   def _HtmlBlockScript; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8896
+  # source://rdoc//lib/rdoc/markdown.rb#8906
   def _HtmlBlockSelfClosing; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6457
+  # source://rdoc//lib/rdoc/markdown.rb#6467
   def _HtmlBlockTable; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7453
+  # source://rdoc//lib/rdoc/markdown.rb#7463
   def _HtmlBlockTbody; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7619
+  # source://rdoc//lib/rdoc/markdown.rb#7629
   def _HtmlBlockTd; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7785
+  # source://rdoc//lib/rdoc/markdown.rb#7795
   def _HtmlBlockTfoot; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#7951
+  # source://rdoc//lib/rdoc/markdown.rb#7961
   def _HtmlBlockTh; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8117
+  # source://rdoc//lib/rdoc/markdown.rb#8127
   def _HtmlBlockThead; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8283
+  # source://rdoc//lib/rdoc/markdown.rb#8293
   def _HtmlBlockTr; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8951
+  # source://rdoc//lib/rdoc/markdown.rb#8961
   def _HtmlBlockType; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#6623
+  # source://rdoc//lib/rdoc/markdown.rb#6633
   def _HtmlBlockUl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2919
+  # source://rdoc//lib/rdoc/markdown.rb#2929
   def _HtmlCloseAnchor; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14415
+  # source://rdoc//lib/rdoc/markdown.rb#14425
   def _HtmlComment; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2863
+  # source://rdoc//lib/rdoc/markdown.rb#2873
   def _HtmlOpenAnchor; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14462
+  # source://rdoc//lib/rdoc/markdown.rb#14472
   def _HtmlTag; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8828
+  # source://rdoc//lib/rdoc/markdown.rb#8838
   def _HtmlUnclosed; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#8878
+  # source://rdoc//lib/rdoc/markdown.rb#8888
   def _HtmlUnclosedType; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10972
+  # source://rdoc//lib/rdoc/markdown.rb#10982
   def _Image; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9281
+  # source://rdoc//lib/rdoc/markdown.rb#9291
   def _InStyleTags; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14860
+  # source://rdoc//lib/rdoc/markdown.rb#14870
   def _Indent; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14867
+  # source://rdoc//lib/rdoc/markdown.rb#14877
   def _IndentedLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9586
+  # source://rdoc//lib/rdoc/markdown.rb#9596
   def _Inline; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15431
+  # source://rdoc//lib/rdoc/markdown.rb#15441
   def _InlineNote; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9365
+  # source://rdoc//lib/rdoc/markdown.rb#9375
   def _Inlines; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11907
+  # source://rdoc//lib/rdoc/markdown.rb#11917
   def _Label; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14938
+  # source://rdoc//lib/rdoc/markdown.rb#14948
   def _Line; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10042
+  # source://rdoc//lib/rdoc/markdown.rb#10052
   def _LineBreak; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11011
+  # source://rdoc//lib/rdoc/markdown.rb#11021
   def _Link; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2548
+  # source://rdoc//lib/rdoc/markdown.rb#2558
   def _ListBlock; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2793
+  # source://rdoc//lib/rdoc/markdown.rb#2803
   def _ListBlockLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2592
+  # source://rdoc//lib/rdoc/markdown.rb#2602
   def _ListContinuationBlock; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2392
+  # source://rdoc//lib/rdoc/markdown.rb#2402
   def _ListItem; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2468
+  # source://rdoc//lib/rdoc/markdown.rb#2478
   def _ListItemTight; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2304
+  # source://rdoc//lib/rdoc/markdown.rb#2314
   def _ListLoose; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2239
+  # source://rdoc//lib/rdoc/markdown.rb#2249
   def _ListTight; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14726
+  # source://rdoc//lib/rdoc/markdown.rb#14736
   def _Newline; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1821
+  # source://rdoc//lib/rdoc/markdown.rb#1831
   def _NonblankIndentedLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14853
+  # source://rdoc//lib/rdoc/markdown.rb#14863
   def _NonindentSpace; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14552
+  # source://rdoc//lib/rdoc/markdown.rb#14562
   def _Nonspacechar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14653
+  # source://rdoc//lib/rdoc/markdown.rb#14663
   def _NormalChar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9938
+  # source://rdoc//lib/rdoc/markdown.rb#9948
   def _NormalEndline; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15333
+  # source://rdoc//lib/rdoc/markdown.rb#15343
   def _Note; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15207
+  # source://rdoc//lib/rdoc/markdown.rb#15217
   def _NoteReference; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15538
+  # source://rdoc//lib/rdoc/markdown.rb#15548
   def _Notes; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14888
+  # source://rdoc//lib/rdoc/markdown.rb#14898
   def _OptionallyIndentedLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#2752
+  # source://rdoc//lib/rdoc/markdown.rb#2762
   def _OrderedList; end
 
   # source://rdoc//lib/rdoc/markdown.rb#1014
@@ -1971,190 +1994,190 @@ class RDoc::Markdown
   # source://rdoc//lib/rdoc/markdown.rb#1057
   def _Plain; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14175
+  # source://rdoc//lib/rdoc/markdown.rb#14185
   def _Quoted; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14108
+  # source://rdoc//lib/rdoc/markdown.rb#14118
   def _RawHtml; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14961
+  # source://rdoc//lib/rdoc/markdown.rb#14971
   def _RawLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15560
+  # source://rdoc//lib/rdoc/markdown.rb#15570
   def _RawNoteBlock; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15237
+  # source://rdoc//lib/rdoc/markdown.rb#15247
   def _RawNoteReference; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12026
+  # source://rdoc//lib/rdoc/markdown.rb#12036
   def _RefSrc; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12062
+  # source://rdoc//lib/rdoc/markdown.rb#12072
   def _RefTitle; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12185
+  # source://rdoc//lib/rdoc/markdown.rb#12195
   def _RefTitleDouble; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12277
+  # source://rdoc//lib/rdoc/markdown.rb#12287
   def _RefTitleParens; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12093
+  # source://rdoc//lib/rdoc/markdown.rb#12103
   def _RefTitleSingle; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11832
+  # source://rdoc//lib/rdoc/markdown.rb#11842
   def _Reference; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11032
+  # source://rdoc//lib/rdoc/markdown.rb#11042
   def _ReferenceLink; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11050
+  # source://rdoc//lib/rdoc/markdown.rb#11060
   def _ReferenceLinkDouble; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11096
+  # source://rdoc//lib/rdoc/markdown.rb#11106
   def _ReferenceLinkSingle; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12369
+  # source://rdoc//lib/rdoc/markdown.rb#12379
   def _References; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1262
+  # source://rdoc//lib/rdoc/markdown.rb#1272
   def _SetextBottom1; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1283
+  # source://rdoc//lib/rdoc/markdown.rb#1293
   def _SetextBottom2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1244
+  # source://rdoc//lib/rdoc/markdown.rb#1254
   def _SetextHeading; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1304
+  # source://rdoc//lib/rdoc/markdown.rb#1314
   def _SetextHeading1; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1426
+  # source://rdoc//lib/rdoc/markdown.rb#1436
   def _SetextHeading2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15040
+  # source://rdoc//lib/rdoc/markdown.rb#15050
   def _SkipBlock; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11206
+  # source://rdoc//lib/rdoc/markdown.rb#11216
   def _Source; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11266
+  # source://rdoc//lib/rdoc/markdown.rb#11276
   def _SourceContents; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14584
+  # source://rdoc//lib/rdoc/markdown.rb#14594
   def _Sp; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9646
+  # source://rdoc//lib/rdoc/markdown.rb#9656
   def _Space; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14733
+  # source://rdoc//lib/rdoc/markdown.rb#14743
   def _Spacechar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14635
+  # source://rdoc//lib/rdoc/markdown.rb#14645
   def _SpecialChar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14595
+  # source://rdoc//lib/rdoc/markdown.rb#14605
   def _Spnl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10129
+  # source://rdoc//lib/rdoc/markdown.rb#10139
   def _StarLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#14914
+  # source://rdoc//lib/rdoc/markdown.rb#14924
   def _StartList; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9678
+  # source://rdoc//lib/rdoc/markdown.rb#9688
   def _Str; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9751
+  # source://rdoc//lib/rdoc/markdown.rb#9761
   def _StrChunk; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10861
+  # source://rdoc//lib/rdoc/markdown.rb#10871
   def _Strike; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10635
+  # source://rdoc//lib/rdoc/markdown.rb#10645
   def _Strong; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10653
+  # source://rdoc//lib/rdoc/markdown.rb#10663
   def _StrongStar; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10757
+  # source://rdoc//lib/rdoc/markdown.rb#10767
   def _StrongUl; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9328
+  # source://rdoc//lib/rdoc/markdown.rb#9338
   def _StyleBlock; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9229
+  # source://rdoc//lib/rdoc/markdown.rb#9239
   def _StyleClose; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#9173
+  # source://rdoc//lib/rdoc/markdown.rb#9183
   def _StyleOpen; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10069
+  # source://rdoc//lib/rdoc/markdown.rb#10079
   def _Symbol; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15937
+  # source://rdoc//lib/rdoc/markdown.rb#15947
   def _Table; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16304
+  # source://rdoc//lib/rdoc/markdown.rb#16314
   def _TableAlign; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16278
+  # source://rdoc//lib/rdoc/markdown.rb#16288
   def _TableAlign2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#15993
+  # source://rdoc//lib/rdoc/markdown.rb#16003
   def _TableHead; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16159
+  # source://rdoc//lib/rdoc/markdown.rb#16169
   def _TableItem; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16138
+  # source://rdoc//lib/rdoc/markdown.rb#16148
   def _TableItem2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16185
+  # source://rdoc//lib/rdoc/markdown.rb#16195
   def _TableLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#16045
+  # source://rdoc//lib/rdoc/markdown.rb#16055
   def _TableRow; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10016
+  # source://rdoc//lib/rdoc/markdown.rb#10026
   def _TerminalEndline; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12391
+  # source://rdoc//lib/rdoc/markdown.rb#12401
   def _Ticks1; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12415
+  # source://rdoc//lib/rdoc/markdown.rb#12425
   def _Ticks2; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12439
+  # source://rdoc//lib/rdoc/markdown.rb#12449
   def _Ticks3; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12463
+  # source://rdoc//lib/rdoc/markdown.rb#12473
   def _Ticks4; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#12487
+  # source://rdoc//lib/rdoc/markdown.rb#12497
   def _Ticks5; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11383
+  # source://rdoc//lib/rdoc/markdown.rb#11393
   def _Title; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11497
+  # source://rdoc//lib/rdoc/markdown.rb#11507
   def _TitleDouble; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#11420
+  # source://rdoc//lib/rdoc/markdown.rb#11430
   def _TitleSingle; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10206
+  # source://rdoc//lib/rdoc/markdown.rb#10216
   def _UlLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10095
+  # source://rdoc//lib/rdoc/markdown.rb#10105
   def _UlOrStarLine; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1895
+  # source://rdoc//lib/rdoc/markdown.rb#1905
   def _Verbatim; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#1845
+  # source://rdoc//lib/rdoc/markdown.rb#1855
   def _VerbatimChunk; end
 
-  # source://rdoc//lib/rdoc/markdown.rb#10301
+  # source://rdoc//lib/rdoc/markdown.rb#10311
   def _Whitespace; end
 
   # source://rdoc//lib/rdoc/markdown.rb#892
@@ -2613,28 +2636,28 @@ class RDoc::Markdown::RuleInfo
   def rendered; end
 end
 
-# source://rdoc//lib/rdoc/markup.rb#106
+# source://rdoc//lib/rdoc/markup.rb#111
 class RDoc::Markup
-  # source://rdoc//lib/rdoc/markup.rb#146
+  # source://rdoc//lib/rdoc/markup.rb#151
   def initialize(attribute_manager = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/markup.rb#163
+  # source://rdoc//lib/rdoc/markup.rb#168
   def add_html(tag, name); end
 
-  # source://rdoc//lib/rdoc/markup.rb#175
+  # source://rdoc//lib/rdoc/markup.rb#180
   def add_regexp_handling(pattern, name); end
 
-  # source://rdoc//lib/rdoc/markup.rb#156
+  # source://rdoc//lib/rdoc/markup.rb#161
   def add_word_pair(start, stop, name); end
 
-  # source://rdoc//lib/rdoc/markup.rb#111
+  # source://rdoc//lib/rdoc/markup.rb#116
   def attribute_manager; end
 
-  # source://rdoc//lib/rdoc/markup.rb#183
+  # source://rdoc//lib/rdoc/markup.rb#188
   def convert(input, formatter); end
 
   class << self
-    # source://rdoc//lib/rdoc/markup.rb#116
+    # source://rdoc//lib/rdoc/markup.rb#121
     def parse(str); end
   end
 end
@@ -3150,16 +3173,16 @@ class RDoc::Markup::PreProcess
   # source://rdoc//lib/rdoc/markup/pre_process.rb#78
   def initialize(input_file_name, include_path); end
 
-  # source://rdoc//lib/rdoc/markup/pre_process.rb#288
+  # source://rdoc//lib/rdoc/markup/pre_process.rb#291
   def find_include_file(name); end
 
   # source://rdoc//lib/rdoc/markup/pre_process.rb#99
   def handle(text, code_object = T.unsafe(nil), &block); end
 
-  # source://rdoc//lib/rdoc/markup/pre_process.rb#150
-  def handle_directive(prefix, directive, param, code_object = T.unsafe(nil), encoding = T.unsafe(nil)); end
+  # source://rdoc//lib/rdoc/markup/pre_process.rb#153
+  def handle_directive(prefix, directive, param, code_object = T.unsafe(nil), encoding = T.unsafe(nil), line = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/markup/pre_process.rb#262
+  # source://rdoc//lib/rdoc/markup/pre_process.rb#265
   def include_file(name, indent, encoding); end
 
   # source://rdoc//lib/rdoc/markup/pre_process.rb#23
@@ -4003,238 +4026,238 @@ class RDoc::Markup::Verbatim < ::RDoc::Markup::Raw
   def text; end
 end
 
-# source://rdoc//lib/rdoc/method_attr.rb#5
+# source://rdoc//lib/rdoc/code_object/method_attr.rb#5
 class RDoc::MethodAttr < ::RDoc::CodeObject
   include ::Comparable
 
-  # source://rdoc//lib/rdoc/method_attr.rb#78
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#78
   def initialize(text, name); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#113
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#113
   def <=>(other); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#121
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#121
   def ==(other); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#209
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#209
   def add_alias(an_alias, context); end
 
   # source://rdoc//lib/rdoc/generator/markup.rb#77
   def add_line_numbers(src); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#32
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#32
   def aliases; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#216
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#216
   def aref; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#225
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#225
   def aref_prefix; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#64
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#64
   def arglists; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#49
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#49
   def block_params; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#233
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#233
   def block_params=(value); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#59
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#59
   def call_seq; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#59
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#59
   def call_seq=(_arg0); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#132
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#132
   def documented?; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#178
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#178
   def find_method_or_attribute(name); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#166
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#166
   def find_see; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#300
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#300
   def full_name; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#291
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#291
   def html_name; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#105
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#105
   def initialize_visibility; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#304
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#304
   def inspect; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#37
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#37
   def is_alias_for; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#37
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#37
   def is_alias_for=(_arg0); end
 
   # source://rdoc//lib/rdoc/generator/markup.rb#101
   def markup_code; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#12
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#12
   def name; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#12
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#12
   def name=(_arg0); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#319
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#319
   def name_prefix; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#330
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#330
   def output_name(context); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#69
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#69
   def param_seq; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#54
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#54
   def params; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#54
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#54
   def params=(_arg0); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#360
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#360
   def parent_name; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#353
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#353
   def path; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#339
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#339
   def pretty_name; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#364
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#364
   def pretty_print(q); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#398
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#398
   def search_record; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#152
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#152
   def see; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#22
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#22
   def singleton; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#22
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#22
   def singleton=(_arg0); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#160
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#160
   def store=(store); end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#27
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#27
   def text; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#410
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#410
   def to_s; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#346
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#346
   def type; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#17
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#17
   def visibility; end
 
-  # source://rdoc//lib/rdoc/method_attr.rb#17
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#17
   def visibility=(_arg0); end
 
   private
 
-  # source://rdoc//lib/rdoc/method_attr.rb#101
+  # source://rdoc//lib/rdoc/code_object/method_attr.rb#101
   def initialize_copy(other); end
 end
 
-# source://rdoc//lib/rdoc/mixin.rb#6
+# source://rdoc//lib/rdoc/code_object/mixin.rb#6
 class RDoc::Mixin < ::RDoc::CodeObject
-  # source://rdoc//lib/rdoc/mixin.rb#16
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#16
   def initialize(name, comment); end
 
-  # source://rdoc//lib/rdoc/mixin.rb#26
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#26
   def <=>(other); end
 
-  # source://rdoc//lib/rdoc/mixin.rb#32
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#32
   def ==(other); end
 
-  # source://rdoc//lib/rdoc/mixin.rb#32
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#32
   def eql?(other); end
 
-  # source://rdoc//lib/rdoc/mixin.rb#41
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#41
   def full_name; end
 
-  # source://rdoc//lib/rdoc/mixin.rb#46
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#46
   def hash; end
 
-  # source://rdoc//lib/rdoc/mixin.rb#50
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#50
   def inspect; end
 
-  # source://rdoc//lib/rdoc/mixin.rb#75
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#75
   def module; end
 
-  # source://rdoc//lib/rdoc/mixin.rb#11
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#11
   def name; end
 
-  # source://rdoc//lib/rdoc/mixin.rb#11
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#11
   def name=(_arg0); end
 
-  # source://rdoc//lib/rdoc/mixin.rb#110
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#110
   def store=(store); end
 
-  # source://rdoc//lib/rdoc/mixin.rb#116
+  # source://rdoc//lib/rdoc/code_object/mixin.rb#116
   def to_s; end
 end
 
-# source://rdoc//lib/rdoc/normal_class.rb#5
+# source://rdoc//lib/rdoc/code_object/normal_class.rb#5
 class RDoc::NormalClass < ::RDoc::ClassModule
-  # source://rdoc//lib/rdoc/normal_class.rb#12
+  # source://rdoc//lib/rdoc/code_object/normal_class.rb#12
   def ancestors; end
 
-  # source://rdoc//lib/rdoc/normal_class.rb#24
+  # source://rdoc//lib/rdoc/code_object/normal_class.rb#24
   def aref_prefix; end
 
-  # source://rdoc//lib/rdoc/normal_class.rb#31
+  # source://rdoc//lib/rdoc/code_object/normal_class.rb#31
   def definition; end
 
-  # source://rdoc//lib/rdoc/normal_class.rb#35
+  # source://rdoc//lib/rdoc/code_object/normal_class.rb#35
   def direct_ancestors; end
 
-  # source://rdoc//lib/rdoc/normal_class.rb#39
+  # source://rdoc//lib/rdoc/code_object/normal_class.rb#39
   def inspect; end
 
-  # source://rdoc//lib/rdoc/normal_class.rb#56
+  # source://rdoc//lib/rdoc/code_object/normal_class.rb#56
   def pretty_print(q); end
 
-  # source://rdoc//lib/rdoc/normal_class.rb#47
+  # source://rdoc//lib/rdoc/code_object/normal_class.rb#47
   def to_s; end
 end
 
-# source://rdoc//lib/rdoc/normal_module.rb#5
+# source://rdoc//lib/rdoc/code_object/normal_module.rb#5
 class RDoc::NormalModule < ::RDoc::ClassModule
-  # source://rdoc//lib/rdoc/normal_module.rb#7
+  # source://rdoc//lib/rdoc/code_object/normal_module.rb#7
   def aref_prefix; end
 
-  # source://rdoc//lib/rdoc/normal_module.rb#21
+  # source://rdoc//lib/rdoc/code_object/normal_module.rb#21
   def definition; end
 
-  # source://rdoc//lib/rdoc/normal_module.rb#11
+  # source://rdoc//lib/rdoc/code_object/normal_module.rb#11
   def inspect; end
 
-  # source://rdoc//lib/rdoc/normal_module.rb#28
+  # source://rdoc//lib/rdoc/code_object/normal_module.rb#28
   def module?; end
 
-  # source://rdoc//lib/rdoc/normal_module.rb#32
+  # source://rdoc//lib/rdoc/code_object/normal_module.rb#32
   def pretty_print(q); end
 
-  # source://rdoc//lib/rdoc/normal_module.rb#69
+  # source://rdoc//lib/rdoc/code_object/normal_module.rb#69
   def superclass; end
 end
 
 # source://rdoc//lib/rdoc/options.rb#75
 class RDoc::Options
-  # source://rdoc//lib/rdoc/options.rb#347
+  # source://rdoc//lib/rdoc/options.rb#352
   def initialize(loaded_options = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/options.rb#460
+  # source://rdoc//lib/rdoc/options.rb#468
   def ==(other); end
 
   # source://rdoc//lib/rdoc/options.rb#152
@@ -4243,10 +4266,10 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#152
   def charset=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#484
+  # source://rdoc//lib/rdoc/options.rb#493
   def check_files; end
 
-  # source://rdoc//lib/rdoc/options.rb#505
+  # source://rdoc//lib/rdoc/options.rb#514
   def check_generator; end
 
   # source://rdoc//lib/rdoc/options.rb#244
@@ -4255,7 +4278,7 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#244
   def coverage_report=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#517
+  # source://rdoc//lib/rdoc/options.rb#526
   def default_title=(string); end
 
   # source://rdoc//lib/rdoc/options.rb#157
@@ -4264,13 +4287,19 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#157
   def dry_run=(_arg0); end
 
+  # source://rdoc//lib/rdoc/options.rb#350
+  def embed_mixins; end
+
+  # source://rdoc//lib/rdoc/options.rb#350
+  def embed_mixins=(_arg0); end
+
   # source://rdoc//lib/rdoc/options.rb#164
   def encoding; end
 
   # source://rdoc//lib/rdoc/options.rb#164
   def encoding=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#545
+  # source://rdoc//lib/rdoc/options.rb#554
   def exclude; end
 
   # source://rdoc//lib/rdoc/options.rb#169
@@ -4282,10 +4311,10 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#174
   def files=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#561
+  # source://rdoc//lib/rdoc/options.rb#570
   def finish; end
 
-  # source://rdoc//lib/rdoc/options.rb#602
+  # source://rdoc//lib/rdoc/options.rb#611
   def finish_page_dir; end
 
   # source://rdoc//lib/rdoc/options.rb#180
@@ -4312,7 +4341,7 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#195
   def generator=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#621
+  # source://rdoc//lib/rdoc/options.rb#630
   def generator_descriptions; end
 
   # source://rdoc//lib/rdoc/options.rb#200
@@ -4330,10 +4359,10 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#212
   def hyperlink_all=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#352
+  # source://rdoc//lib/rdoc/options.rb#357
   def init_ivars; end
 
-  # source://rdoc//lib/rdoc/options.rb#397
+  # source://rdoc//lib/rdoc/options.rb#403
   def init_with(map); end
 
   # source://rdoc//lib/rdoc/options.rb#217
@@ -4384,7 +4413,7 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#258
   def output_decoration=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#428
+  # source://rdoc//lib/rdoc/options.rb#435
   def override(map); end
 
   # source://rdoc//lib/rdoc/options.rb#264
@@ -4393,7 +4422,7 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#264
   def page_dir=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#647
+  # source://rdoc//lib/rdoc/options.rb#656
   def parse(argv); end
 
   # source://rdoc//lib/rdoc/options.rb#269
@@ -4402,10 +4431,10 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#269
   def pipe=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#1192
+  # source://rdoc//lib/rdoc/options.rb#1209
   def quiet; end
 
-  # source://rdoc//lib/rdoc/options.rb#1199
+  # source://rdoc//lib/rdoc/options.rb#1216
   def quiet=(bool); end
 
   # source://rdoc//lib/rdoc/options.rb#274
@@ -4420,10 +4449,10 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#281
   def root=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#1206
+  # source://rdoc//lib/rdoc/options.rb#1223
   def sanitize_path(path); end
 
-  # source://rdoc//lib/rdoc/options.rb#1233
+  # source://rdoc//lib/rdoc/options.rb#1250
   def setup_generator(generator_name = T.unsafe(nil)); end
 
   # source://rdoc//lib/rdoc/options.rb#286
@@ -4462,7 +4491,7 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#306
   def template_dir=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#1255
+  # source://rdoc//lib/rdoc/options.rb#1272
   def template_dir_for(template); end
 
   # source://rdoc//lib/rdoc/options.rb#311
@@ -4477,7 +4506,7 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#316
   def title=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#524
+  # source://rdoc//lib/rdoc/options.rb#533
   def to_yaml(*options); end
 
   # source://rdoc//lib/rdoc/options.rb#321
@@ -4495,10 +4524,10 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#341
   def visibility; end
 
-  # source://rdoc//lib/rdoc/options.rb#1272
+  # source://rdoc//lib/rdoc/options.rb#1289
   def visibility=(visibility); end
 
-  # source://rdoc//lib/rdoc/options.rb#1284
+  # source://rdoc//lib/rdoc/options.rb#1301
   def warn(message); end
 
   # source://rdoc//lib/rdoc/options.rb#331
@@ -4507,27 +4536,27 @@ class RDoc::Options
   # source://rdoc//lib/rdoc/options.rb#331
   def webcvs=(_arg0); end
 
-  # source://rdoc//lib/rdoc/options.rb#1292
+  # source://rdoc//lib/rdoc/options.rb#1309
   def write_options; end
 
-  # source://rdoc//lib/rdoc/options.rb#424
+  # source://rdoc//lib/rdoc/options.rb#431
   def yaml_initialize(tag, map); end
 
   class << self
-    # source://rdoc//lib/rdoc/options.rb#1306
+    # source://rdoc//lib/rdoc/options.rb#1323
     def load_options; end
   end
 end
 
 # source://rdoc//lib/rdoc/parser.rb#33
 class RDoc::Parser
-  # source://rdoc//lib/rdoc/parser.rb#254
+  # source://rdoc//lib/rdoc/parser.rb#255
   def initialize(top_level, file_name, content, options, stats); end
 
   # source://rdoc//lib/rdoc/parser.rb#52
   def file_name; end
 
-  # source://rdoc//lib/rdoc/parser.rb#274
+  # source://rdoc//lib/rdoc/parser.rb#275
   def handle_tab_width(body); end
 
   class << self
@@ -4547,18 +4576,18 @@ class RDoc::Parser
     def check_modeline(file_name); end
 
     # source://rdoc//lib/rdoc/parser.rb#169
-    def for(top_level, file_name, content, options, stats); end
+    def for(top_level, content, options, stats); end
 
-    # source://rdoc//lib/rdoc/parser.rb#203
+    # source://rdoc//lib/rdoc/parser.rb#204
     def parse_files_matching(regexp); end
 
     # source://rdoc//lib/rdoc/parser.rb#45
     def parsers; end
 
-    # source://rdoc//lib/rdoc/parser.rb#210
+    # source://rdoc//lib/rdoc/parser.rb#211
     def remove_modeline(content); end
 
-    # source://rdoc//lib/rdoc/parser.rb#231
+    # source://rdoc//lib/rdoc/parser.rb#232
     def use_markup(content); end
 
     # source://rdoc//lib/rdoc/parser.rb#94
@@ -4804,117 +4833,72 @@ end
 
 # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#7
 class RDoc::Parser::RipperStateLex
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#576
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#278
   def initialize(code); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#322
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#27
   def get_squashed_tk; end
 
   private
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#465
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#168
   def get_embdoc_tk(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#474
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#177
   def get_heredoc_tk(heredoc_name, indent); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#549
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#252
   def get_op_tk(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#447
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#150
   def get_regexp_tk(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#420
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#123
   def get_string_tk(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#373
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#76
   def get_symbol_tk(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#511
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#214
   def get_words_tk(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#499
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#202
   def heredoc_end?(name, indent, tk); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#493
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#196
   def retrieve_heredoc_info(tk); end
 
   class << self
-    # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#597
+    # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#299
     def end?(token); end
 
-    # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#584
+    # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#286
     def parse(code); end
   end
 end
 
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#20
+# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#14
 RDoc::Parser::RipperStateLex::EXPR_ARG = T.let(T.unsafe(nil), Integer)
 
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#31
-RDoc::Parser::RipperStateLex::EXPR_ARG_ANY = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#16
-RDoc::Parser::RipperStateLex::EXPR_BEG = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#30
-RDoc::Parser::RipperStateLex::EXPR_BEG_ANY = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#25
-RDoc::Parser::RipperStateLex::EXPR_CLASS = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#21
-RDoc::Parser::RipperStateLex::EXPR_CMDARG = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#24
-RDoc::Parser::RipperStateLex::EXPR_DOT = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#17
+# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#12
 RDoc::Parser::RipperStateLex::EXPR_END = T.let(T.unsafe(nil), Integer)
 
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#18
-RDoc::Parser::RipperStateLex::EXPR_ENDARG = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#19
+# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#13
 RDoc::Parser::RipperStateLex::EXPR_ENDFN = T.let(T.unsafe(nil), Integer)
 
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#32
-RDoc::Parser::RipperStateLex::EXPR_END_ANY = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#28
-RDoc::Parser::RipperStateLex::EXPR_FITEM = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#23
+# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#15
 RDoc::Parser::RipperStateLex::EXPR_FNAME = T.let(T.unsafe(nil), Integer)
 
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#26
-RDoc::Parser::RipperStateLex::EXPR_LABEL = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#27
-RDoc::Parser::RipperStateLex::EXPR_LABELED = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#22
-RDoc::Parser::RipperStateLex::EXPR_MID = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#15
-RDoc::Parser::RipperStateLex::EXPR_NONE = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#29
-RDoc::Parser::RipperStateLex::EXPR_VALUE = T.let(T.unsafe(nil), Integer)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#312
+# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#17
 class RDoc::Parser::RipperStateLex::InnerStateLex < ::Ripper::Filter
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#313
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#18
   def initialize(code); end
 
-  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#317
+  # source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#22
   def on_default(event, tok, data); end
 end
 
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#11
-RDoc::Parser::RipperStateLex::RIPPER_HAS_LEX_STATE = T.let(T.unsafe(nil), TrueClass)
-
-# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#13
+# source://rdoc//lib/rdoc/parser/ripper_state_lex.rb#10
 class RDoc::Parser::RipperStateLex::Token < ::Struct
   def char_no; end
   def char_no=(_); end
@@ -4936,228 +4920,228 @@ class RDoc::Parser::RipperStateLex::Token < ::Struct
   end
 end
 
-# source://rdoc//lib/rdoc/parser/ruby.rb#144
+# source://rdoc//lib/rdoc/parser/ruby.rb#153
 class RDoc::Parser::Ruby < ::RDoc::Parser
   include ::RDoc::TokenStream
   include ::RDoc::Parser::RubyTools
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#164
+  # source://rdoc//lib/rdoc/parser/ruby.rb#173
   def initialize(top_level, file_name, content, options, stats); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#236
+  # source://rdoc//lib/rdoc/parser/ruby.rb#245
   def collect_first_comment; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#279
+  # source://rdoc//lib/rdoc/parser/ruby.rb#288
   def consume_trailing_spaces; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#286
+  # source://rdoc//lib/rdoc/parser/ruby.rb#295
   def create_attr(container, single, name, rw, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#300
+  # source://rdoc//lib/rdoc/parser/ruby.rb#309
   def create_module_alias(container, constant, rhs_name); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#313
+  # source://rdoc//lib/rdoc/parser/ruby.rb#322
   def error(msg); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#322
+  # source://rdoc//lib/rdoc/parser/ruby.rb#331
   def get_bool; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#340
+  # source://rdoc//lib/rdoc/parser/ruby.rb#349
   def get_class_or_module(container, ignore_constants = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#423
+  # source://rdoc//lib/rdoc/parser/ruby.rb#432
   def get_class_specification; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#456
+  # source://rdoc//lib/rdoc/parser/ruby.rb#465
   def get_constant; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#558
+  # source://rdoc//lib/rdoc/parser/ruby.rb#567
   def get_end_token(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#473
+  # source://rdoc//lib/rdoc/parser/ruby.rb#482
   def get_included_module_with_optional_parens; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#578
+  # source://rdoc//lib/rdoc/parser/ruby.rb#587
   def get_method_container(container, name_t); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#621
+  # source://rdoc//lib/rdoc/parser/ruby.rb#630
   def get_symbol_or_name; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#194
+  # source://rdoc//lib/rdoc/parser/ruby.rb#203
   def get_tkread_clean(pattern, replacement); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#208
+  # source://rdoc//lib/rdoc/parser/ruby.rb#217
   def get_visibility_information(tk, single); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#661
+  # source://rdoc//lib/rdoc/parser/ruby.rb#670
   def look_for_directives_in(container, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#681
+  # source://rdoc//lib/rdoc/parser/ruby.rb#690
   def make_message(message); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#693
+  # source://rdoc//lib/rdoc/parser/ruby.rb#702
   def new_comment(comment, line_no = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#762
+  # source://rdoc//lib/rdoc/parser/ruby.rb#771
   def parse_alias(context, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#704
+  # source://rdoc//lib/rdoc/parser/ruby.rb#713
   def parse_attr(context, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#733
+  # source://rdoc//lib/rdoc/parser/ruby.rb#742
   def parse_attr_accessor(context, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#803
+  # source://rdoc//lib/rdoc/parser/ruby.rb#812
   def parse_call_parameters(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#846
+  # source://rdoc//lib/rdoc/parser/ruby.rb#855
   def parse_class(container, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#880
+  # source://rdoc//lib/rdoc/parser/ruby.rb#889
   def parse_class_regular(container, declaration_context, single, name_t, given_name, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#920
+  # source://rdoc//lib/rdoc/parser/ruby.rb#929
   def parse_class_singleton(container, name, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1085
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1094
   def parse_comment(container, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1113
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1122
   def parse_comment_attr(container, type, name, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1125
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1134
   def parse_comment_ghost(container, text, name, column, line_no, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1164
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1173
   def parse_comment_tomdoc(container, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#959
+  # source://rdoc//lib/rdoc/parser/ruby.rb#968
   def parse_constant(container, tk, comment, ignore_constants = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1026
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1035
   def parse_constant_body(container, constant, is_array_or_hash); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2103
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2112
   def parse_constant_visibility(container, single, tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1199
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1208
   def parse_extend_or_include(klass, container, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1237
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1246
   def parse_identifier(container, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1219
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1228
   def parse_included_with_activesupport_concern(container, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1301
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1310
   def parse_meta_attr(context, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1335
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1344
   def parse_meta_method(container, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1381
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1390
   def parse_meta_method_name(comment, tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1405
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1414
   def parse_meta_method_params(container, single, meth, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1437
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1446
   def parse_method(container, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1522
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1531
   def parse_method_dummy(container); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1535
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1544
   def parse_method_name(container); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1562
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1571
   def parse_method_name_regular(container, name_t); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1580
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1589
   def parse_method_name_singleton(container, name_t); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1624
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1633
   def parse_method_or_yield_parameters(method = T.unsafe(nil), modifiers = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1691
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1700
   def parse_method_parameters(method); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1492
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1501
   def parse_method_params_and_body(container, single, meth, added_container); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1706
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1715
   def parse_module(container, single, tk, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1728
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1737
   def parse_require(context, comment); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1749
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1758
   def parse_rescue; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1780
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1789
   def parse_statements(container, single = T.unsafe(nil), current_method = T.unsafe(nil), comment = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1971
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1980
   def parse_symbol_arg(no = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1986
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1995
   def parse_symbol_arg_paren(no); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2014
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2023
   def parse_symbol_arg_space(no, tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2045
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2054
   def parse_symbol_in_arg; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2062
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2071
   def parse_top_level_statements(container); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2080
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2089
   def parse_visibility(container, single, tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2119
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2128
   def parse_yield(context, single, tk, method); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2140
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2149
   def read_directive(allowed); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2172
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2181
   def read_documentation_modifiers(context, allowed); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2191
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2200
   def record_location(container); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#1769
+  # source://rdoc//lib/rdoc/parser/ruby.rb#1778
   def retrieve_comment_body(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2203
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2212
   def scan; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2291
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2300
   def skip_for_variable; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2302
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2311
   def skip_method(container); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2250
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2259
   def skip_optional_do_after_expression; end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#401
+  # source://rdoc//lib/rdoc/parser/ruby.rb#410
   def skip_parentheses(&block); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2311
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2320
   def skip_tkspace_comment(skip_nl = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#646
+  # source://rdoc//lib/rdoc/parser/ruby.rb#655
   def suppress_parents(container, ancestor); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#186
+  # source://rdoc//lib/rdoc/parser/ruby.rb#195
   def tk_nl?(tk); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2323
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2332
   def update_visibility(container, vis_type, vis, singleton); end
 
-  # source://rdoc//lib/rdoc/parser/ruby.rb#2368
+  # source://rdoc//lib/rdoc/parser/ruby.rb#2377
   def warn(message); end
 end
 
@@ -5740,7 +5724,7 @@ class RDoc::RDoc
   # source://rdoc//lib/rdoc/rdoc.rb#404
   def parse_files(files); end
 
-  # source://rdoc//lib/rdoc/rdoc.rb#534
+  # source://rdoc//lib/rdoc/rdoc.rb#535
   def remove_siginfo_handler; end
 
   # source://rdoc//lib/rdoc/rdoc.rb#428
@@ -5781,169 +5765,169 @@ RDoc::RDoc::UNCONDITIONALLY_SKIPPED_DIRECTORIES = T.let(T.unsafe(nil), Array)
 
 # source://rdoc//lib/rdoc/ri/driver.rb#25
 class RDoc::RI::Driver
-  # source://rdoc//lib/rdoc/ri/driver.rb#391
+  # source://rdoc//lib/rdoc/ri/driver.rb#395
   def initialize(initial_options = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#429
+  # source://rdoc//lib/rdoc/ri/driver.rb#433
   def add_also_in(out, also_in); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#446
+  # source://rdoc//lib/rdoc/ri/driver.rb#450
   def add_class(out, name, classes); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#473
+  # source://rdoc//lib/rdoc/ri/driver.rb#477
   def add_extends(out, extends); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#481
+  # source://rdoc//lib/rdoc/ri/driver.rb#485
   def add_extension_modules(out, type, extensions); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#499
+  # source://rdoc//lib/rdoc/ri/driver.rb#503
   def add_extension_modules_multiple(out, store, modules); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#526
+  # source://rdoc//lib/rdoc/ri/driver.rb#530
   def add_extension_modules_single(out, store, include); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#466
+  # source://rdoc//lib/rdoc/ri/driver.rb#470
   def add_from(out, store); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#540
+  # source://rdoc//lib/rdoc/ri/driver.rb#544
   def add_includes(out, includes); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#547
+  # source://rdoc//lib/rdoc/ri/driver.rb#551
   def add_method(out, name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#558
+  # source://rdoc//lib/rdoc/ri/driver.rb#562
   def add_method_documentation(out, klass); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#571
+  # source://rdoc//lib/rdoc/ri/driver.rb#575
   def add_method_list(out, methods, name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#591
+  # source://rdoc//lib/rdoc/ri/driver.rb#595
   def ancestors_of(klass); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#926
+  # source://rdoc//lib/rdoc/ri/driver.rb#930
   def check_did_you_mean; end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#622
+  # source://rdoc//lib/rdoc/ri/driver.rb#626
   def class_cache; end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#628
+  # source://rdoc//lib/rdoc/ri/driver.rb#632
   def class_document(name, found, klasses, includes, extends); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#650
+  # source://rdoc//lib/rdoc/ri/driver.rb#654
   def class_document_comment(out, comment); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#670
+  # source://rdoc//lib/rdoc/ri/driver.rb#674
   def class_document_constants(out, klass); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#694
+  # source://rdoc//lib/rdoc/ri/driver.rb#698
   def classes; end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#714
+  # source://rdoc//lib/rdoc/ri/driver.rb#718
   def classes_and_includes_and_extends_for(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#739
+  # source://rdoc//lib/rdoc/ri/driver.rb#743
   def complete(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#750
+  # source://rdoc//lib/rdoc/ri/driver.rb#754
   def complete_klass(name, klass, selector, method, completions); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#769
+  # source://rdoc//lib/rdoc/ri/driver.rb#773
   def complete_method(name, klass, selector, completions); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#789
+  # source://rdoc//lib/rdoc/ri/driver.rb#793
   def display(document); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#802
+  # source://rdoc//lib/rdoc/ri/driver.rb#806
   def display_class(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#818
+  # source://rdoc//lib/rdoc/ri/driver.rb#822
   def display_method(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#832
+  # source://rdoc//lib/rdoc/ri/driver.rb#836
   def display_name(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#861
+  # source://rdoc//lib/rdoc/ri/driver.rb#865
   def display_names(names); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#872
+  # source://rdoc//lib/rdoc/ri/driver.rb#876
   def display_page(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#903
+  # source://rdoc//lib/rdoc/ri/driver.rb#907
   def display_page_list(store, pages = T.unsafe(nil), search = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#947
+  # source://rdoc//lib/rdoc/ri/driver.rb#951
   def expand_class(klass); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#965
+  # source://rdoc//lib/rdoc/ri/driver.rb#969
   def expand_name(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#981
+  # source://rdoc//lib/rdoc/ri/driver.rb#985
   def filter_methods(found, name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#999
+  # source://rdoc//lib/rdoc/ri/driver.rb#1003
   def find_methods(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1045
+  # source://rdoc//lib/rdoc/ri/driver.rb#1049
   def find_store(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1062
+  # source://rdoc//lib/rdoc/ri/driver.rb#1066
   def formatter(io); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1075
+  # source://rdoc//lib/rdoc/ri/driver.rb#1079
   def interactive; end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1114
+  # source://rdoc//lib/rdoc/ri/driver.rb#1118
   def list_known_classes(names = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1146
+  # source://rdoc//lib/rdoc/ri/driver.rb#1150
   def list_methods_matching(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1185
+  # source://rdoc//lib/rdoc/ri/driver.rb#1189
   def load_method(store, cache, klass, type, name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1208
+  # source://rdoc//lib/rdoc/ri/driver.rb#1212
   def load_methods_matching(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1229
+  # source://rdoc//lib/rdoc/ri/driver.rb#1233
   def lookup_method(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1254
+  # source://rdoc//lib/rdoc/ri/driver.rb#1258
   def method_document(name, filtered); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1272
+  # source://rdoc//lib/rdoc/ri/driver.rb#1276
   def method_type(selector); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1284
+  # source://rdoc//lib/rdoc/ri/driver.rb#1288
   def name_regexp(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1298
+  # source://rdoc//lib/rdoc/ri/driver.rb#1302
   def page; end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1316
+  # source://rdoc//lib/rdoc/ri/driver.rb#1320
   def paging?; end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1327
+  # source://rdoc//lib/rdoc/ri/driver.rb#1331
   def parse_name(name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1359
+  # source://rdoc//lib/rdoc/ri/driver.rb#1363
   def render_class(out, store, klass, also_in); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1389
+  # source://rdoc//lib/rdoc/ri/driver.rb#1393
   def render_method(out, store, method, name); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1409
+  # source://rdoc//lib/rdoc/ri/driver.rb#1413
   def render_method_arguments(out, arglists); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1418
+  # source://rdoc//lib/rdoc/ri/driver.rb#1422
   def render_method_comment(out, method, alias_for = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1436
+  # source://rdoc//lib/rdoc/ri/driver.rb#1440
   def render_method_superclass(out, method); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1448
+  # source://rdoc//lib/rdoc/ri/driver.rb#1452
   def run; end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1468
+  # source://rdoc//lib/rdoc/ri/driver.rb#1472
   def setup_pager; end
 
   # source://rdoc//lib/rdoc/ri/driver.rb#62
@@ -5952,7 +5936,7 @@ class RDoc::RI::Driver
   # source://rdoc//lib/rdoc/ri/driver.rb#62
   def show_all=(_arg0); end
 
-  # source://rdoc//lib/rdoc/ri/driver.rb#1494
+  # source://rdoc//lib/rdoc/ri/driver.rb#1498
   def start_server; end
 
   # source://rdoc//lib/rdoc/ri/driver.rb#67
@@ -5977,7 +5961,7 @@ class RDoc::RI::Driver
     # source://rdoc//lib/rdoc/ri/driver.rb#109
     def process_args(argv); end
 
-    # source://rdoc//lib/rdoc/ri/driver.rb#376
+    # source://rdoc//lib/rdoc/ri/driver.rb#380
     def run(argv = T.unsafe(nil)); end
   end
 end
@@ -6000,101 +5984,39 @@ module RDoc::RI::Formatter; end
 # source://rdoc//lib/rdoc/ri/store.rb#4
 RDoc::RI::Store = RDoc::Store
 
-# source://rdoc//lib/rdoc/require.rb#5
+# source://rdoc//lib/rdoc/code_object/require.rb#5
 class RDoc::Require < ::RDoc::CodeObject
-  # source://rdoc//lib/rdoc/require.rb#15
+  # source://rdoc//lib/rdoc/code_object/require.rb#15
   def initialize(name, comment); end
 
-  # source://rdoc//lib/rdoc/require.rb#22
+  # source://rdoc//lib/rdoc/code_object/require.rb#22
   def inspect; end
 
-  # source://rdoc//lib/rdoc/require.rb#10
+  # source://rdoc//lib/rdoc/code_object/require.rb#10
   def name; end
 
-  # source://rdoc//lib/rdoc/require.rb#10
+  # source://rdoc//lib/rdoc/code_object/require.rb#10
   def name=(_arg0); end
 
-  # source://rdoc//lib/rdoc/require.rb#31
+  # source://rdoc//lib/rdoc/code_object/require.rb#31
   def to_s; end
 
-  # source://rdoc//lib/rdoc/require.rb#38
+  # source://rdoc//lib/rdoc/code_object/require.rb#38
   def top_level; end
 end
 
-# source://rdoc//lib/rdoc/servlet.rb#34
-class RDoc::Servlet < ::WEBrick::HTTPServlet::AbstractServlet
-  # source://rdoc//lib/rdoc/servlet.rb#69
-  def initialize(server, stores, cache, mount_path = T.unsafe(nil), extra_doc_dirs = T.unsafe(nil)); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#100
-  def asset(generator_name, req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#42
-  def asset_dirs; end
-
-  # source://rdoc//lib/rdoc/servlet.rb#119
-  def do_GET(req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#152
-  def documentation_page(store, generator, path, req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#171
-  def documentation_search(store, generator, req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#185
-  def documentation_source(path); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#203
-  def error(exception, req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#246
-  def generator_for(store); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#267
-  def if_modified_since(req, res, path = T.unsafe(nil)); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#290
-  def installed_docs; end
-
-  # source://rdoc//lib/rdoc/servlet.rb#318
-  def not_found(generator, req, res, message = T.unsafe(nil)); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#47
-  def options; end
-
-  # source://rdoc//lib/rdoc/servlet.rb#327
-  def ri_paths(&block); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#334
-  def root(req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#345
-  def root_search(req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#395
-  def show_documentation(req, res); end
-
-  # source://rdoc//lib/rdoc/servlet.rb#419
-  def store_for(source_name); end
-
-  class << self
-    # source://rdoc//lib/rdoc/servlet.rb#53
-    def get_instance(server, *options); end
-  end
-end
-
-# source://rdoc//lib/rdoc/single_class.rb#5
+# source://rdoc//lib/rdoc/code_object/single_class.rb#5
 class RDoc::SingleClass < ::RDoc::ClassModule
-  # source://rdoc//lib/rdoc/single_class.rb#10
+  # source://rdoc//lib/rdoc/code_object/single_class.rb#10
   def ancestors; end
 
-  # source://rdoc//lib/rdoc/single_class.rb#14
+  # source://rdoc//lib/rdoc/code_object/single_class.rb#14
   def aref_prefix; end
 
-  # source://rdoc//lib/rdoc/single_class.rb#21
+  # source://rdoc//lib/rdoc/code_object/single_class.rb#21
   def definition; end
 
-  # source://rdoc//lib/rdoc/single_class.rb#25
+  # source://rdoc//lib/rdoc/code_object/single_class.rb#25
   def pretty_print(q); end
 end
 
@@ -6503,55 +6425,55 @@ end
 
 # source://rdoc//lib/rdoc/task.rb#99
 class RDoc::Task < ::Rake::TaskLib
-  # source://rdoc//lib/rdoc/task.rb#158
+  # source://rdoc//lib/rdoc/task.rb#157
   def initialize(name = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/task.rb#288
+  # source://rdoc//lib/rdoc/task.rb#287
   def before_running_rdoc(&block); end
 
-  # source://rdoc//lib/rdoc/task.rb#174
+  # source://rdoc//lib/rdoc/task.rb#173
   def check_names(names); end
 
-  # source://rdoc//lib/rdoc/task.rb#188
+  # source://rdoc//lib/rdoc/task.rb#187
   def clobber_task_description; end
 
-  # source://rdoc//lib/rdoc/task.rb#309
+  # source://rdoc//lib/rdoc/task.rb#308
   def coverage_task_description; end
 
-  # source://rdoc//lib/rdoc/task.rb#195
+  # source://rdoc//lib/rdoc/task.rb#194
   def defaults; end
 
-  # source://rdoc//lib/rdoc/task.rb#224
+  # source://rdoc//lib/rdoc/task.rb#223
   def define; end
 
-  # source://rdoc//lib/rdoc/task.rb#152
+  # source://rdoc//lib/rdoc/task.rb#151
   def external; end
 
-  # source://rdoc//lib/rdoc/task.rb#152
+  # source://rdoc//lib/rdoc/task.rb#151
   def external=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#137
+  # source://rdoc//lib/rdoc/task.rb#136
   def generator; end
 
-  # source://rdoc//lib/rdoc/task.rb#137
+  # source://rdoc//lib/rdoc/task.rb#136
   def generator=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#209
+  # source://rdoc//lib/rdoc/task.rb#208
   def inline_source; end
 
-  # source://rdoc//lib/rdoc/task.rb#217
+  # source://rdoc//lib/rdoc/task.rb#216
   def inline_source=(value); end
 
-  # source://rdoc//lib/rdoc/task.rb#126
+  # source://rdoc//lib/rdoc/task.rb#125
   def main; end
 
-  # source://rdoc//lib/rdoc/task.rb#126
+  # source://rdoc//lib/rdoc/task.rb#125
   def main=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#110
+  # source://rdoc//lib/rdoc/task.rb#109
   def markup; end
 
-  # source://rdoc//lib/rdoc/task.rb#110
+  # source://rdoc//lib/rdoc/task.rb#109
   def markup=(_arg0); end
 
   # source://rdoc//lib/rdoc/task.rb#104
@@ -6560,60 +6482,60 @@ class RDoc::Task < ::Rake::TaskLib
   # source://rdoc//lib/rdoc/task.rb#104
   def name=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#272
+  # source://rdoc//lib/rdoc/task.rb#271
   def option_list; end
 
-  # source://rdoc//lib/rdoc/task.rb#147
+  # source://rdoc//lib/rdoc/task.rb#146
   def options; end
 
-  # source://rdoc//lib/rdoc/task.rb#147
+  # source://rdoc//lib/rdoc/task.rb#146
   def options=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#115
+  # source://rdoc//lib/rdoc/task.rb#114
   def rdoc_dir; end
 
-  # source://rdoc//lib/rdoc/task.rb#115
+  # source://rdoc//lib/rdoc/task.rb#114
   def rdoc_dir=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#142
+  # source://rdoc//lib/rdoc/task.rb#141
   def rdoc_files; end
 
-  # source://rdoc//lib/rdoc/task.rb#142
+  # source://rdoc//lib/rdoc/task.rb#141
   def rdoc_files=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#295
+  # source://rdoc//lib/rdoc/task.rb#294
   def rdoc_task_description; end
 
-  # source://rdoc//lib/rdoc/task.rb#302
+  # source://rdoc//lib/rdoc/task.rb#301
   def rerdoc_task_description; end
 
-  # source://rdoc//lib/rdoc/task.rb#131
+  # source://rdoc//lib/rdoc/task.rb#130
   def template; end
 
-  # source://rdoc//lib/rdoc/task.rb#131
+  # source://rdoc//lib/rdoc/task.rb#130
   def template=(_arg0); end
 
-  # source://rdoc//lib/rdoc/task.rb#120
+  # source://rdoc//lib/rdoc/task.rb#119
   def title; end
 
-  # source://rdoc//lib/rdoc/task.rb#120
+  # source://rdoc//lib/rdoc/task.rb#119
   def title=(_arg0); end
 
   private
 
-  # source://rdoc//lib/rdoc/task.rb#326
+  # source://rdoc//lib/rdoc/task.rb#325
   def clobber_task_name; end
 
-  # source://rdoc//lib/rdoc/task.rb#340
+  # source://rdoc//lib/rdoc/task.rb#339
   def coverage_task_name; end
 
-  # source://rdoc//lib/rdoc/task.rb#315
+  # source://rdoc//lib/rdoc/task.rb#314
   def rdoc_target; end
 
-  # source://rdoc//lib/rdoc/task.rb#319
+  # source://rdoc//lib/rdoc/task.rb#318
   def rdoc_task_name; end
 
-  # source://rdoc//lib/rdoc/task.rb#333
+  # source://rdoc//lib/rdoc/task.rb#332
   def rerdoc_task_name; end
 end
 
@@ -6696,169 +6618,169 @@ module RDoc::TokenStream
   end
 end
 
-# source://rdoc//lib/rdoc/tom_doc.rb#42
+# source://rdoc//lib/rdoc/tom_doc.rb#36
 class RDoc::TomDoc < ::RDoc::Markup::Parser
-  # source://rdoc//lib/rdoc/tom_doc.rb#130
+  # source://rdoc//lib/rdoc/tom_doc.rb#124
   def initialize; end
 
-  # source://rdoc//lib/rdoc/tom_doc.rb#143
+  # source://rdoc//lib/rdoc/tom_doc.rb#137
   def build_heading(level); end
 
-  # source://rdoc//lib/rdoc/tom_doc.rb#173
+  # source://rdoc//lib/rdoc/tom_doc.rb#167
   def build_paragraph(margin); end
 
-  # source://rdoc//lib/rdoc/tom_doc.rb#159
+  # source://rdoc//lib/rdoc/tom_doc.rb#153
   def build_verbatim(margin); end
 
-  # source://rdoc//lib/rdoc/tom_doc.rb#213
+  # source://rdoc//lib/rdoc/tom_doc.rb#207
   def parse_text(parent, indent); end
 
-  # source://rdoc//lib/rdoc/tom_doc.rb#231
+  # source://rdoc//lib/rdoc/tom_doc.rb#225
   def tokenize(text); end
 
-  # source://rdoc//lib/rdoc/tom_doc.rb#46
+  # source://rdoc//lib/rdoc/tom_doc.rb#40
   def tokens; end
 
   class << self
-    # source://rdoc//lib/rdoc/tom_doc.rb#53
+    # source://rdoc//lib/rdoc/tom_doc.rb#47
     def add_post_processor; end
 
-    # source://rdoc//lib/rdoc/tom_doc.rb#84
+    # source://rdoc//lib/rdoc/tom_doc.rb#78
     def parse(text); end
 
-    # source://rdoc//lib/rdoc/tom_doc.rb#100
+    # source://rdoc//lib/rdoc/tom_doc.rb#94
     def signature(comment); end
   end
 end
 
-# source://rdoc//lib/rdoc/top_level.rb#5
+# source://rdoc//lib/rdoc/code_object/top_level.rb#5
 class RDoc::TopLevel < ::RDoc::Context
-  # source://rdoc//lib/rdoc/top_level.rb#43
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#43
   def initialize(absolute_name, relative_name = T.unsafe(nil)); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#67
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#67
   def ==(other); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#22
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#22
   def absolute_name; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#22
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#22
   def absolute_name=(_arg0); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#76
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#76
   def add_alias(an_alias); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#85
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#85
   def add_constant(constant); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#94
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#94
   def add_include(include); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#103
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#103
   def add_method(method); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#113
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#113
   def add_to_classes_or_modules(mod); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#120
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#120
   def base_name; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#29
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#29
   def classes_or_modules; end
 
   # source://rdoc//lib/rdoc/generator/markup.rb#149
   def cvs_url; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#31
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#31
   def diagram; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#31
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#31
   def diagram=(_arg0); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#130
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#130
   def display?; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#67
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#67
   def eql?(other); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#12
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#12
   def file_stat; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#12
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#12
   def file_stat=(_arg0); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#140
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#140
   def find_class_or_module(name); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#147
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#147
   def find_local_symbol(symbol); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#154
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#154
   def find_module_named(name); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#161
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#161
   def full_name; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#169
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#169
   def hash; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#176
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#176
   def http_url(prefix); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#182
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#182
   def inspect; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#194
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#194
   def last_modified; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#201
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#201
   def marshal_dump; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#213
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#213
   def marshal_load(array); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#120
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#120
   def name; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#227
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#227
   def object_class; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#238
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#238
   def page_name; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#36
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#36
   def parser; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#58
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#58
   def parser=(val); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#248
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#248
   def path; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#252
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#252
   def pretty_print(q); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#17
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#17
   def relative_name; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#17
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#17
   def relative_name=(_arg0); end
 
-  # source://rdoc//lib/rdoc/top_level.rb#266
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#266
   def search_record; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#283
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#283
   def text?; end
 
-  # source://rdoc//lib/rdoc/top_level.rb#287
+  # source://rdoc//lib/rdoc/code_object/top_level.rb#287
   def to_s; end
 end
 
-# source://rdoc//lib/rdoc/task.rb#347
+# source://rdoc//lib/rdoc/task.rb#346
 module Rake
   extend ::FileUtils::StreamUtils_
   extend ::FileUtils
 end
 
-# source://rdoc//lib/rdoc/task.rb#352
+# source://rdoc//lib/rdoc/task.rb#351
 Rake::RDocTask = RDoc::Task

@@ -186,6 +186,24 @@ SQLite3::Constants::Open::TRANSIENT_DB = T.let(T.unsafe(nil), Integer)
 SQLite3::Constants::Open::URI = T.let(T.unsafe(nil), Integer)
 SQLite3::Constants::Open::WAL = T.let(T.unsafe(nil), Integer)
 
+# source://sqlite3//lib/sqlite3/constants.rb#174
+module SQLite3::Constants::Optimize; end
+
+# source://sqlite3//lib/sqlite3/constants.rb#180
+SQLite3::Constants::Optimize::ANALYZE_TABLES = T.let(T.unsafe(nil), Integer)
+
+# source://sqlite3//lib/sqlite3/constants.rb#189
+SQLite3::Constants::Optimize::CHECK_ALL_TABLES = T.let(T.unsafe(nil), Integer)
+
+# source://sqlite3//lib/sqlite3/constants.rb#177
+SQLite3::Constants::Optimize::DEBUG = T.let(T.unsafe(nil), Integer)
+
+# source://sqlite3//lib/sqlite3/constants.rb#195
+SQLite3::Constants::Optimize::DEFAULT = T.let(T.unsafe(nil), Integer)
+
+# source://sqlite3//lib/sqlite3/constants.rb#184
+SQLite3::Constants::Optimize::LIMIT_ANALYZE = T.let(T.unsafe(nil), Integer)
+
 # source://sqlite3//lib/sqlite3/constants.rb#126
 module SQLite3::Constants::Status; end
 
@@ -676,61 +694,64 @@ module SQLite3::Pragmas
   # source://sqlite3//lib/sqlite3/pragmas.rb#337
   def mmap_size=(size); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#341
+  # source://sqlite3//lib/sqlite3/pragmas.rb#347
+  def optimize(bitmask = T.unsafe(nil)); end
+
+  # source://sqlite3//lib/sqlite3/pragmas.rb#355
   def page_count; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#345
+  # source://sqlite3//lib/sqlite3/pragmas.rb#359
   def page_size; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#349
+  # source://sqlite3//lib/sqlite3/pragmas.rb#363
   def page_size=(size); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#353
+  # source://sqlite3//lib/sqlite3/pragmas.rb#367
   def parser_trace=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#357
+  # source://sqlite3//lib/sqlite3/pragmas.rb#371
   def query_only; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#361
+  # source://sqlite3//lib/sqlite3/pragmas.rb#375
   def query_only=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#365
+  # source://sqlite3//lib/sqlite3/pragmas.rb#379
   def quick_check(*num_errors, &block); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#369
+  # source://sqlite3//lib/sqlite3/pragmas.rb#383
   def read_uncommitted; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#373
+  # source://sqlite3//lib/sqlite3/pragmas.rb#387
   def read_uncommitted=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#377
+  # source://sqlite3//lib/sqlite3/pragmas.rb#391
   def recursive_triggers; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#381
+  # source://sqlite3//lib/sqlite3/pragmas.rb#395
   def recursive_triggers=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#385
+  # source://sqlite3//lib/sqlite3/pragmas.rb#399
   def reverse_unordered_selects; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#389
+  # source://sqlite3//lib/sqlite3/pragmas.rb#403
   def reverse_unordered_selects=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#393
+  # source://sqlite3//lib/sqlite3/pragmas.rb#407
   def schema_cookie; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#397
+  # source://sqlite3//lib/sqlite3/pragmas.rb#411
   def schema_cookie=(cookie); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#401
+  # source://sqlite3//lib/sqlite3/pragmas.rb#415
   def schema_version; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#405
+  # source://sqlite3//lib/sqlite3/pragmas.rb#419
   def schema_version=(version); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#409
+  # source://sqlite3//lib/sqlite3/pragmas.rb#423
   def secure_delete; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#413
+  # source://sqlite3//lib/sqlite3/pragmas.rb#427
   def secure_delete=(mode); end
 
   # source://sqlite3//lib/sqlite3/pragmas.rb#18
@@ -742,93 +763,93 @@ module SQLite3::Pragmas
   # source://sqlite3//lib/sqlite3/pragmas.rb#75
   def set_int_pragma(name, value); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#417
+  # source://sqlite3//lib/sqlite3/pragmas.rb#431
   def short_column_names; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#421
+  # source://sqlite3//lib/sqlite3/pragmas.rb#435
   def short_column_names=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#425
+  # source://sqlite3//lib/sqlite3/pragmas.rb#439
   def shrink_memory; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#429
+  # source://sqlite3//lib/sqlite3/pragmas.rb#443
   def soft_heap_limit; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#433
+  # source://sqlite3//lib/sqlite3/pragmas.rb#447
   def soft_heap_limit=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#437
+  # source://sqlite3//lib/sqlite3/pragmas.rb#451
   def stats(&block); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#441
+  # source://sqlite3//lib/sqlite3/pragmas.rb#455
   def synchronous; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#445
+  # source://sqlite3//lib/sqlite3/pragmas.rb#459
   def synchronous=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#524
+  # source://sqlite3//lib/sqlite3/pragmas.rb#538
   def table_info(table); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#449
+  # source://sqlite3//lib/sqlite3/pragmas.rb#463
   def temp_store; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#453
+  # source://sqlite3//lib/sqlite3/pragmas.rb#467
   def temp_store=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#457
+  # source://sqlite3//lib/sqlite3/pragmas.rb#471
   def threads; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#461
+  # source://sqlite3//lib/sqlite3/pragmas.rb#475
   def threads=(count); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#465
+  # source://sqlite3//lib/sqlite3/pragmas.rb#479
   def user_cookie; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#469
+  # source://sqlite3//lib/sqlite3/pragmas.rb#483
   def user_cookie=(cookie); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#473
+  # source://sqlite3//lib/sqlite3/pragmas.rb#487
   def user_version; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#477
+  # source://sqlite3//lib/sqlite3/pragmas.rb#491
   def user_version=(version); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#481
+  # source://sqlite3//lib/sqlite3/pragmas.rb#495
   def vdbe_addoptrace=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#485
+  # source://sqlite3//lib/sqlite3/pragmas.rb#499
   def vdbe_debug=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#489
+  # source://sqlite3//lib/sqlite3/pragmas.rb#503
   def vdbe_listing=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#493
+  # source://sqlite3//lib/sqlite3/pragmas.rb#507
   def vdbe_trace; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#497
+  # source://sqlite3//lib/sqlite3/pragmas.rb#511
   def vdbe_trace=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#501
+  # source://sqlite3//lib/sqlite3/pragmas.rb#515
   def wal_autocheckpoint; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#505
+  # source://sqlite3//lib/sqlite3/pragmas.rb#519
   def wal_autocheckpoint=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#509
+  # source://sqlite3//lib/sqlite3/pragmas.rb#523
   def wal_checkpoint; end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#513
+  # source://sqlite3//lib/sqlite3/pragmas.rb#527
   def wal_checkpoint=(mode); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#517
+  # source://sqlite3//lib/sqlite3/pragmas.rb#531
   def writable_schema=(mode); end
 
   private
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#574
+  # source://sqlite3//lib/sqlite3/pragmas.rb#588
   def tweak_default(hash); end
 
-  # source://sqlite3//lib/sqlite3/pragmas.rb#558
+  # source://sqlite3//lib/sqlite3/pragmas.rb#572
   def version_compare(v1, v2); end
 end
 
@@ -904,6 +925,8 @@ end
 class SQLite3::SQLException < ::SQLite3::Exception; end
 
 SQLite3::SQLITE_LOADED_VERSION = T.let(T.unsafe(nil), String)
+SQLite3::SQLITE_PACKAGED_LIBRARIES = T.let(T.unsafe(nil), TrueClass)
+SQLite3::SQLITE_PRECOMPILED_LIBRARIES = T.let(T.unsafe(nil), TrueClass)
 SQLite3::SQLITE_VERSION = T.let(T.unsafe(nil), String)
 SQLite3::SQLITE_VERSION_NUMBER = T.let(T.unsafe(nil), Integer)
 
@@ -983,8 +1006,11 @@ class SQLite3::TooBigException < ::SQLite3::Exception; end
 # source://sqlite3//lib/sqlite3/errors.rb#79
 class SQLite3::UnsupportedException < ::SQLite3::Exception; end
 
-# source://sqlite3//lib/sqlite3/version.rb#2
+# source://sqlite3//lib/sqlite3/version.rb#3
 SQLite3::VERSION = T.let(T.unsafe(nil), String)
+
+# source://sqlite3//lib/sqlite3/version_info.rb#3
+SQLite3::VERSION_INFO = T.let(T.unsafe(nil), Hash)
 
 # source://sqlite3//lib/sqlite3/value.rb#4
 class SQLite3::Value

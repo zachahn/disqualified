@@ -5,25 +5,26 @@
 # Please instead update this file by running `bin/tapioca gem securerandom`.
 
 
+# source://securerandom//lib/securerandom.rb#41
 module SecureRandom
   extend ::Random::Formatter
 
   class << self
-    # source://securerandom//securerandom.rb#50
+    # source://securerandom//lib/securerandom.rb#50
     def bytes(n); end
 
-    # source://securerandom//securerandom.rb#64
+    # source://securerandom//lib/securerandom.rb#64
     def gen_random(n); end
 
     private
 
-    # source://securerandom//securerandom.rb#59
+    # source://securerandom//lib/securerandom.rb#59
     def gen_random_openssl(n); end
 
-    # source://securerandom//securerandom.rb#64
+    # source://securerandom//lib/securerandom.rb#64
     def gen_random_urandom(n); end
   end
 end
 
-# source://securerandom//securerandom.rb#44
+# source://securerandom//lib/securerandom.rb#44
 SecureRandom::VERSION = T.let(T.unsafe(nil), String)

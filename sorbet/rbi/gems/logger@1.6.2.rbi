@@ -110,11 +110,14 @@ class Logger
 
   private
 
-  # source://logger//lib/logger.rb#754
+  # source://logger//lib/logger.rb#758
   def format_message(severity, datetime, progname, msg); end
 
   # source://logger//lib/logger.rb#745
   def format_severity(severity); end
+
+  # source://logger//lib/logger.rb#754
+  def level_key; end
 
   # source://logger//lib/logger.rb#750
   def level_override; end
