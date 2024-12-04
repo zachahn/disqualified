@@ -3,4 +3,5 @@
 require_relative "../lib/disqualified"
 require_relative "../lib/disqualified/cli"
 
-Disqualified::CLI.run
+cli = Disqualified::CLI.new
+cli.run
