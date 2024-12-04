@@ -17,4 +17,8 @@ class Disqualified::InstallGenerator < Rails::Generators::Base
     basename = "20241119023328_create_disqualified_sequences.rb"
     copy_file(basename, File.join(db_migrate_path, basename))
   end
+
+  def copy_initializer
+    copy_file("initializer.rb", "config/initializers/disqualified.rb")
+  end
 end
