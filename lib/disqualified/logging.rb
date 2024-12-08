@@ -13,12 +13,12 @@ module Disqualified::Logging
 
   module_function
 
-  sig { params(parts: T.untyped).void }
+  sig { params(parts: T.untyped).returns(String) }
   def format_log(*parts)
     *extras, message = parts
 
     if extras.empty?
-      message
+      message.to_s
     else
       "#{extras.map { |x| "[#{x}]" }.join(" ")} #{message}"
     end
