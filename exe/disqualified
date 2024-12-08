@@ -3,5 +3,5 @@
 require_relative "../lib/disqualified"
 require_relative "../lib/disqualified/cli"
 
-cli = Disqualified::CLI.new
+cli = Disqualified::CLI.new(ARGV)
 cli.run
